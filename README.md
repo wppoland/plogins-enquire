@@ -1,45 +1,35 @@
-# Enquire — Product Enquiry Form for WooCommerce
+# Enquire - Product Enquiry Form for WooCommerce
 
-Adds an accessible **"Ask a question"** button to WooCommerce single product
-pages. Clicking it opens a focus-trapped `<dialog>` with a simple form (name,
-email, message); on submit, the enquiry is emailed to the configured recipient
-with the product name and link. No enquiry data is stored — submissions are
-emailed only.
+Enquire adds an accessible "Ask a question" button to your WooCommerce single product pages.
+Clicking it opens a simple dialog form (name, email, message); on submit, the enquiry is emailed
+to you with the product name and link, so you can answer pre-sale questions and close more sales.
+No enquiry data is stored — submissions are emailed only.
 
 ## Features
 
-- "Ask a question" trigger on single product pages (configurable label + placement).
-- Accessible native `<dialog>` form: keyboard friendly, focus-managed, SR-labelled, motion-reduced aware.
-- Emails enquiries via `wp_mail()` with product context; customer address set as Reply-To.
-- Inline success/error states, no page reload.
-- Spam protection: nonce + honeypot + per-visitor rate limit.
-- Configurable required fields, labels, messages and email subject.
-- WooCommerce → Enquire settings page with inline help on every option.
-- Loads CSS/JS only on product pages. Declares WooCommerce HPOS + Blocks compatibility.
+- "Ask a question" button on single product pages, with a configurable label and placement.
+- Accessible dialog form built on the native `<dialog>` element: keyboard friendly, focus-managed,
+  screen-reader labelled, and motion-reduced aware.
+- Sends enquiries via `wp_mail()` to a configurable recipient (falls back to the site admin email),
+  with the customer's address set as Reply-To.
+- Inline success and error states, no page reload.
+- Spam protection: nonce verification, a honeypot field and a per-visitor rate limit.
+- Settings page under WooCommerce → Enquire with inline help on every option.
 
-## Architecture
+## Installation
 
-- `enquire.php` — bootstrap. Declares WC compatibility, then boots on `init:0`
-  and fires `do_action('enquire/booted', Plugin::instance())` from
-  `Plugin::boot()`. PRO companions hook that action.
-- `src/Plugin.php` — singleton + minimal DI container; resolves the services in
-  `config/hooks.php` and calls `registerHooks()` on each.
-- `src/Service/EnquiryService.php` — renders the trigger/form, handles the AJAX
-  submission, validates, rate-limits and emails.
-- `src/Admin/Settings.php` — the WooCommerce submenu settings page.
-- `templates/enquiry-form.php` — the trigger + dialog markup.
-- `assets/` — front-end and admin CSS/JS (hand-written, no build step).
+1. Upload the plugin to `/wp-content/plugins/enquire`, or install it via Plugins → Add New.
+2. Activate it. WooCommerce must be active.
+3. Go to WooCommerce → Enquire to set the recipient email, button label and form options.
 
-## Development
+## Frequently Asked Questions
 
-```sh
-composer install
-composer cs        # PHPCS (WordPress security sniffs)
-composer analyse   # PHPStan level 6
-```
+**Does it require WooCommerce?**
+Yes. Enquire adds its button to WooCommerce single product pages and uses WooCommerce product data.
 
-Self-contained: no runtime Composer dependencies.
+**Where are enquiries stored?**
+Nowhere. Enquiries are emailed only — nothing is written to your database.
 
-## License
+Built by WPPoland — https://plogins.com
 
-GPL-2.0-or-later.
+License: GPL-2.0-or-later

@@ -23,8 +23,7 @@ return [
     'recipient' => '',
 
     // Trigger button.
-    'button_text'      => 'Ask a question',
-    'button_placement' => 'after_add_to_cart',
+    'button_text' => 'Ask a question',
 
     // Form chrome.
     'form_title'    => 'Ask a question about this product',

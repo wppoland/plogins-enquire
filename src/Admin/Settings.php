@@ -13,8 +13,8 @@ use Enquire\Contract\HasHooks;
  * Enquire").
  *
  * Stores settings in the `enquire_settings` option (array): the master toggle,
- * recipient address, trigger button label/placement, required-field rules and
- * messaging. All output is escaped; all input is sanitised on save.
+ * recipient address, trigger button label, required-field rules and messaging.
+ * All output is escaped; all input is sanitised on save.
  */
 final class Settings implements HasHooks
 {
@@ -29,7 +29,7 @@ final class Settings implements HasHooks
     }
 
     /**
-     * Load the settings-page CSS/JS only on the Enquire screen.
+     * Load the settings-page CSS only on the Enquire screen.
      */
     public function enqueueAssets(string $hookSuffix): void
     {
@@ -42,14 +42,6 @@ final class Settings implements HasHooks
             \Enquire\Plugin::instance()->url('assets/css/admin.css'),
             [],
             \Enquire\VERSION,
-        );
-
-        wp_enqueue_script(
-            'enquire-admin',
-            \Enquire\Plugin::instance()->url('assets/js/admin.js'),
-            [],
-            \Enquire\VERSION,
-            ['in_footer' => true, 'strategy' => 'defer'],
         );
     }
 
@@ -103,7 +95,7 @@ final class Settings implements HasHooks
                 </span>
                 <div class="enquire-admin__intro-text">
                     <h2><?php esc_html_e('Let shoppers ask about a product before they buy', 'enquire'); ?></h2>
-                    <p><?php esc_html_e('Enquire adds an “Ask a question” button to your single product pages. Clicking it opens an accessible form (name, email, message) that emails you the question with the product details — no data is stored. Tune everything below; hover a “?” for a quick explanation.', 'enquire'); ?></p>
+                    <p><?php esc_html_e('Enquire adds an “Ask a question” button to your single product pages. Clicking it opens an accessible form (name, email, message) that emails you the question with the product details — no data is stored.', 'enquire'); ?></p>
                 </div>
             </div>
 
@@ -117,10 +109,7 @@ final class Settings implements HasHooks
                     <table class="form-table" role="presentation">
                         <tbody>
                             <tr>
-                                <th scope="row">
-                                    <?php esc_html_e('Enable enquiries', 'enquire'); ?>
-                                    <?php $this->helpTip('enabled', __('Master switch. When off, no button or form is shown and no front-end assets are loaded.', 'enquire')); ?>
-                                </th>
+                                <th scope="row"><?php esc_html_e('Enable enquiries', 'enquire'); ?></th>
                                 <td>
                                     <label for="enquire_enabled">
                                         <input
@@ -128,7 +117,6 @@ final class Settings implements HasHooks
                                             id="enquire_enabled"
                                             name="<?php echo esc_attr(self::OPTION); ?>[enabled]"
                                             value="1"
-                                            aria-describedby="enquire-tip-enabled"
                                             <?php checked((bool) ($settings['enabled'] ?? false), true); ?>
                                         />
                                         <?php esc_html_e('Show the “Ask a question” button on single product pages.', 'enquire'); ?>
@@ -138,7 +126,6 @@ final class Settings implements HasHooks
                             <tr>
                                 <th scope="row">
                                     <label for="enquire_recipient"><?php esc_html_e('Recipient email', 'enquire'); ?></label>
-                                    <?php $this->helpTip('recipient', __('Where enquiries are sent. Leave empty to use your site’s admin email address.', 'enquire')); ?>
                                 </th>
                                 <td>
                                     <input
@@ -148,9 +135,8 @@ final class Settings implements HasHooks
                                         value="<?php echo esc_attr((string) ($settings['recipient'] ?? '')); ?>"
                                         class="regular-text"
                                         placeholder="<?php echo esc_attr((string) get_option('admin_email')); ?>"
-                                        aria-describedby="enquire-tip-recipient"
                                     />
-                                    <p class="description"><?php esc_html_e('Enquiries are emailed here. The customer’s address is set as Reply-To so you can reply directly.', 'enquire'); ?></p>
+                                    <p class="description"><?php esc_html_e('Enquiries are emailed here. Leave empty to use your site’s admin email. The customer’s address is set as Reply-To so you can reply directly.', 'enquire'); ?></p>
                                 </td>
                             </tr>
                         </tbody>
@@ -159,28 +145,13 @@ final class Settings implements HasHooks
 
                 <div class="enquire-admin__section">
                     <h2><?php esc_html_e('Trigger button', 'enquire'); ?></h2>
-                    <p class="enquire-admin__section-intro"><?php esc_html_e('How and where the enquiry button appears on the product page.', 'enquire'); ?></p>
+                    <p class="enquire-admin__section-intro"><?php esc_html_e('The enquiry button shown after the add-to-cart button on the product page.', 'enquire'); ?></p>
 
                     <table class="form-table" role="presentation">
                         <tbody>
                             <?php
-                            $this->textRow('button_text', __('Button label', 'enquire'), __('Text on the trigger button.', 'enquire'), $settings, __('The clickable label, e.g. “Ask a question” or “Enquire now”.', 'enquire'));
+                            $this->textRow('button_text', __('Button label', 'enquire'), __('The clickable label, e.g. “Ask a question” or “Enquire now”.', 'enquire'), $settings);
                             ?>
-                            <tr>
-                                <th scope="row">
-                                    <label for="enquire_button_placement"><?php esc_html_e('Button placement', 'enquire'); ?></label>
-                                    <?php $this->helpTip('button_placement', __('Where the button is injected on the single product page. “After add to cart” suits most themes.', 'enquire')); ?>
-                                </th>
-                                <td>
-                                    <?php $enquire_placement = (string) ($settings['button_placement'] ?? 'after_add_to_cart'); ?>
-                                    <select id="enquire_button_placement" name="<?php echo esc_attr(self::OPTION); ?>[button_placement]" aria-describedby="enquire-tip-button_placement">
-                                        <option value="after_add_to_cart" <?php selected($enquire_placement, 'after_add_to_cart'); ?>><?php esc_html_e('After the add-to-cart button', 'enquire'); ?></option>
-                                        <option value="before_add_to_cart" <?php selected($enquire_placement, 'before_add_to_cart'); ?>><?php esc_html_e('Before the add-to-cart button', 'enquire'); ?></option>
-                                        <option value="after_summary" <?php selected($enquire_placement, 'after_summary'); ?>><?php esc_html_e('At the end of the product summary', 'enquire'); ?></option>
-                                    </select>
-                                    <p class="description"><?php esc_html_e('Pick the spot that best fits your theme’s product layout.', 'enquire'); ?></p>
-                                </td>
-                            </tr>
                         </tbody>
                     </table>
                 </div>
@@ -192,14 +163,14 @@ final class Settings implements HasHooks
                     <table class="form-table" role="presentation">
                         <tbody>
                             <?php
-                            $this->textRow('form_title', __('Form title', 'enquire'), __('Heading shown at the top of the dialog.', 'enquire'), $settings, __('Announced to screen-reader users when the dialog opens, and shown as its heading.', 'enquire'));
+                            $this->textRow('form_title', __('Form title', 'enquire'), __('Heading shown at the top of the dialog.', 'enquire'), $settings);
                             $this->textRow('name_label', __('Name field label', 'enquire'), __('Label for the name input.', 'enquire'), $settings);
                             $this->textRow('email_label', __('Email field label', 'enquire'), __('Label for the email input.', 'enquire'), $settings);
                             $this->textRow('message_label', __('Message field label', 'enquire'), __('Label for the message textarea.', 'enquire'), $settings);
                             $this->textRow('submit_text', __('Submit button label', 'enquire'), __('Label for the send button.', 'enquire'), $settings);
-                            $this->checkboxRow('require_name', __('Require name', 'enquire'), __('Make the name field required.', 'enquire'), $settings, __('When on, the form cannot be submitted without a name.', 'enquire'));
-                            $this->checkboxRow('require_email', __('Require email', 'enquire'), __('Make the email field required.', 'enquire'), $settings, __('Recommended on so you can reply. A valid email format is always enforced when an address is entered.', 'enquire'));
-                            $this->checkboxRow('require_message', __('Require message', 'enquire'), __('Make the message field required.', 'enquire'), $settings, __('When on, the form cannot be submitted with an empty message.', 'enquire'));
+                            $this->checkboxRow('require_name', __('Require name', 'enquire'), __('Make the name field required.', 'enquire'), $settings);
+                            $this->checkboxRow('require_email', __('Require email', 'enquire'), __('Make the email field required. A valid email format is always enforced when an address is entered.', 'enquire'), $settings);
+                            $this->checkboxRow('require_message', __('Require message', 'enquire'), __('Make the message field required.', 'enquire'), $settings);
                             ?>
                         </tbody>
                     </table>
@@ -212,9 +183,9 @@ final class Settings implements HasHooks
                     <table class="form-table" role="presentation">
                         <tbody>
                             <?php
-                            $this->textRow('success_message', __('Success message', 'enquire'), __('Shown after a successful submission.', 'enquire'), $settings, __('A friendly confirmation shown inline once the enquiry is sent.', 'enquire'));
-                            $this->textRow('error_message', __('Error message', 'enquire'), __('Shown if the submission fails.', 'enquire'), $settings, __('Shown if sending fails (e.g. a mail error). Reassure the shopper they can try again.', 'enquire'));
-                            $this->textRow('email_subject', __('Email subject', 'enquire'), __('Subject line of the enquiry email. Use {product} for the product name.', 'enquire'), $settings, __('The subject of the email you receive. {product} is replaced with the product name.', 'enquire'));
+                            $this->textRow('success_message', __('Success message', 'enquire'), __('A friendly confirmation shown inline once the enquiry is sent.', 'enquire'), $settings);
+                            $this->textRow('error_message', __('Error message', 'enquire'), __('Shown if sending fails (e.g. a mail error).', 'enquire'), $settings);
+                            $this->textRow('email_subject', __('Email subject', 'enquire'), __('Subject of the email you receive. {product} is replaced with the product name.', 'enquire'), $settings);
                             ?>
                         </tbody>
                     </table>
@@ -227,40 +198,16 @@ final class Settings implements HasHooks
     }
 
     /**
-     * Render an accessible "?" help affordance with a tooltip.
-     */
-    private function helpTip(string $key, string $text): void
-    {
-        $tipId = 'enquire-tip-' . $key;
-        ?>
-        <button
-            type="button"
-            class="enquire-help"
-            data-enquire-tip="<?php echo esc_attr($tipId); ?>"
-            aria-label="<?php esc_attr_e('More information', 'enquire'); ?>"
-            aria-describedby="<?php echo esc_attr($tipId); ?>"
-            title="<?php echo esc_attr($text); ?>"
-        >?</button>
-        <span class="enquire-help-tip" id="<?php echo esc_attr($tipId); ?>" role="tooltip" hidden><?php echo esc_html($text); ?></span>
-        <?php
-    }
-
-    /**
      * Render a single checkbox row in the form-table.
      *
      * @param array<string, mixed> $settings
      */
-    private function checkboxRow(string $key, string $label, string $help, array $settings, string $tip = ''): void
+    private function checkboxRow(string $key, string $label, string $help, array $settings): void
     {
         $id = 'enquire_' . $key;
         ?>
         <tr>
-            <th scope="row">
-                <?php echo esc_html($label); ?>
-                <?php if ($tip !== '') {
-                    $this->helpTip($key, $tip);
-                } ?>
-            </th>
+            <th scope="row"><?php echo esc_html($label); ?></th>
             <td>
                 <label for="<?php echo esc_attr($id); ?>">
                     <input
@@ -268,7 +215,6 @@ final class Settings implements HasHooks
                         id="<?php echo esc_attr($id); ?>"
                         name="<?php echo esc_attr(self::OPTION); ?>[<?php echo esc_attr($key); ?>]"
                         value="1"
-                        <?php if ($tip !== '') : ?>aria-describedby="<?php echo esc_attr('enquire-tip-' . $key); ?>"<?php endif; ?>
                         <?php checked((bool) ($settings[$key] ?? false), true); ?>
                     />
                     <?php echo esc_html($help); ?>
@@ -283,16 +229,13 @@ final class Settings implements HasHooks
      *
      * @param array<string, mixed> $settings
      */
-    private function textRow(string $key, string $label, string $help, array $settings, string $tip = ''): void
+    private function textRow(string $key, string $label, string $help, array $settings): void
     {
         $id = 'enquire_' . $key;
         ?>
         <tr>
             <th scope="row">
                 <label for="<?php echo esc_attr($id); ?>"><?php echo esc_html($label); ?></label>
-                <?php if ($tip !== '') {
-                    $this->helpTip($key, $tip);
-                } ?>
             </th>
             <td>
                 <input
@@ -301,7 +244,6 @@ final class Settings implements HasHooks
                     name="<?php echo esc_attr(self::OPTION); ?>[<?php echo esc_attr($key); ?>]"
                     value="<?php echo esc_attr((string) ($settings[$key] ?? '')); ?>"
                     class="regular-text"
-                    <?php if ($tip !== '') : ?>aria-describedby="<?php echo esc_attr('enquire-tip-' . $key); ?>"<?php endif; ?>
                 />
                 <p class="description"><?php echo esc_html($help); ?></p>
             </td>
@@ -324,32 +266,24 @@ final class Settings implements HasHooks
 
         $defaults = $this->settings();
 
-        $placement = isset($raw['button_placement']) ? sanitize_key((string) $raw['button_placement']) : 'after_add_to_cart';
-        if (! in_array($placement, ['after_add_to_cart', 'before_add_to_cart', 'after_summary'], true)) {
-            $placement = 'after_add_to_cart';
-        }
-
         $recipient = isset($raw['recipient']) ? sanitize_email((string) $raw['recipient']) : '';
 
-        $sanitized = array_merge($defaults, [
-            'enabled'          => ! empty($raw['enabled']),
-            'recipient'        => $recipient,
-            'button_text'      => $this->sanitizeText($raw, 'button_text', $defaults),
-            'button_placement' => $placement,
-            'form_title'       => $this->sanitizeText($raw, 'form_title', $defaults),
-            'name_label'       => $this->sanitizeText($raw, 'name_label', $defaults),
-            'email_label'      => $this->sanitizeText($raw, 'email_label', $defaults),
-            'message_label'    => $this->sanitizeText($raw, 'message_label', $defaults),
-            'submit_text'      => $this->sanitizeText($raw, 'submit_text', $defaults),
-            'require_name'     => ! empty($raw['require_name']),
-            'require_email'    => ! empty($raw['require_email']),
-            'require_message'  => ! empty($raw['require_message']),
-            'success_message'  => $this->sanitizeText($raw, 'success_message', $defaults),
-            'error_message'    => $this->sanitizeText($raw, 'error_message', $defaults),
-            'email_subject'    => $this->sanitizeText($raw, 'email_subject', $defaults),
+        return array_merge($defaults, [
+            'enabled'         => ! empty($raw['enabled']),
+            'recipient'       => $recipient,
+            'button_text'     => $this->sanitizeText($raw, 'button_text', $defaults),
+            'form_title'      => $this->sanitizeText($raw, 'form_title', $defaults),
+            'name_label'      => $this->sanitizeText($raw, 'name_label', $defaults),
+            'email_label'     => $this->sanitizeText($raw, 'email_label', $defaults),
+            'message_label'   => $this->sanitizeText($raw, 'message_label', $defaults),
+            'submit_text'     => $this->sanitizeText($raw, 'submit_text', $defaults),
+            'require_name'    => ! empty($raw['require_name']),
+            'require_email'   => ! empty($raw['require_email']),
+            'require_message' => ! empty($raw['require_message']),
+            'success_message' => $this->sanitizeText($raw, 'success_message', $defaults),
+            'error_message'   => $this->sanitizeText($raw, 'error_message', $defaults),
+            'email_subject'   => $this->sanitizeText($raw, 'email_subject', $defaults),
         ]);
-
-        return (array) apply_filters('enquire_sanitize_settings', $sanitized, $raw);
     }
 
     /**

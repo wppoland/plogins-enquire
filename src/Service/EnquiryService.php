@@ -34,7 +34,7 @@ final class EnquiryService implements HasHooks
         }
 
         add_action('wp_enqueue_scripts', [$this, 'enqueueAssets']);
-        add_action($this->placementHook(), [$this, 'renderTrigger'], $this->placementPriority());
+        add_action('woocommerce_after_add_to_cart_form', [$this, 'renderTrigger'], 10);
 
         add_action('wp_ajax_' . self::AJAX_ACTION, [$this, 'handleSubmit']);
         add_action('wp_ajax_nopriv_' . self::AJAX_ACTION, [$this, 'handleSubmit']);
@@ -157,19 +157,6 @@ final class EnquiryService implements HasHooks
 
         $this->markRateLimit();
 
-        /**
-         * Fires after an enquiry has been successfully emailed. PRO add-ons hook
-         * here to log the enquiry, send the shopper a confirmation copy, etc.
-         *
-         * @param \WC_Product          $product The product the enquiry is about.
-         * @param array<string, mixed> $enquiry The sanitised submission.
-         */
-        do_action('enquire/enquiry_sent', $product, [
-            'name'    => $name,
-            'email'   => $email,
-            'message' => $message,
-        ]);
-
         wp_send_json_success([
             'message' => (string) ($settings['success_message'] ?? __('Thanks! Your question has been sent.', 'enquire')),
         ]);
@@ -248,25 +235,7 @@ final class EnquiryService implements HasHooks
             $headers[] = 'Reply-To: ' . $fromName . ' <' . $email . '>';
         }
 
-        /**
-         * Filter the enquiry email arguments before sending.
-         *
-         * @param array{to:string,subject:string,body:string,headers:list<string>} $mail
-         * @param \WC_Product $product
-         */
-        $mail = apply_filters('enquire_email_args', [
-            'to'      => $recipient,
-            'subject' => $subject,
-            'body'    => $body,
-            'headers' => $headers,
-        ], $product);
-
-        return (bool) wp_mail(
-            (string) $mail['to'],
-            (string) $mail['subject'],
-            (string) $mail['body'],
-            $mail['headers'],
-        );
+        return (bool) wp_mail($recipient, $subject, $body, $headers);
     }
 
     /**
@@ -307,26 +276,6 @@ final class EnquiryService implements HasHooks
         $product = function_exists('wc_get_product') ? wc_get_product(get_the_ID()) : null;
 
         return $product instanceof \WC_Product ? $product : null;
-    }
-
-    /**
-     * WooCommerce hook the trigger renders on, derived from the placement setting.
-     */
-    private function placementHook(): string
-    {
-        $placement = (string) ($this->settings()['button_placement'] ?? 'after_add_to_cart');
-
-        return match ($placement) {
-            'before_add_to_cart' => 'woocommerce_before_add_to_cart_form',
-            'after_summary'      => 'woocommerce_single_product_summary',
-            default              => 'woocommerce_after_add_to_cart_form',
-        };
-    }
-
-    private function placementPriority(): int
-    {
-        // For the summary placement, render near the bottom of the summary block.
-        return (string) ($this->settings()['button_placement'] ?? '') === 'after_summary' ? 45 : 10;
     }
 
     /**

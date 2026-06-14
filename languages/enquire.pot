@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-06-14T14:04:45+00:00\n"
+"POT-Creation-Date: 2026-06-14T21:55:26+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: enquire\n"
@@ -43,232 +43,164 @@ msgstr ""
 msgid "Enquire - Product Enquiry Form for WooCommerce requires WooCommerce to be active."
 msgstr ""
 
-#: src/Admin/Settings.php:60
+#: src/Admin/Settings.php:52
 msgid "Enquire Settings"
 msgstr ""
 
-#: src/Admin/Settings.php:61
+#: src/Admin/Settings.php:53
 msgid "Enquire"
 msgstr ""
 
-#: src/Admin/Settings.php:105
+#: src/Admin/Settings.php:97
 msgid "Let shoppers ask about a product before they buy"
 msgstr ""
 
-#: src/Admin/Settings.php:106
-msgid "Enquire adds an “Ask a question” button to your single product pages. Clicking it opens an accessible form (name, email, message) that emails you the question with the product details — no data is stored. Tune everything below; hover a “?” for a quick explanation."
+#: src/Admin/Settings.php:98
+msgid "Enquire adds an “Ask a question” button to your single product pages. Clicking it opens an accessible form (name, email, message) that emails you the question with the product details — no data is stored."
 msgstr ""
 
-#: src/Admin/Settings.php:114
+#: src/Admin/Settings.php:106
 msgid "General"
 msgstr ""
 
-#: src/Admin/Settings.php:115
+#: src/Admin/Settings.php:107
 msgid "The master switch and where enquiries are delivered."
 msgstr ""
 
-#: src/Admin/Settings.php:121
+#: src/Admin/Settings.php:112
 msgid "Enable enquiries"
 msgstr ""
 
 #: src/Admin/Settings.php:122
-msgid "Master switch. When off, no button or form is shown and no front-end assets are loaded."
-msgstr ""
-
-#: src/Admin/Settings.php:134
 msgid "Show the “Ask a question” button on single product pages."
 msgstr ""
 
-#: src/Admin/Settings.php:140
+#: src/Admin/Settings.php:128
 msgid "Recipient email"
 msgstr ""
 
-#: src/Admin/Settings.php:141
-msgid "Where enquiries are sent. Leave empty to use your site’s admin email address."
+#: src/Admin/Settings.php:139
+msgid "Enquiries are emailed here. Leave empty to use your site’s admin email. The customer’s address is set as Reply-To so you can reply directly."
 msgstr ""
 
-#: src/Admin/Settings.php:153
-msgid "Enquiries are emailed here. The customer’s address is set as Reply-To so you can reply directly."
-msgstr ""
-
-#: src/Admin/Settings.php:161
+#: src/Admin/Settings.php:147
 msgid "Trigger button"
 msgstr ""
 
-#: src/Admin/Settings.php:162
-msgid "How and where the enquiry button appears on the product page."
+#: src/Admin/Settings.php:148
+msgid "The enquiry button shown after the add-to-cart button on the product page."
 msgstr ""
 
-#: src/Admin/Settings.php:167
+#: src/Admin/Settings.php:153
 msgid "Button label"
 msgstr ""
 
-#: src/Admin/Settings.php:167
-msgid "Text on the trigger button."
-msgstr ""
-
-#: src/Admin/Settings.php:167
+#: src/Admin/Settings.php:153
 msgid "The clickable label, e.g. “Ask a question” or “Enquire now”."
 msgstr ""
 
-#: src/Admin/Settings.php:171
-msgid "Button placement"
-msgstr ""
-
-#: src/Admin/Settings.php:172
-msgid "Where the button is injected on the single product page. “After add to cart” suits most themes."
-msgstr ""
-
-#: src/Admin/Settings.php:177
-msgid "After the add-to-cart button"
-msgstr ""
-
-#: src/Admin/Settings.php:178
-msgid "Before the add-to-cart button"
-msgstr ""
-
-#: src/Admin/Settings.php:179
-msgid "At the end of the product summary"
-msgstr ""
-
-#: src/Admin/Settings.php:181
-msgid "Pick the spot that best fits your theme’s product layout."
-msgstr ""
-
-#: src/Admin/Settings.php:189
+#: src/Admin/Settings.php:160
 msgid "Form fields"
 msgstr ""
 
-#: src/Admin/Settings.php:190
+#: src/Admin/Settings.php:161
 msgid "Field labels and which fields a shopper must complete. Empty labels fall back to the built-in defaults."
 msgstr ""
 
-#: src/Admin/Settings.php:195
+#: src/Admin/Settings.php:166
 msgid "Form title"
 msgstr ""
 
-#: src/Admin/Settings.php:195
+#: src/Admin/Settings.php:166
 msgid "Heading shown at the top of the dialog."
 msgstr ""
 
-#: src/Admin/Settings.php:195
-msgid "Announced to screen-reader users when the dialog opens, and shown as its heading."
-msgstr ""
-
-#: src/Admin/Settings.php:196
+#: src/Admin/Settings.php:167
 msgid "Name field label"
 msgstr ""
 
-#: src/Admin/Settings.php:196
+#: src/Admin/Settings.php:167
 msgid "Label for the name input."
 msgstr ""
 
-#: src/Admin/Settings.php:197
+#: src/Admin/Settings.php:168
 msgid "Email field label"
 msgstr ""
 
-#: src/Admin/Settings.php:197
+#: src/Admin/Settings.php:168
 msgid "Label for the email input."
 msgstr ""
 
-#: src/Admin/Settings.php:198
+#: src/Admin/Settings.php:169
 msgid "Message field label"
 msgstr ""
 
-#: src/Admin/Settings.php:198
+#: src/Admin/Settings.php:169
 msgid "Label for the message textarea."
 msgstr ""
 
-#: src/Admin/Settings.php:199
+#: src/Admin/Settings.php:170
 msgid "Submit button label"
 msgstr ""
 
-#: src/Admin/Settings.php:199
+#: src/Admin/Settings.php:170
 msgid "Label for the send button."
 msgstr ""
 
-#: src/Admin/Settings.php:200
+#: src/Admin/Settings.php:171
 msgid "Require name"
 msgstr ""
 
-#: src/Admin/Settings.php:200
+#: src/Admin/Settings.php:171
 msgid "Make the name field required."
 msgstr ""
 
-#: src/Admin/Settings.php:200
-msgid "When on, the form cannot be submitted without a name."
-msgstr ""
-
-#: src/Admin/Settings.php:201
+#: src/Admin/Settings.php:172
 msgid "Require email"
 msgstr ""
 
-#: src/Admin/Settings.php:201
-msgid "Make the email field required."
+#: src/Admin/Settings.php:172
+msgid "Make the email field required. A valid email format is always enforced when an address is entered."
 msgstr ""
 
-#: src/Admin/Settings.php:201
-msgid "Recommended on so you can reply. A valid email format is always enforced when an address is entered."
-msgstr ""
-
-#: src/Admin/Settings.php:202
+#: src/Admin/Settings.php:173
 msgid "Require message"
 msgstr ""
 
-#: src/Admin/Settings.php:202
+#: src/Admin/Settings.php:173
 msgid "Make the message field required."
 msgstr ""
 
-#: src/Admin/Settings.php:202
-msgid "When on, the form cannot be submitted with an empty message."
-msgstr ""
-
-#: src/Admin/Settings.php:209
+#: src/Admin/Settings.php:180
 msgid "Messaging"
 msgstr ""
 
-#: src/Admin/Settings.php:210
+#: src/Admin/Settings.php:181
 msgid "What shoppers see after submitting, and the email subject line."
 msgstr ""
 
-#: src/Admin/Settings.php:215
+#: src/Admin/Settings.php:186
 msgid "Success message"
 msgstr ""
 
-#: src/Admin/Settings.php:215
-msgid "Shown after a successful submission."
-msgstr ""
-
-#: src/Admin/Settings.php:215
+#: src/Admin/Settings.php:186
 msgid "A friendly confirmation shown inline once the enquiry is sent."
 msgstr ""
 
-#: src/Admin/Settings.php:216
+#: src/Admin/Settings.php:187
 msgid "Error message"
 msgstr ""
 
-#: src/Admin/Settings.php:216
-msgid "Shown if the submission fails."
+#: src/Admin/Settings.php:187
+msgid "Shown if sending fails (e.g. a mail error)."
 msgstr ""
 
-#: src/Admin/Settings.php:216
-msgid "Shown if sending fails (e.g. a mail error). Reassure the shopper they can try again."
-msgstr ""
-
-#: src/Admin/Settings.php:217
+#: src/Admin/Settings.php:188
 msgid "Email subject"
 msgstr ""
 
-#: src/Admin/Settings.php:217
-msgid "Subject line of the enquiry email. Use {product} for the product name."
-msgstr ""
-
-#: src/Admin/Settings.php:217
-msgid "The subject of the email you receive. {product} is replaced with the product name."
-msgstr ""
-
-#: src/Admin/Settings.php:240
-msgid "More information"
+#: src/Admin/Settings.php:188
+msgid "Subject of the email you receive. {product} is replaced with the product name."
 msgstr ""
 
 #: src/Service/EnquiryService.php:122

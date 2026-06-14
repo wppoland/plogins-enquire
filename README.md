@@ -7,14 +7,14 @@ No enquiry data is stored — submissions are emailed only.
 
 ## Features
 
-- "Ask a question" button on single product pages, with a configurable label and placement.
+- "Ask a question" button on single product pages, with a configurable label.
 - Accessible dialog form built on the native `<dialog>` element: keyboard friendly, focus-managed,
   screen-reader labelled, and motion-reduced aware.
 - Sends enquiries via `wp_mail()` to a configurable recipient (falls back to the site admin email),
   with the customer's address set as Reply-To.
 - Inline success and error states, no page reload.
 - Spam protection: nonce verification, a honeypot field and a per-visitor rate limit.
-- Settings page under WooCommerce → Enquire with inline help on every option.
+- Settings page under WooCommerce → Enquire to customise labels, required fields and messaging.
 
 ## Installation
 

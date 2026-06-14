@@ -19,13 +19,13 @@ No enquiry data is stored in your database: submissions are emailed only. The cu
 
 = Features =
 
-* "Ask a question" button on single product pages, with configurable label and placement (before/after add to cart, or end of the product summary).
+* "Ask a question" button on single product pages, with a configurable label, shown after the add-to-cart button.
 * Accessible dialog form built on the native `<dialog>` element — keyboard friendly, focus-managed, screen-reader labelled, and motion-reduced aware.
 * Sends enquiries via `wp_mail()` to a configurable recipient (falls back to your site admin email), with the product name and permalink included.
 * Inline success and error states — no page reload.
 * Spam protection: nonce verification, a honeypot field, and a per-visitor rate limit.
 * Choose which fields are required (name, email, message) and customise every label and message.
-* WooCommerce submenu settings page (WooCommerce → Enquire) with inline help on every option.
+* WooCommerce submenu settings page (WooCommerce → Enquire).
 * Loads its small CSS/JS only on product pages. Declares WooCommerce HPOS and Cart/Checkout Blocks compatibility.
 
 == Installation ==

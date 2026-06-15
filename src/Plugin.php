@@ -57,5 +57,15 @@ final class Plugin
                 $service->registerHooks();
             }
         }
+
+        /**
+         * Fires after Enquire has fully booted and all services are registered.
+         *
+         * Add-ons (e.g. Enquire Pro) listen on this action to extend the shared
+         * container and register their own hooks.
+         *
+         * @param Plugin $plugin The booted plugin instance.
+         */
+        do_action('enquire/booted', $this);
     }
 }

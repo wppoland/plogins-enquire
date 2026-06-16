@@ -15,8 +15,11 @@
     /* Iron-gall ink: a deep, slightly green-shifted navy — the colour of a
        fountain pen, deliberately not a default UI blue (#2563eb). */
     --enquire-ink: var(--wp--preset--color--contrast, #1d3a4a);
-    /* Manuscript amber: the seal / accent moment, warm against the ink. */
-    --enquire-seal: var(--wp--preset--color--primary, #b8742a);
+    /* Manuscript amber: the seal / accent moment, warm against the ink.
+       Deepened to #9c5e1c so it clears WCAG AA as small text (the required
+       mark) on white/paper (>=4.5:1) while white and dark labels both clear
+       3:1 on the seal fill in either scheme. */
+    --enquire-seal: var(--wp--preset--color--primary, #9c5e1c);
     --enquire-accent: var(--enquire-ink);
 
     --enquire-radius: 12px;

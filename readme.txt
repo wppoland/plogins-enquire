@@ -54,6 +54,10 @@ To the recipient address you set on the settings page. If you leave it empty, yo
 
 Each submission is checked against a nonce and a hidden honeypot field, and a visitor can send at most one enquiry every 30 seconds.
 
+= Can I customise the button label? =
+
+Yes. Set the button text and form heading under **WooCommerce → Enquire**.
+
 == Screenshots ==
 
 1. The "Ask a question" form on a single product page.

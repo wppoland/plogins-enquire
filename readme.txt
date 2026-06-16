@@ -13,20 +13,22 @@ Add an Ask a Question form to products that emails the store owner.
 
 == Description ==
 
-Enquire adds an accessible "Ask a question" button to your WooCommerce single product pages. When a shopper clicks it, a focus-trapped dialog opens with a simple form (name, email, message). On submit, the enquiry is emailed straight to you with the product name and link — so you can answer pre-sale questions and close more sales.
+Enquire adds an "Ask a question" button to your WooCommerce single product pages. When a shopper clicks it, a dialog opens with a short form (name, email, message). On submit, the question is emailed to you along with the product name and a link to it, so you can reply before the sale.
 
-No enquiry data is stored in your database: submissions are emailed only. The customer's address is set as the email Reply-To, so you can reply directly from your inbox.
+Nothing is stored in your database. Each enquiry is sent by email, and the shopper's address is used as the Reply-To header so you can answer straight from your inbox.
+
+The code is on GitHub at https://github.com/wppoland/enquire if you want to read it, report a bug, or send a patch.
 
 = Features =
 
-* "Ask a question" button on single product pages, with a configurable label, shown after the add-to-cart button.
-* Accessible dialog form built on the native `<dialog>` element — keyboard friendly, focus-managed, screen-reader labelled, and motion-reduced aware.
-* Sends enquiries via `wp_mail()` to a configurable recipient (falls back to your site admin email), with the product name and permalink included.
-* Inline success and error states — no page reload.
-* Spam protection: nonce verification, a honeypot field, and a per-visitor rate limit.
-* Choose which fields are required (name, email, message) and customise every label and message.
-* WooCommerce submenu settings page (WooCommerce → Enquire).
-* Loads its small CSS/JS only on product pages. Declares WooCommerce HPOS and Cart/Checkout Blocks compatibility.
+* "Ask a question" button on single product pages, with a label you can change, placed after the add-to-cart button.
+* The form opens in a native `<dialog>`: it traps focus while open, labels itself for screen readers, and skips its animation when the visitor prefers reduced motion.
+* Enquiries go out through `wp_mail()` to whichever address you set (or your site admin email if you leave it blank), with the product name and its permalink in the body.
+* Success and error messages appear inline, so there is no page reload.
+* Spam handling: nonce check, a honeypot field, and a 30-second rate limit per visitor.
+* Pick which of name, email and message are required, and edit the button, field labels, success/error text and email subject.
+* Settings live under WooCommerce → Enquire.
+* The small CSS and JS load only on product pages. The plugin declares WooCommerce HPOS and Cart &amp; Checkout Blocks compatibility.
 
 == Installation ==
 
@@ -42,7 +44,7 @@ Yes. Enquire adds its button to WooCommerce single product pages and uses WooCom
 
 = Where are enquiries stored? =
 
-Nowhere. Enquiries are emailed only — nothing is written to your database.
+They are not. Each enquiry is emailed and nothing is written to your database.
 
 = Where do enquiries get sent? =
 
@@ -50,7 +52,7 @@ To the recipient address you set on the settings page. If you leave it empty, yo
 
 = How is spam handled? =
 
-Each submission is verified with a nonce, screened with a honeypot field, and limited to one per visitor per short window.
+Each submission is checked against a nonce and a hidden honeypot field, and a visitor can send at most one enquiry every 30 seconds.
 
 == Screenshots ==
 

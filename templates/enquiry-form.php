@@ -71,12 +71,22 @@ $enquire_title_id  = $enquire_dialog_id . '-title';
                 <input type="hidden" name="nonce" value="<?php echo esc_attr($nonce); ?>" />
                 <input type="hidden" name="product_id" value="<?php echo esc_attr((string) $product->get_id()); ?>" />
 
-                <?php // Honeypot: visually hidden, hidden from assistive tech. ?>
-                <div class="enquire__hp" aria-hidden="true">
-                    <label>
-                        <?php esc_html_e('Leave this field empty', 'enquire'); ?>
-                        <input type="text" name="<?php echo esc_attr($honeypot); ?>" tabindex="-1" autocomplete="off" />
-                    </label>
+                <?php
+                // Honeypot: visually hidden and hidden from assistive tech.
+                // Inside a modal <dialog> top layer Chromium stops honouring
+                // ancestor aria-hidden, so the field is hidden from AT on the
+                // input itself (inert + aria-hidden, no accessible name).
+                ?>
+                <div class="enquire__hp">
+                    <span aria-hidden="true"><?php esc_html_e('Leave this field empty', 'enquire'); ?></span>
+                    <input
+                        type="text"
+                        name="<?php echo esc_attr($honeypot); ?>"
+                        tabindex="-1"
+                        autocomplete="off"
+                        aria-hidden="true"
+                        inert
+                    />
                 </div>
 
                 <p class="enquire__field">

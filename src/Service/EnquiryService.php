@@ -141,14 +141,39 @@ final class EnquiryService implements HasHooks
         $email   = isset($_POST['enquire_email']) ? sanitize_email(wp_unslash((string) $_POST['enquire_email'])) : '';
         $message = isset($_POST['enquire_message']) ? sanitize_textarea_field(wp_unslash((string) $_POST['enquire_message'])) : '';
 
+        /** @var array<string, mixed> $enquiry */
+        $enquiry = [
+            'name'    => $name,
+            'email'   => $email,
+            'message' => $message,
+        ];
+
+        /**
+         * Allows add-ons to add sanitised metadata to the enquiry payload.
+         *
+         * @param array<string, mixed> $enquiry Sanitised enquiry fields.
+         * @param \WC_Product          $product Product the enquiry is about.
+         * @param array<string, mixed> $settings Free plugin settings.
+         */
+        $enquiry = (array) apply_filters('enquire/enquiry_payload', $enquiry, $product, $settings);
+
         $errors = $this->validate($settings, $name, $email, $message);
+        /**
+         * Allows add-ons to validate fields they add to the enquiry form.
+         *
+         * @param list<string>         $errors   Human-readable validation errors.
+         * @param \WC_Product          $product  Product the enquiry is about.
+         * @param array<string, mixed> $enquiry  Sanitised enquiry payload.
+         * @param array<string, mixed> $settings Free plugin settings.
+         */
+        $errors = (array) apply_filters('enquire/validation_errors', $errors, $product, $enquiry, $settings);
         if ($errors !== []) {
             wp_send_json_error([
                 'message' => implode(' ', $errors),
             ], 422);
         }
 
-        $sent = $this->sendEmail($settings, $product, $name, $email, $message);
+        $sent = $this->sendEmail($settings, $product, $enquiry);
         if (! $sent) {
             wp_send_json_error([
                 'message' => (string) ($settings['error_message'] ?? __('Sorry, something went wrong. Please try again.', 'enquire')),
@@ -168,11 +193,7 @@ final class EnquiryService implements HasHooks
          * @param array<string, mixed> $enquiry The sanitised submission, with
          *                                       keys: name, email, message.
          */
-        do_action('enquire/enquiry_sent', $product, [
-            'name'    => $name,
-            'email'   => $email,
-            'message' => $message,
-        ]);
+        do_action('enquire/enquiry_sent', $product, $enquiry);
 
         wp_send_json_success([
             'message' => (string) ($settings['success_message'] ?? __('Thanks! Your question has been sent.', 'enquire')),
@@ -214,8 +235,9 @@ final class EnquiryService implements HasHooks
      * Send the enquiry email to the configured recipient.
      *
      * @param array<string, mixed> $settings
+     * @param array<string, mixed> $enquiry
      */
-    private function sendEmail(array $settings, \WC_Product $product, string $name, string $email, string $message): bool
+    private function sendEmail(array $settings, \WC_Product $product, array $enquiry): bool
     {
         $recipient = sanitize_email((string) ($settings['recipient'] ?? ''));
         if ($recipient === '' || ! is_email($recipient)) {
@@ -227,6 +249,9 @@ final class EnquiryService implements HasHooks
         $subject     = str_replace('{product}', $productName, $subjectTpl);
 
         $notProvided = __('(not provided)', 'enquire');
+        $name         = isset($enquiry['name']) ? (string) $enquiry['name'] : '';
+        $email        = isset($enquiry['email']) ? (string) $enquiry['email'] : '';
+        $message      = isset($enquiry['message']) ? (string) $enquiry['message'] : '';
         $nameValue   = $name !== '' ? $name : $notProvided;
         $emailValue  = $email !== '' ? $email : $notProvided;
 
@@ -252,7 +277,45 @@ final class EnquiryService implements HasHooks
             $headers[] = 'Reply-To: ' . $fromName . ' <' . $email . '>';
         }
 
-        return (bool) wp_mail($recipient, $subject, $body, $headers);
+        /** @var array{to?: string, subject?: string, body?: string, headers?: list<string>, attachments?: list<string>} $mail */
+        $mail = [
+            'to'          => $recipient,
+            'subject'     => $subject,
+            'body'        => $body,
+            'headers'     => $headers,
+            'attachments' => [],
+        ];
+
+        /**
+         * Allows add-ons to adjust the outgoing store-owner email.
+         *
+         * @param array<string, mixed> $mail     Mail arguments for wp_mail().
+         * @param \WC_Product          $product  Product the enquiry is about.
+         * @param array<string, mixed> $enquiry  Sanitised enquiry payload.
+         * @param array<string, mixed> $settings Free plugin settings.
+         */
+        $mail = (array) apply_filters('enquire/mail_args', $mail, $product, $enquiry, $settings);
+
+        $sent = (bool) wp_mail(
+            (string) ($mail['to'] ?? $recipient),
+            (string) ($mail['subject'] ?? $subject),
+            (string) ($mail['body'] ?? $body),
+            isset($mail['headers']) && is_array($mail['headers']) ? $mail['headers'] : [],
+            isset($mail['attachments']) && is_array($mail['attachments']) ? $mail['attachments'] : [],
+        );
+
+        /**
+         * Fires after the store-owner enquiry email send attempt.
+         *
+         * @param bool                 $sent     Whether wp_mail() reported success.
+         * @param array<string, mixed> $mail     Mail arguments used for wp_mail().
+         * @param \WC_Product          $product  Product the enquiry is about.
+         * @param array<string, mixed> $enquiry  Sanitised enquiry payload.
+         * @param array<string, mixed> $settings Free plugin settings.
+         */
+        do_action('enquire/mail_sent', $sent, $mail, $product, $enquiry, $settings);
+
+        return $sent;
     }
 
     /**

@@ -66,7 +66,7 @@ $enquire_title_id  = $enquire_dialog_id . '-title';
                 ?>
             </p>
 
-            <form class="enquire__form" data-enquire-form novalidate>
+            <form class="enquire__form" data-enquire-form enctype="multipart/form-data" novalidate>
                 <input type="hidden" name="action" value="enquire_submit" />
                 <input type="hidden" name="nonce" value="<?php echo esc_attr($nonce); ?>" />
                 <input type="hidden" name="product_id" value="<?php echo esc_attr((string) $product->get_id()); ?>" />
@@ -129,6 +129,17 @@ $enquire_title_id  = $enquire_dialog_id . '-title';
                         <?php echo $enquire_req_msg ? 'required' : ''; ?>
                     ></textarea>
                 </p>
+
+                <?php
+                /**
+                 * Allows add-ons to append extra fields to the enquiry form.
+                 *
+                 * @param string               $fields   HTML fields to render.
+                 * @param \WC_Product          $product  Current product.
+                 * @param array<string, mixed> $settings Free plugin settings.
+                 */
+                echo wp_kses_post((string) apply_filters('enquire/form_fields', '', $product, $settings));
+                ?>
 
                 <div class="enquire__status" data-enquire-status role="status" aria-live="polite" hidden></div>
 

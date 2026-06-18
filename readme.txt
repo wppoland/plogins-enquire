@@ -5,7 +5,7 @@ Requires at least: 6.5
 Tested up to: 7.0
 Requires PHP: 8.1
 Requires Plugins: woocommerce
-Stable tag: 0.1.0
+Stable tag: 0.1.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -68,6 +68,10 @@ Yes. Set the button text and form heading under **WooCommerce → Enquire**.
 Enquire does not connect to any external service. Form submissions are sent to your own site over `admin-ajax.php` and never leave your server. Each enquiry is delivered with your site's own `wp_mail()` (WordPress core mail), using whatever mailer your site already has. The plugin stores only its own settings (the `enquire_settings` option) and a schema marker (`enquire_db_version`), plus a short-lived transient used for the per-visitor rate limit; enquiry content itself is not written to the database.
 
 == Changelog ==
+
+= 0.1.1 =
+* Adds extension hooks for form fields, validation, enquiry payload data and outgoing email arguments.
+* Adds multipart form support so premium add-ons can attach files to enquiry emails.
 
 = 0.1.0 =
 * Initial release.

@@ -1,5 +1,5 @@
 === Enquire - Product Enquiry Form for WooCommerce ===
-Contributors: wppoland
+Contributors: motylanogha
 Tags: woocommerce, product enquiry, ask a question, contact form, product question
 Requires at least: 6.5
 Tested up to: 7.0

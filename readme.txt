@@ -19,6 +19,15 @@ Nothing is stored in your database. Each enquiry is sent by email, and the shopp
 
 The code is on GitHub at https://github.com/wppoland/enquire if you want to read it, report a bug, or send a patch.
 
+= Documentation and links =
+
+* **Documentation** - https://plogins.com/enquire/docs/
+* **Plugin page** - https://plogins.com/enquire/
+* **Source code** - https://github.com/wppoland/enquire
+* **Bug reports and feature requests** - https://github.com/wppoland/enquire/issues
+* **Discussions and questions** - https://github.com/wppoland/enquire/discussions
+
+
 = Features =
 
 * "Ask a question" button on single product pages, with a label you can change, placed after the add-to-cart button.

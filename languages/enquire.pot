@@ -56,7 +56,7 @@ msgid "Let shoppers ask about a product before they buy"
 msgstr ""
 
 #: src/Admin/Settings.php:99
-msgid "Enquire adds an “Ask a question” button to your single product pages. Clicking it opens an accessible form (name, email, message) that emails you the question with the product details — no data is stored."
+msgid "Enquire adds an “Ask a question” button to your single product pages. Clicking it opens an accessible form (name, email, message) that emails you the question with the product details, no data is stored."
 msgstr ""
 
 #: src/Admin/Settings.php:107
@@ -112,7 +112,7 @@ msgid "Form title"
 msgstr ""
 
 #: src/Admin/Settings.php:167
-msgid "The heading at the top of the dialog — set the shopper’s expectation, e.g. “Ask a question about this product”."
+msgid "The heading at the top of the dialog, set the shopper’s expectation, e.g. “Ask a question about this product”."
 msgstr ""
 
 #: src/Admin/Settings.php:168
@@ -136,7 +136,7 @@ msgid "Message field label"
 msgstr ""
 
 #: src/Admin/Settings.php:170
-msgid "Sits above the message box — prompt the kind of question you want, e.g. “Your question”."
+msgid "Sits above the message box, prompt the kind of question you want, e.g. “Your question”."
 msgstr ""
 
 #: src/Admin/Settings.php:171
@@ -160,7 +160,7 @@ msgid "Require email"
 msgstr ""
 
 #: src/Admin/Settings.php:173
-msgid "Shoppers cannot send without an email. A valid format is always enforced when an address is entered, even if this is off — but leaving it off means you may not be able to reply."
+msgid "Shoppers cannot send without an email. A valid format is always enforced when an address is entered, even if this is off, but leaving it off means you may not be able to reply."
 msgstr ""
 
 #: src/Admin/Settings.php:174
@@ -184,7 +184,7 @@ msgid "Success message"
 msgstr ""
 
 #: src/Admin/Settings.php:187
-msgid "Shown inline the moment an enquiry sends — reassure the shopper and set a reply expectation."
+msgid "Shown inline the moment an enquiry sends, reassure the shopper and set a reply expectation."
 msgstr ""
 
 #: src/Admin/Settings.php:188

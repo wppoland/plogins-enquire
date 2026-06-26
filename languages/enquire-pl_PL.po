@@ -68,11 +68,11 @@ msgstr "Pozwól klientom zapytać o produkt, zanim go kupią"
 msgid ""
 "Enquire adds an “Ask a question” button to your single product pages. "
 "Clicking it opens an accessible form (name, email, message) that emails you "
-"the question with the product details — no data is stored."
+"the question with the product details, no data is stored."
 msgstr ""
 "Enquire dodaje przycisk „Zadaj pytanie” na stronach pojedynczych produktów. "
 "Kliknięcie otwiera dostępny formularz (imię, e-mail, wiadomość), który "
-"wysyła Ci pytanie wraz ze szczegółami produktu — żadne dane nie są "
+"wysyła Ci pytanie wraz ze szczegółami produktu, żadne dane nie są "
 "przechowywane."
 
 #: src/Admin/Settings.php:107
@@ -143,7 +143,7 @@ msgstr "Tytuł formularza"
 
 #: src/Admin/Settings.php:167
 msgid ""
-"The heading at the top of the dialog — set the shopper’s expectation, e.g. "
+"The heading at the top of the dialog, set the shopper’s expectation, e.g. "
 "“Ask a question about this product”."
 msgstr ""
 
@@ -171,7 +171,7 @@ msgstr "Etykieta pola wiadomości"
 
 #: src/Admin/Settings.php:170
 msgid ""
-"Sits above the message box — prompt the kind of question you want, e.g. "
+"Sits above the message box, prompt the kind of question you want, e.g. "
 "“Your question”."
 msgstr ""
 
@@ -198,7 +198,7 @@ msgstr "Wymagaj adresu e-mail"
 #: src/Admin/Settings.php:173
 msgid ""
 "Shoppers cannot send without an email. A valid format is always enforced "
-"when an address is entered, even if this is off — but leaving it off means "
+"when an address is entered, even if this is off, but leaving it off means "
 "you may not be able to reply."
 msgstr ""
 
@@ -226,7 +226,7 @@ msgstr "Komunikat o powodzeniu"
 
 #: src/Admin/Settings.php:187
 msgid ""
-"Shown inline the moment an enquiry sends — reassure the shopper and set a "
+"Shown inline the moment an enquiry sends, reassure the shopper and set a "
 "reply expectation."
 msgstr ""
 

@@ -96,7 +96,7 @@ final class Settings implements HasHooks
                 </span>
                 <div class="enquire-admin__intro-text">
                     <h2><?php esc_html_e('Let shoppers ask about a product before they buy', 'enquire'); ?></h2>
-                    <p><?php esc_html_e('Enquire adds an “Ask a question” button to your single product pages. Clicking it opens an accessible form (name, email, message) that emails you the question with the product details — no data is stored.', 'enquire'); ?></p>
+                    <p><?php esc_html_e('Enquire adds an “Ask a question” button to your single product pages. Clicking it opens an accessible form (name, email, message) that emails you the question with the product details, no data is stored.', 'enquire'); ?></p>
                 </div>
             </div>
 
@@ -164,13 +164,13 @@ final class Settings implements HasHooks
                     <table class="form-table" role="presentation">
                         <tbody>
                             <?php
-                            $this->textRow('form_title', __('Form title', 'enquire'), __('The heading at the top of the dialog — set the shopper’s expectation, e.g. “Ask a question about this product”.', 'enquire'), $settings, $defaults);
+                            $this->textRow('form_title', __('Form title', 'enquire'), __('The heading at the top of the dialog, set the shopper’s expectation, e.g. “Ask a question about this product”.', 'enquire'), $settings, $defaults);
                             $this->textRow('name_label', __('Name field label', 'enquire'), __('Sits above the name input. Customers see this wording, not “name”.', 'enquire'), $settings, $defaults);
                             $this->textRow('email_label', __('Email field label', 'enquire'), __('Sits above the email input. This address becomes the Reply-To, so you can answer the shopper directly.', 'enquire'), $settings, $defaults);
-                            $this->textRow('message_label', __('Message field label', 'enquire'), __('Sits above the message box — prompt the kind of question you want, e.g. “Your question”.', 'enquire'), $settings, $defaults);
+                            $this->textRow('message_label', __('Message field label', 'enquire'), __('Sits above the message box, prompt the kind of question you want, e.g. “Your question”.', 'enquire'), $settings, $defaults);
                             $this->textRow('submit_text', __('Submit button label', 'enquire'), __('The wording on the send button inside the dialog.', 'enquire'), $settings, $defaults);
                             $this->checkboxRow('require_name', __('Require name', 'enquire'), __('Shoppers cannot send until they fill in the name field.', 'enquire'), $settings);
-                            $this->checkboxRow('require_email', __('Require email', 'enquire'), __('Shoppers cannot send without an email. A valid format is always enforced when an address is entered, even if this is off — but leaving it off means you may not be able to reply.', 'enquire'), $settings);
+                            $this->checkboxRow('require_email', __('Require email', 'enquire'), __('Shoppers cannot send without an email. A valid format is always enforced when an address is entered, even if this is off, but leaving it off means you may not be able to reply.', 'enquire'), $settings);
                             $this->checkboxRow('require_message', __('Require message', 'enquire'), __('Shoppers cannot send an empty enquiry.', 'enquire'), $settings);
                             ?>
                         </tbody>
@@ -184,7 +184,7 @@ final class Settings implements HasHooks
                     <table class="form-table" role="presentation">
                         <tbody>
                             <?php
-                            $this->textRow('success_message', __('Success message', 'enquire'), __('Shown inline the moment an enquiry sends — reassure the shopper and set a reply expectation.', 'enquire'), $settings, $defaults);
+                            $this->textRow('success_message', __('Success message', 'enquire'), __('Shown inline the moment an enquiry sends, reassure the shopper and set a reply expectation.', 'enquire'), $settings, $defaults);
                             $this->textRow('error_message', __('Error message', 'enquire'), __('Shown if the email cannot be sent (e.g. a server mail error). Keep it calm and ask them to retry.', 'enquire'), $settings, $defaults);
                             $this->textRow('email_subject', __('Email subject', 'enquire'), __('The subject line of the enquiry email you receive. {product} is replaced with the product name, so enquiries are easy to scan in your inbox.', 'enquire'), $settings, $defaults);
                             ?>

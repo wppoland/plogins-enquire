@@ -66,6 +66,11 @@ Each submission is checked against a nonce and a hidden honeypot field, and a vi
 
 Yes. Set the button text and form heading under **WooCommerce → Enquire**.
 
+
+= Does this plugin work on WordPress Multisite? =
+
+Yes. This plugin is compatible with WordPress Multisite. Network activate it or activate it on individual sites; each site keeps its own settings and data.
+
 == Screenshots ==
 
 1. The "Ask a question" form on a single product page.

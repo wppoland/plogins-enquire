@@ -1,0 +1,381 @@
+# Copyright (C) 2026 WPPoland
+# This file is distributed under the GPL-2.0-or-later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Enquire - Product Enquiry Form for WooCommerce 0.1.1\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/enquire\n"
+"POT-Creation-Date: 2026-06-18T12:34:55+00:00\n"
+"PO-Revision-Date: 2026-06-18T12:34:55+00:00\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: es_ES\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Domain: plogins-enquire\n"
+"X-Generator: WP-CLI 2.11.0\n"
+
+#. Plugin Name of the plugin
+#: enquire.php
+msgid "Enquire - Product Enquiry Form for WooCommerce"
+msgstr "Enquire - Formulario de consulta de producto para WooCommerce"
+
+#. Plugin URI of the plugin
+#: enquire.php
+msgid "https://plogins.com/enquire/"
+msgstr "https://plogins.com/es/enquire/"
+
+#. Description of the plugin
+#: enquire.php
+msgid "Add an Ask a Question form to products that emails the store owner."
+msgstr ""
+"Añade un formulario de Hacer una pregunta a los productos que envíe por "
+"correo electrónico al propietario de la tienda."
+
+#. Author of the plugin
+#: enquire.php
+msgid "WPPoland"
+msgstr "WPPoland"
+
+#. Author URI of the plugin
+#: enquire.php
+msgid "https://plogins.com/"
+msgstr "https://plogins.com/"
+
+#: enquire.php:47
+msgid ""
+"Enquire - Product Enquiry Form for WooCommerce requires WooCommerce to be "
+"active."
+msgstr ""
+"Enquire: el formulario de consulta de productos para WooCommerce requiere "
+"que WooCommerce esté activo."
+
+#: src/Admin/Settings.php:52
+msgid "Enquire Settings"
+msgstr "Ajustes de Enquire"
+
+#: src/Admin/Settings.php:53
+msgid "Enquire"
+msgstr "Enquire"
+
+#: src/Admin/Settings.php:98
+msgid "Let shoppers ask about a product before they buy"
+msgstr ""
+"Permita que los compradores pregunten sobre un producto antes de comprarlo"
+
+#: src/Admin/Settings.php:99
+msgid ""
+"Enquire adds an “Ask a question” button to your single product pages. "
+"Clicking it opens an accessible form (name, email, message) that emails you "
+"the question with the product details, no data is stored."
+msgstr ""
+"Enquire añade un botón \"Hacer una pregunta\" a las páginas de sus "
+"productos individuales. Al hacer clic en él, se abre un formulario accesible"
+" (nombre, correo electrónico, mensaje) que le envía la pregunta con los "
+"detalles del producto, no se almacena ningún dato."
+
+#: src/Admin/Settings.php:107
+msgid "General"
+msgstr "General"
+
+#: src/Admin/Settings.php:108
+msgid "The master switch and where enquiries are delivered."
+msgstr "El interruptor maestro y donde se entregan consultas."
+
+#: src/Admin/Settings.php:113
+msgid "Enable enquiries"
+msgstr "Habilitar consultas"
+
+#: src/Admin/Settings.php:123
+msgid "Show the “Ask a question” button on single product pages."
+msgstr ""
+"Muestre el botón \"Hacer una pregunta\" en las páginas de un solo producto."
+
+#: src/Admin/Settings.php:129
+msgid "Recipient email"
+msgstr "Correo electrónico del destinatario"
+
+#: src/Admin/Settings.php:140
+msgid ""
+"Enquiries are emailed here. Leave empty to use your site’s admin email. The "
+"customer’s address is set as Reply-To so you can reply directly."
+msgstr ""
+"Las consultas se envían por correo electrónico aquí. Déjelo vacío para usar "
+"el correo electrónico del administrador de tu sitio. La dirección del "
+"cliente está configurada como Responder a para que pueda responder "
+"directamente."
+
+#: src/Admin/Settings.php:148
+msgid "Trigger button"
+msgstr "Botón de disparo"
+
+#: src/Admin/Settings.php:149
+msgid ""
+"The enquiry button shown after the add-to-cart button on the product page. "
+"Clear any text field below to restore its packaged default (shown as the "
+"greyed hint)."
+msgstr ""
+"El botón de consulta que se muestra después del botón Añadir al carrito en "
+"la página del producto. Borre cualquier campo de texto a continuación para "
+"restaurar su paquete predeterminado (que se muestra como una pista gris)."
+
+#: src/Admin/Settings.php:154
+msgid "Button label"
+msgstr "Etiqueta del botón"
+
+#: src/Admin/Settings.php:154
+msgid ""
+"The wording shoppers click to open the enquiry form, e.g. “Ask a question” "
+"or “Enquire now”."
+msgstr ""
+"Los compradores hacen clic en el texto para abrir el formulario de consulta,"
+" p. “Haz una pregunta” o “Consulta ahora”."
+
+#: src/Admin/Settings.php:161
+msgid "Form fields"
+msgstr "Campos de formulario"
+
+#: src/Admin/Settings.php:162
+msgid ""
+"The labels inside the enquiry dialog and which fields a shopper must "
+"complete before they can send. Clear any label to restore its packaged "
+"default."
+msgstr ""
+"Las etiquetas dentro del cuadro de diálogo de consulta y los campos que un "
+"comprador debe completar antes de poder enviar. Borre cualquier etiqueta "
+"para restaurar su paquete predeterminado."
+
+#: src/Admin/Settings.php:167
+msgid "Form title"
+msgstr "Título del formulario"
+
+#: src/Admin/Settings.php:167
+msgid ""
+"The heading at the top of the dialog, set the shopper’s expectation, e.g. "
+"“Ask a question about this product”."
+msgstr ""
+"El título en la parte superior del cuadro de diálogo establece las "
+"expectativas del comprador, p. “Haga una pregunta sobre este producto”."
+
+#: src/Admin/Settings.php:168
+msgid "Name field label"
+msgstr "Etiqueta del campo de nombre"
+
+#: src/Admin/Settings.php:168
+msgid "Sits above the name input. Customers see this wording, not “name”."
+msgstr ""
+"Se encuentra encima de la entrada del nombre. Los clientes ven este texto, "
+"no \"nombre\"."
+
+#: src/Admin/Settings.php:169
+msgid "Email field label"
+msgstr "Etiqueta de campo de correo electrónico"
+
+#: src/Admin/Settings.php:169
+msgid ""
+"Sits above the email input. This address becomes the Reply-To, so you can "
+"answer the shopper directly."
+msgstr ""
+"Se encuentra encima de la entrada del correo electrónico. Esta dirección se "
+"convierte en Responder a, por lo que puede responder al comprador "
+"directamente."
+
+#: src/Admin/Settings.php:170
+msgid "Message field label"
+msgstr "Etiqueta del campo de mensaje"
+
+#: src/Admin/Settings.php:170
+msgid ""
+"Sits above the message box, prompt the kind of question you want, e.g. “Your"
+" question”."
+msgstr ""
+"Se encuentra encima del cuadro de mensaje y muestra el tipo de pregunta que "
+"deseas, p. “Tu pregunta”."
+
+#: src/Admin/Settings.php:171
+msgid "Submit button label"
+msgstr "Enviar etiqueta del botón"
+
+#: src/Admin/Settings.php:171
+msgid "The wording on the send button inside the dialog."
+msgstr "El texto del botón enviar dentro del cuadro de diálogo."
+
+#: src/Admin/Settings.php:172
+msgid "Require name"
+msgstr "Requerir nombre"
+
+#: src/Admin/Settings.php:172
+msgid "Shoppers cannot send until they fill in the name field."
+msgstr ""
+"Los compradores no pueden enviar hasta que completen el campo de nombre."
+
+#: src/Admin/Settings.php:173
+msgid "Require email"
+msgstr "Requerir correo electrónico"
+
+#: src/Admin/Settings.php:173
+msgid ""
+"Shoppers cannot send without an email. A valid format is always enforced "
+"when an address is entered, even if this is off, but leaving it off means "
+"you may not be able to reply."
+msgstr ""
+"Los compradores no pueden enviar sin un correo electrónico. Siempre se "
+"aplica un formato válido cuando se ingresa una dirección, incluso si está "
+"desactivado, pero dejarlo desactivado significa que es posible que no puedas"
+" responder."
+
+#: src/Admin/Settings.php:174
+msgid "Require message"
+msgstr "Requerir mensaje"
+
+#: src/Admin/Settings.php:174
+msgid "Shoppers cannot send an empty enquiry."
+msgstr "Los compradores no pueden enviar una consulta vacía."
+
+#: src/Admin/Settings.php:181
+msgid "Messaging"
+msgstr "Mensajería"
+
+#: src/Admin/Settings.php:182
+msgid ""
+"What shoppers see after submitting, and the subject line of the email you "
+"receive. Clear any field to restore its packaged default."
+msgstr ""
+"Lo que ven los compradores después de enviarlo y la línea de asunto del "
+"correo electrónico que recibe. Borre cualquier campo para restaurar su "
+"paquete predeterminado."
+
+#: src/Admin/Settings.php:187
+msgid "Success message"
+msgstr "Mensaje de éxito"
+
+#: src/Admin/Settings.php:187
+msgid ""
+"Shown inline the moment an enquiry sends, reassure the shopper and set a "
+"reply expectation."
+msgstr ""
+"Se muestra en línea en el momento en que se envía una consulta, tranquiliza "
+"al comprador y establece una expectativa de respuesta."
+
+#: src/Admin/Settings.php:188
+msgid "Error message"
+msgstr "Mensaje de fallo"
+
+#: src/Admin/Settings.php:188
+msgid ""
+"Shown if the email cannot be sent (e.g. a server mail error). Keep it calm "
+"and ask them to retry."
+msgstr ""
+"Se muestra si el correo electrónico no se puede enviar (por ejemplo, un "
+"error de correo del servidor). Mantén la calma y pídeles que vuelvan a "
+"intentarlo."
+
+#: src/Admin/Settings.php:189
+msgid "Email subject"
+msgstr "Asunto del correo electrónico"
+
+#: src/Admin/Settings.php:189
+msgid ""
+"The subject line of the enquiry email you receive. {product} is replaced "
+"with the product name, so enquiries are easy to scan in your inbox."
+msgstr ""
+"La línea de asunto del correo electrónico de consulta que recibe. {product} "
+"se reemplaza con el nombre del producto, por lo que las consultas son "
+"fáciles de escanear en su bandeja de entrada."
+
+#: src/Service/EnquiryService.php:122
+msgid "Your session expired. Please reload the page and try again."
+msgstr "Tu sesión expiró. Vuelva a cargar la página e inténtelo de nuevo."
+
+#: src/Service/EnquiryService.php:128
+msgid "Please wait a moment before sending another enquiry."
+msgstr "Espere un momento antes de enviar otra consulta."
+
+#: src/Service/EnquiryService.php:136 src/Service/EnquiryService.php:179
+msgid "Sorry, something went wrong. Please try again."
+msgstr "Lo siento, algo salió mal. Por favor inténtalo de nuevo."
+
+#: src/Service/EnquiryService.php:199
+msgid "Thanks! Your question has been sent."
+msgstr "¡Gracias! Su pregunta ha sido enviada."
+
+#: src/Service/EnquiryService.php:214
+msgid "Please enter your name."
+msgstr "Por favor ingrese su nombre."
+
+#: src/Service/EnquiryService.php:219
+msgid "Please enter your email address."
+msgstr "Por favor ingrese su dirección de correo electrónico."
+
+#: src/Service/EnquiryService.php:221 src/Service/EnquiryService.php:224
+msgid "Please enter a valid email address."
+msgstr "Por favor, introduce una dirección de correo electrónico válida."
+
+#: src/Service/EnquiryService.php:228
+msgid "Please enter your question."
+msgstr "Por favor ingrese su pregunta."
+
+#: src/Service/EnquiryService.php:250
+msgid "(not provided)"
+msgstr "(no proporcionado)"
+
+#. translators: %s: product name.
+#: src/Service/EnquiryService.php:259
+msgid "New product enquiry for: %s"
+msgstr "Consulta de nuevo producto para: %s"
+
+#. translators: %s: customer name.
+#: src/Service/EnquiryService.php:263
+msgid "Name: %s"
+msgstr "Nombre: %s"
+
+#. translators: %s: customer email.
+#: src/Service/EnquiryService.php:265
+msgid "Email: %s"
+msgstr "Correo electrónico: %s"
+
+#: src/Service/EnquiryService.php:267
+msgid "Message:"
+msgstr "Mensaje:"
+
+#: src/Service/EnquiryService.php:268
+msgid "(no message)"
+msgstr "(sin mensaje)"
+
+#: templates/enquiry-form.php:17
+msgid "Ask a question"
+msgstr "Hacer una pregunta"
+
+#: templates/enquiry-form.php:18
+msgid "Ask a question about this product"
+msgstr "Haga una pregunta sobre este producto"
+
+#: templates/enquiry-form.php:19
+msgid "Your name"
+msgstr "tu nombre"
+
+#: templates/enquiry-form.php:20
+msgid "Your email"
+msgstr "Tu correo electrónico"
+
+#: templates/enquiry-form.php:21
+msgid "Your question"
+msgstr "Tu pregunta"
+
+#: templates/enquiry-form.php:22
+msgid "Send enquiry"
+msgstr "Enviar consulta"
+
+#: templates/enquiry-form.php:54
+msgid "Close"
+msgstr "Cerrar"
+
+#. translators: %s: product name.
+#: templates/enquiry-form.php:63
+msgid "About: %s"
+msgstr "Acerca de: %s"
+
+#: templates/enquiry-form.php:81
+msgid "Leave this field empty"
+msgstr "Deja este campo vacío"

@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Enquire - Product Enquiry Form for WooCommerce 0.1.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/enquire\n"
-"POT-Creation-Date: 2026-06-16T20:23:26+00:00\n"
+"POT-Creation-Date: 2026-06-18T12:34:55+00:00\n"
 "PO-Revision-Date: 2026-06-15 12:00+0000\n"
 "Last-Translator: WPPoland <kontakt@wppoland.com>\n"
 "Language-Team: Polish <pl@li.org>\n"
@@ -12,10 +12,9 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 "
-"|| n%100>14) ? 1 : 2);\n"
-"X-Generator: WP-CLI 2.12.0\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
 "X-Domain: plogins-enquire\n"
+"X-Generator: WP-CLI 2.12.0\n"
 
 #. Plugin Name of the plugin
 #: enquire.php
@@ -115,6 +114,9 @@ msgid ""
 "Clear any text field below to restore its packaged default (shown as the "
 "greyed hint)."
 msgstr ""
+"Przycisk zapytania wyświetlany po przycisku „Dodaj do koszyka” na stronie "
+"produktu. Wyczyść dowolne pole tekstowe poniżej, aby przywrócić domyślne "
+"ustawienie pakietu (pokazane jako wskazówka w kolorze szarym)."
 
 #: src/Admin/Settings.php:154
 msgid "Button label"
@@ -125,6 +127,8 @@ msgid ""
 "The wording shoppers click to open the enquiry form, e.g. “Ask a question” "
 "or “Enquire now”."
 msgstr ""
+"Sformułowanie, które kupujący klika, aby otworzyć formularz zapytania, np.: "
+"„Zadaj pytanie” lub „Zapytaj teraz”."
 
 #: src/Admin/Settings.php:161
 msgid "Form fields"
@@ -136,6 +140,9 @@ msgid ""
 "complete before they can send. Clear any label to restore its packaged "
 "default."
 msgstr ""
+"Etykiety w oknie dialogowym zapytania oraz pola, które kupujący musi "
+"wypełnić, zanim będzie mógł wysłać zapytanie. Wyczyść dowolną etykietę, aby "
+"przywrócić jej wbudowaną wartość domyślną."
 
 #: src/Admin/Settings.php:167
 msgid "Form title"
@@ -146,6 +153,8 @@ msgid ""
 "The heading at the top of the dialog, set the shopper’s expectation, e.g. "
 "“Ask a question about this product”."
 msgstr ""
+"Nagłówek znajdujący się w górnej części okna dialogowego określa oczekiwania"
+" kupującego, np.: „Zadaj pytanie dotyczące tego produktu”."
 
 #: src/Admin/Settings.php:168
 msgid "Name field label"
@@ -154,6 +163,8 @@ msgstr "Etykieta pola imienia"
 #: src/Admin/Settings.php:168
 msgid "Sits above the name input. Customers see this wording, not “name”."
 msgstr ""
+"Znajduje się nad polem nazwy. Klienci widzą to sformułowanie, a nie "
+"„nazwę”."
 
 #: src/Admin/Settings.php:169
 msgid "Email field label"
@@ -164,6 +175,8 @@ msgid ""
 "Sits above the email input. This address becomes the Reply-To, so you can "
 "answer the shopper directly."
 msgstr ""
+"Znajduje się nad polem e-mail. Adres ten staje się adresem zwrotnym, "
+"dzięki czemu możesz bezpośrednio odpowiedzieć kupującemu."
 
 #: src/Admin/Settings.php:170
 msgid "Message field label"
@@ -171,9 +184,11 @@ msgstr "Etykieta pola wiadomości"
 
 #: src/Admin/Settings.php:170
 msgid ""
-"Sits above the message box, prompt the kind of question you want, e.g. "
-"“Your question”."
+"Sits above the message box, prompt the kind of question you want, e.g. “Your"
+" question”."
 msgstr ""
+"Znajduje się nad oknem wiadomości i wyświetla żądany rodzaj pytania, np.: "
+"„Twoje pytanie”."
 
 #: src/Admin/Settings.php:171
 msgid "Submit button label"
@@ -181,7 +196,7 @@ msgstr "Etykieta przycisku wysyłania"
 
 #: src/Admin/Settings.php:171
 msgid "The wording on the send button inside the dialog."
-msgstr ""
+msgstr "Treść przycisku wysyłania w oknie dialogowym."
 
 #: src/Admin/Settings.php:172
 msgid "Require name"
@@ -189,7 +204,7 @@ msgstr "Wymagaj imienia"
 
 #: src/Admin/Settings.php:172
 msgid "Shoppers cannot send until they fill in the name field."
-msgstr ""
+msgstr "Kupujący nie mogą wysłać zapytania, dopóki nie wypełnią pola nazwy."
 
 #: src/Admin/Settings.php:173
 msgid "Require email"
@@ -201,6 +216,10 @@ msgid ""
 "when an address is entered, even if this is off, but leaving it off means "
 "you may not be able to reply."
 msgstr ""
+"Kupujący nie mogą wysłać zapytania bez adresu e-mail. Podczas "
+"wprowadzania adresu zawsze wymuszany jest prawidłowy format, nawet jeśli ta "
+"opcja jest wyłączona, ale pozostawienie jej wyłączonej oznacza, że ​​możesz "
+"nie być w stanie odpowiedzieć."
 
 #: src/Admin/Settings.php:174
 msgid "Require message"
@@ -208,7 +227,7 @@ msgstr "Wymagaj wiadomości"
 
 #: src/Admin/Settings.php:174
 msgid "Shoppers cannot send an empty enquiry."
-msgstr ""
+msgstr "Kupujący nie mogą wysłać pustego zapytania."
 
 #: src/Admin/Settings.php:181
 msgid "Messaging"
@@ -219,6 +238,8 @@ msgid ""
 "What shoppers see after submitting, and the subject line of the email you "
 "receive. Clear any field to restore its packaged default."
 msgstr ""
+"Co kupujący widzą po przesłaniu i temat otrzymanej wiadomości e-mail. "
+"Wyczyść dowolne pole, aby przywrócić jego wartość domyślną w pakiecie."
 
 #: src/Admin/Settings.php:187
 msgid "Success message"
@@ -229,6 +250,8 @@ msgid ""
 "Shown inline the moment an enquiry sends, reassure the shopper and set a "
 "reply expectation."
 msgstr ""
+"Wyświetlane w momencie wysłania zapytania, uspokój kupującego i ustal "
+"oczekiwaną odpowiedź."
 
 #: src/Admin/Settings.php:188
 msgid "Error message"
@@ -239,6 +262,8 @@ msgid ""
 "Shown if the email cannot be sent (e.g. a server mail error). Keep it calm "
 "and ask them to retry."
 msgstr ""
+"Wyświetlany, jeśli nie można wysłać wiadomości e-mail (np. błąd poczty "
+"serwera). Zachowaj spokój i poproś o ponowną próbę."
 
 #: src/Admin/Settings.php:189
 msgid "Email subject"
@@ -249,6 +274,9 @@ msgid ""
 "The subject line of the enquiry email you receive. {product} is replaced "
 "with the product name, so enquiries are easy to scan in your inbox."
 msgstr ""
+"Temat otrzymanej wiadomości e-mail z zapytaniem. {product} jest zastępowany "
+"nazwą produktu, dzięki czemu zapytania można łatwo przeglądać w skrzynce "
+"odbiorczej."
 
 #: src/Service/EnquiryService.php:122
 msgid "Your session expired. Please reload the page and try again."
@@ -258,57 +286,54 @@ msgstr "Twoja sesja wygasła. Odśwież stronę i spróbuj ponownie."
 msgid "Please wait a moment before sending another enquiry."
 msgstr "Poczekaj chwilę przed wysłaniem kolejnego zapytania."
 
-#: src/Service/EnquiryService.php:136 src/Service/EnquiryService.php:154
+#: src/Service/EnquiryService.php:136 src/Service/EnquiryService.php:179
 msgid "Sorry, something went wrong. Please try again."
 msgstr "Przepraszamy, coś poszło nie tak. Spróbuj ponownie."
 
-#: src/Service/EnquiryService.php:178
+#: src/Service/EnquiryService.php:199
 msgid "Thanks! Your question has been sent."
 msgstr "Dziękujemy! Twoje pytanie zostało wysłane."
 
-#: src/Service/EnquiryService.php:193
+#: src/Service/EnquiryService.php:214
 msgid "Please enter your name."
 msgstr "Podaj swoje imię."
 
-#: src/Service/EnquiryService.php:198
+#: src/Service/EnquiryService.php:219
 msgid "Please enter your email address."
 msgstr "Podaj swój adres e-mail."
 
-#: src/Service/EnquiryService.php:200 src/Service/EnquiryService.php:203
+#: src/Service/EnquiryService.php:221 src/Service/EnquiryService.php:224
 msgid "Please enter a valid email address."
 msgstr "Podaj poprawny adres e-mail."
 
-#: src/Service/EnquiryService.php:207
+#: src/Service/EnquiryService.php:228
 msgid "Please enter your question."
 msgstr "Wpisz swoje pytanie."
 
-#: src/Service/EnquiryService.php:229
+#: src/Service/EnquiryService.php:250
 msgid "(not provided)"
 msgstr "(nie podano)"
 
 #. translators: %s: product name.
-#: src/Service/EnquiryService.php:235
-#, php-format
+#: src/Service/EnquiryService.php:259
 msgid "New product enquiry for: %s"
 msgstr "Nowe zapytanie o produkt: %s"
 
 #. translators: %s: customer name.
-#: src/Service/EnquiryService.php:239
-#, php-format
+#: src/Service/EnquiryService.php:263
 msgid "Name: %s"
 msgstr "Imię: %s"
 
 #. translators: %s: customer email.
-#: src/Service/EnquiryService.php:241
-#, php-format
+#: src/Service/EnquiryService.php:265
 msgid "Email: %s"
 msgstr "E-mail: %s"
 
-#: src/Service/EnquiryService.php:243
+#: src/Service/EnquiryService.php:267
 msgid "Message:"
 msgstr "Wiadomość:"
 
-#: src/Service/EnquiryService.php:244
+#: src/Service/EnquiryService.php:268
 msgid "(no message)"
 msgstr "(brak wiadomości)"
 
@@ -342,11 +367,10 @@ msgstr "Zamknij"
 
 #. translators: %s: product name.
 #: templates/enquiry-form.php:63
-#, php-format
 msgid "About: %s"
 msgstr "Dotyczy: %s"
 
-#: templates/enquiry-form.php:77
+#: templates/enquiry-form.php:81
 msgid "Leave this field empty"
 msgstr "Pozostaw to pole puste"
 
@@ -385,11 +409,11 @@ msgstr "Pozostaw to pole puste"
 #~ msgstr "Ustaw pole imienia jako wymagane."
 
 #~ msgid ""
-#~ "Make the email field required. A valid email format is always enforced "
-#~ "when an address is entered."
+#~ "Make the email field required. A valid email format is always enforced when "
+#~ "an address is entered."
 #~ msgstr ""
-#~ "Ustaw pole e-mail jako wymagane. Poprawny format adresu e-mail jest "
-#~ "zawsze wymuszany, gdy adres zostanie wpisany."
+#~ "Ustaw pole e-mail jako wymagane. Poprawny format adresu e-mail jest zawsze "
+#~ "wymuszany, gdy adres zostanie wpisany."
 
 #~ msgid "Make the message field required."
 #~ msgstr "Ustaw pole wiadomości jako wymagane."
@@ -398,8 +422,7 @@ msgstr "Pozostaw to pole puste"
 #~ msgstr "To, co klienci widzą po wysłaniu, oraz temat wiadomości e-mail."
 
 #~ msgid "A friendly confirmation shown inline once the enquiry is sent."
-#~ msgstr ""
-#~ "Przyjazne potwierdzenie wyświetlane na stronie po wysłaniu zapytania."
+#~ msgstr "Przyjazne potwierdzenie wyświetlane na stronie po wysłaniu zapytania."
 
 #~ msgid "Shown if sending fails (e.g. a mail error)."
 #~ msgstr "Wyświetlany, gdy wysyłanie się nie powiedzie (np. błąd poczty)."
@@ -408,5 +431,5 @@ msgstr "Pozostaw to pole puste"
 #~ "Subject of the email you receive. {product} is replaced with the product "
 #~ "name."
 #~ msgstr ""
-#~ "Temat wiadomości e-mail, którą otrzymujesz. {product} jest zastępowane "
-#~ "nazwą produktu."
+#~ "Temat wiadomości e-mail, którą otrzymujesz. {product} jest zastępowane nazwą"
+#~ " produktu."

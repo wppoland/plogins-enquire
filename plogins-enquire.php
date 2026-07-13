@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name:       Plogins Enquire - Product Enquiry for WooCommerce
+ * Plugin Name:       Enquire - Product Enquiry for WooCommerce
  * Plugin URI:        https://plogins.com/plogins-enquire/
  * Description:        Add an Ask a Question form to products that emails the store owner.
  * Version:           1.0.2

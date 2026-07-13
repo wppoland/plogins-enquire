@@ -8,59 +8,62 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: plogins-i18n\n"
 
-msgid "Requires Plugins: woocommerce"
-msgstr "Erfordert Plugins: woocommerce"
-
 msgid "Add an Ask a Question form to products that emails the store owner."
 msgstr "Füge den Produkten ein Frageformular hinzu, das dem Ladenbesitzer eine E-Mail sendet."
 
 msgid "Enquire adds an \"Ask a question\" button to your WooCommerce single product pages. When a shopper clicks it, a dialog opens with a short form (name, email, message). On submit, the question is emailed to you along with the product name and a link to it, so you can reply before the sale."
-msgstr "Inquire fügt deinen WooCommerce-Einzelproduktseiten die Schaltfläche „Frage stellen“ hinzu. Wenn ein Käufer darauf klickt, öffnet sich ein Dialog mit einem kurzen Formular (Name, E-Mail, Nachricht). Beim Absenden wird dir die Frage zusammen mit dem Produktnamen und einem Link dazu per E-Mail zugesandt, sodass du vor dem Verkauf antworten können."
+msgstr "Enquire fügt deinen WooCommerce-Einzelproduktseiten die Schaltfläche „Frage stellen“ hinzu. Wenn ein Käufer darauf klickt, öffnet sich ein Dialog mit einem kurzen Formular (Name, E-Mail, Nachricht). Beim Absenden wird dir die Frage zusammen mit dem Produktnamen und einem Link dazu per E-Mail zugesandt, sodass du noch vor dem Verkauf antworten kannst."
 
 msgid "Nothing is stored in your database. Each enquiry is sent by email, and the shopper's address is used as the Reply-To header so you can answer straight from your inbox."
-msgstr "In deiner Datenbank wird nichts gespeichert. Jede Anfrage wird per E-Mail gesendet und die Adresse des Käufers wird als Reply-To-Header verwendet, sodass du direkt aus deinem Posteingang antworten können."
+msgstr "In deiner Datenbank wird nichts gespeichert. Jede Anfrage wird per E-Mail gesendet und die Adresse des Käufers wird als Reply-To-Header verwendet, sodass du direkt aus deinem Posteingang antworten kannst."
 
 msgid "The code is on GitHub at https://github.com/wppoland/plogins-enquire if you want to read it, report a bug, or send a patch."
-msgstr "Der Code befindet sich auf GitHub unter https://github.com/wppoland/plogins-enquire, wenn du ihn lesen, einen Fehler melden oder einen Patch senden möchten."
+msgstr "Der Code befindet sich auf GitHub unter https://github.com/wppoland/plogins-enquire, falls du ihn lesen, einen Fehler melden oder einen Patch einsenden möchtest."
 
 msgid "* <strong>Documentation</strong> - https://plogins.com/plogins-enquire/docs/\n* <strong>Plugin page</strong> - https://plogins.com/plogins-enquire/\n* <strong>Source code</strong> - https://github.com/wppoland/plogins-enquire\n* <strong>Bug reports and feature requests</strong> - https://github.com/wppoland/plogins-enquire/issues"
 msgstr "* <strong>Dokumentation</strong> - https://plogins.com/de/plogins-enquire/docs/\n* <strong>Plugin-Seite</strong> - https://plogins.com/de/plogins-enquire/\n* <strong>Quellcode</strong> – https://github.com/wppoland/plogins-enquire\n* <strong>Fehlerberichte und Funktionsanfragen</strong> – https://github.com/wppoland/plogins-enquire/issues"
 
 msgid "* \"Ask a question\" button on single product pages, with a label you can change, placed after the add-to-cart button.\n* The form opens in a native `<dialog>`: it traps focus while open, labels itself for screen readers, and skips its animation when the visitor prefers reduced motion.\n* Enquiries go out through `wp_mail()` to whichever address you set (or your site admin email if you leave it blank), with the product name and its permalink in the body.\n* Success and error messages appear inline, so there is no page reload.\n* Spam handling: nonce check, a honeypot field, and a 30-second rate limit per visitor.\n* Pick which of name, email and message are required, and edit the button, field labels, success/error text and email subject.\n* Settings live under WooCommerce → Enquire.\n* The small CSS and JS load only on product pages. The plugin declares WooCommerce HPOS and Cart &amp; Checkout Blocks compatibility."
-msgstr "* Schaltfläche „Frage stellen“ auf einzelnen Produktseiten, mit einer Beschriftung, die du ändern können, platziert nach der Schaltfläche „In den Warenkorb“.\n* Das Formular wird in einem nativen „<Dialog>“ geöffnet: Es speichert den Fokus, während es geöffnet ist, markiert sich selbst für Bildschirmleseprogramme und überspringt seine Animation, wenn der Besucher reduzierte Bewegung bevorzugt.\n* Anfragen gehen über „wp_mail()“ an die von dir festgelegte Adresse (oder an die E-Mail-Adresse Ihres Site-Administrators, wenn du diese leer lassen), mit dem Produktnamen und seinem Permalink im Text.\n* Erfolgs- und Fehlermeldungen werden inline angezeigt, sodass kein Neuladen der Seite erforderlich ist.\n* Spam-Behandlung: Nonce-Prüfung, ein Honeypot-Feld und ein 30-Sekunden-Rate-Limit pro Besucher.\n* Wähle aus, ob Name, E-Mail-Adresse oder Nachricht erforderlich sind, und bearbeite die Schaltfläche, die Feldbeschriftungen, den Erfolgs-/Fehlertext und den E-Mail-Betreff.\n* Einstellungen live unter WooCommerce → Anfragen.\n* Das kleine CSS und JS werden nur auf Produktseiten geladen. Das Plugin deklariert WooCommerce HPOS und Cart &amp; Kompatibilität mit Checkout-Blöcken."
+msgstr "* Schaltfläche „Frage stellen“ auf einzelnen Produktseiten, mit einer Beschriftung, die du ändern kannst, platziert nach der Schaltfläche „In den Warenkorb“.\n* Das Formular wird in einem nativen `<dialog>`-Element geöffnet: Es hält den Fokus fest, solange es geöffnet ist, beschriftet sich selbst für Screenreader und überspringt seine Animation, wenn der Besucher reduzierte Bewegung bevorzugt.\n* Anfragen gehen über `wp_mail()` an die von dir festgelegte Adresse (oder an die Admin-E-Mail-Adresse deiner Website, wenn du sie leer lässt), mit dem Produktnamen und seinem Permalink im Text.\n* Erfolgs- und Fehlermeldungen werden inline angezeigt, sodass kein Neuladen der Seite erforderlich ist.\n* Spam-Behandlung: Nonce-Prüfung, ein Honeypot-Feld und ein 30-Sekunden-Rate-Limit pro Besucher.\n* Wähle aus, welche der Felder Name, E-Mail-Adresse und Nachricht erforderlich sind, und bearbeite die Schaltfläche, die Feldbeschriftungen, den Erfolgs-/Fehlertext und den E-Mail-Betreff.\n* Die Einstellungen findest du unter WooCommerce → Enquire.\n* Das kleine CSS und JS werden nur auf Produktseiten geladen. Das Plugin erklärt Kompatibilität mit WooCommerce HPOS sowie den Warenkorb- und Checkout-Blöcken."
 
 msgid "1. Upload the plugin to `/wp-content/plugins/enquire`, or install via Plugins → Add New.\n2. Activate it. WooCommerce must be active.\n3. Go to WooCommerce → Enquire to set the recipient email, button label and form options."
-msgstr "1. Lade das Plugin nach „/wp-content/plugins/enquire“ hoch oder installiere es über Plugins → Neu hinzufügen.\n2. Aktiviere es. WooCommerce muss aktiv sein.\n3. Gehe zu WooCommerce → Anfragen, um die E-Mail-Adresse des Empfängers, die Schaltflächenbeschriftung und die Formularoptionen festzulegen."
+msgstr "1. Lade das Plugin nach `/wp-content/plugins/enquire` hoch oder installiere es über Plugins → Neu hinzufügen.\n2. Aktiviere es. WooCommerce muss aktiv sein.\n3. Gehe zu WooCommerce → Enquire, um die E-Mail-Adresse des Empfängers, die Schaltflächenbeschriftung und die Formularoptionen festzulegen."
 
 msgid "Yes. Enquire adds its button to WooCommerce single product pages and uses WooCommerce product data."
-msgstr "Ja. Inquire fügt seine Schaltfläche zu einzelnen Produktseiten von WooCommerce hinzu und verwendet WooCommerce-Produktdaten."
+msgstr "Ja. Enquire fügt seine Schaltfläche zu einzelnen Produktseiten von WooCommerce hinzu und verwendet WooCommerce-Produktdaten."
 
 msgid "They are not. Each enquiry is emailed and nothing is written to your database."
-msgstr "Das sind sie nicht. Jede Anfrage wird per E-Mail verschickt und nichts wird in deine Datenbank geschrieben."
+msgstr "Gar nicht. Jede Anfrage wird per E-Mail verschickt und nichts wird in deine Datenbank geschrieben."
 
 msgid "To the recipient address you set on the settings page. If you leave it empty, your site's admin email is used."
-msgstr "An die Empfängeradresse, die du auf der Einstellungsseite festgelegt haben. Wenn du das Feld leer lassen, wird die Administrator-E-Mail-Adresse deiner Website verwendet."
+msgstr "An die Empfängeradresse, die du auf der Einstellungsseite festgelegt hast. Wenn du das Feld leer lässt, wird die Administrator-E-Mail-Adresse deiner Website verwendet."
 
 msgid "Each submission is checked against a nonce and a hidden honeypot field, and a visitor can send at most one enquiry every 30 seconds."
 msgstr "Jede Übermittlung wird anhand eines Nonce- und eines versteckten Honeypot-Felds überprüft, und ein Besucher kann höchstens alle 30 Sekunden eine Anfrage senden."
 
 msgid "Yes. Set the button text and form heading under <strong>WooCommerce → Enquire</strong>."
-msgstr "Ja. Lege den Schaltflächentext und die Formularüberschrift unter <strong>WooCommerce → Anfragen</strong> fest."
+msgstr "Ja. Lege den Schaltflächentext und die Formularüberschrift unter <strong>WooCommerce → Enquire</strong> fest."
 
 msgid "Yes. This plugin is compatible with WordPress Multisite. Network activate it or activate it on individual sites; each site keeps its own settings and data."
 msgstr "Ja. Dieses Plugin ist mit WordPress Multisite kompatibel. Aktiviere es im Netzwerk oder auf einzelnen Websites. Jede Site behält ihre eigenen Einstellungen und Daten."
 
 msgid "1. The \"Ask a question\" form on a single product page.\n2. The WooCommerce → Enquire settings page."
-msgstr "1. Das Formular „Frage stellen“ auf einer einzelnen Produktseite.\n2. Die Seite WooCommerce → Einstellungen abfragen."
+msgstr "1. Das Formular „Frage stellen“ auf einer einzelnen Produktseite.\n2. Die Einstellungsseite WooCommerce → Enquire."
 
 msgid "Enquire does not connect to any external service. Form submissions are sent to your own site over `admin-ajax.php` and never leave your server. Each enquiry is delivered with your site's own `wp_mail()` (WordPress core mail), using whatever mailer your site already has. The plugin stores only its own settings (the `enquire_settings` option) and a schema marker (`enquire_db_version`), plus a short-lived transient used for the per-visitor rate limit; enquiry content itself is not written to the database."
-msgstr "Inquire stellt keine Verbindung zu einem externen Dienst her. Formulareinsendungen werden über „admin-ajax.php“ an deine eigene Website gesendet und verlassen niemals deinen Server. Jede Anfrage wird mit der eigenen „wp_mail()“ (WordPress-Kernmail) deiner Website zugestellt, wobei der Mailer verwendet wird, über den deine Website bereits verfügt. Das Plugin speichert nur seine eigenen Einstellungen (die Option „enquire_settings“) und einen Schemamarker („enquire_db_version“) sowie einen kurzlebigen Transienten, der für die Ratenbegrenzung pro Besucher verwendet wird; Der Anfrageinhalt selbst wird nicht in die Datenbank geschrieben."
+msgstr "Enquire stellt keine Verbindung zu einem externen Dienst her. Formulareinsendungen werden über `admin-ajax.php` an deine eigene Website gesendet und verlassen niemals deinen Server. Jede Anfrage wird mit der eigenen `wp_mail()` (WordPress-Kernmail) deiner Website zugestellt, wobei der Mailer verwendet wird, über den deine Website bereits verfügt. Das Plugin speichert nur seine eigenen Einstellungen (die Option `enquire_settings`) und einen Schemamarker (`enquire_db_version`) sowie einen kurzlebigen Transient, der für die Ratenbegrenzung pro Besucher verwendet wird; der Anfrageinhalt selbst wird nicht in die Datenbank geschrieben."
+
+msgid "Plogins Enquire includes Polish, German and Spanish translations for the plugin interface. The text domain is `plogins-enquire`, so WordPress.org language packs can also override or extend these bundled translations."
+msgstr "Plogins Enquire umfasst polnische, deutsche und spanische Übersetzungen für die Plugin-Schnittstelle. Die Textdomain ist `plogins-enquire`, sodass WordPress.org-Sprachpakete diese gebündelten Übersetzungen auch überschreiben oder erweitern können."
+
+msgid "* Added bundled Polish, German and Spanish translations for the plugin interface."
+msgstr "* Gebündelte polnische, deutsche und spanische Übersetzungen für die Plugin-Schnittstelle hinzugefügt."
 
 msgid "* First stable release."
 msgstr "* Erste stabile Version."
 
 msgid "* Renamed to Plogins Enquire for WooCommerce for a more distinctive plugin name."
-msgstr "* Umbenannt in Plogins. Erkundige sich bei WooCommerce nach einem eindeutigeren Plugin-Namen."
+msgstr "* Umbenannt in Plogins Enquire for WooCommerce für einen unverwechselbareren Plugin-Namen."
 
 msgid "* Adds extension hooks for form fields, validation, enquiry payload data and outgoing email arguments.\n* Adds multipart form support so premium add-ons can attach files to enquiry emails."
 msgstr "* Fügt Erweiterungs-Hooks für Formularfelder, Validierung, Anfrage-Nutzdaten und Argumente für ausgehende E-Mails hinzu.\n* Fügt Unterstützung für mehrteilige Formulare hinzu, sodass Premium-Add-ons Dateien an Anfrage-E-Mails anhängen können."

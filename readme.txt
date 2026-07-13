@@ -1,4 +1,4 @@
-=== Plogins Enquire - Product Enquiry for WooCommerce ===
+=== Enquire - Product Enquiry for WooCommerce ===
 Contributors: motylanogha
 Tags: woocommerce, product enquiry, ask a question, contact form, product question
 Requires at least: 6.5

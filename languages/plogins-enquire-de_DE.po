@@ -121,7 +121,7 @@ msgstr ""
 
 #: src/Admin/Settings.php:154
 msgid "Button label"
-msgstr "Button-Beschriftung"
+msgstr "Knopfbeschriftung"
 
 #: src/Admin/Settings.php:154
 msgid ""

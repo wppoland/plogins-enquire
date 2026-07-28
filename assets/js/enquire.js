@@ -1,5 +1,5 @@
 /**
- * Enquire — front-end behaviour.
+ * Enquire, front-end behaviour.
  *
  * Opens an accessible <dialog> from the trigger, submits the enquiry over AJAX,
  * and renders inline success/error feedback without leaving the page. No

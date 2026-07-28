@@ -19,7 +19,7 @@ msgstr ""
 #. Plugin Name of the plugin
 #: enquire.php
 msgid "Enquire - Product Enquiry Form for WooCommerce"
-msgstr "Anfragen – Produktanfrageformular für WooCommerce"
+msgstr "Anfragen, Produktanfrageformular für WooCommerce"
 
 #. Plugin URI of the plugin
 #: enquire.php
@@ -48,7 +48,7 @@ msgid ""
 "Enquire - Product Enquiry Form for WooCommerce requires WooCommerce to be "
 "active."
 msgstr ""
-"Anfragen – Für das Produktanfrageformular für WooCommerce muss WooCommerce "
+"Anfragen, Für das Produktanfrageformular für WooCommerce muss WooCommerce "
 "aktiv sein."
 
 #: src/Admin/Settings.php:52

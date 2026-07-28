@@ -23,8 +23,8 @@ Der Code befindet sich auf GitHub unter https://github.com/wppoland/plogins-enqu
 
 * <strong>Dokumentation</strong> - https://plogins.com/de/plogins-enquire/docs/
 * <strong>Plugin-Seite</strong> - https://plogins.com/de/plogins-enquire/
-* <strong>Quellcode</strong> – https://github.com/wppoland/plogins-enquire
-* <strong>Fehlerberichte und Funktionsanfragen</strong> – https://github.com/wppoland/plogins-enquire/issues
+* <strong>Quellcode</strong>, https://github.com/wppoland/plogins-enquire
+* <strong>Fehlerberichte und Funktionsanfragen</strong>, https://github.com/wppoland/plogins-enquire/issues
 
 
 = Features =

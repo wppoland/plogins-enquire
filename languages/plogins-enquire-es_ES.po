@@ -70,9 +70,9 @@ msgid ""
 "Clicking it opens an accessible form (name, email, message) that emails you "
 "the question with the product details, no data is stored."
 msgstr ""
-"Enquire añade un botón \"Hacer una pregunta\" a las páginas de sus productos"
-" individuales. Al hacer clic en él, se abre un formulario accesible (nombre,"
-" correo electrónico, mensaje) que le envía la pregunta con los detalles del "
+"Enquire añade un botón \"Hacer una pregunta\" a las páginas de sus productos "
+"individuales. Al hacer clic en él, se abre un formulario accesible (nombre, "
+"correo electrónico, mensaje) que le envía la pregunta con los detalles del "
 "producto, no se almacena ningún dato."
 
 #: src/Admin/Settings.php:107
@@ -129,8 +129,8 @@ msgid ""
 "The wording shoppers click to open the enquiry form, e.g. “Ask a question” "
 "or “Enquire now”."
 msgstr ""
-"Los compradores hacen clic en el texto para abrir el formulario de consulta,"
-" p. “Haz una pregunta” o “Consulta ahora”."
+"Los compradores hacen clic en el texto para abrir el formulario de consulta, "
+"p. “Haz una pregunta” o “Consulta ahora”."
 
 #: src/Admin/Settings.php:161
 msgid "Form fields"
@@ -187,8 +187,8 @@ msgstr "Etiqueta del campo de mensaje"
 
 #: src/Admin/Settings.php:170
 msgid ""
-"Sits above the message box, prompt the kind of question you want, e.g. “Your"
-" question”."
+"Sits above the message box, prompt the kind of question you want, e.g. “Your "
+"question”."
 msgstr ""
 "Se encuentra encima del cuadro de mensaje y muestra el tipo de pregunta que "
 "deseas, p. “Tu pregunta”."
@@ -222,8 +222,8 @@ msgid ""
 msgstr ""
 "Los compradores no pueden enviar sin un correo electrónico. Siempre se "
 "aplica un formato válido cuando se ingresa una dirección, incluso si está "
-"desactivado, pero dejarlo desactivado significa que es posible que no puedas"
-" responder."
+"desactivado, pero dejarlo desactivado significa que es posible que no puedas "
+"responder."
 
 #: src/Admin/Settings.php:174
 msgid "Require message"
@@ -379,3 +379,55 @@ msgstr "Acerca de: %s"
 #: templates/enquiry-form.php:81
 msgid "Leave this field empty"
 msgstr "Deja este campo vacío"
+
+#: src/Admin/ProUpsell.php:78
+msgid "Wkrótce"
+msgstr "Próximamente"
+
+#: src/Admin/ProUpsell.php:78
+msgid "Coming soon"
+msgstr "Próximamente"
+
+#. translators: %d: yearly price in PLN
+#: src/Admin/ProUpsell.php:83
+#, php-format
+msgid "od %d zł/rok"
+msgstr "desde %d zł/año"
+
+#. translators: 1: currency symbol, 2: yearly price
+#: src/Admin/ProUpsell.php:88
+#, php-format
+msgid "from %1$s%2$d/yr"
+msgstr "desde %1$s%2$d/año"
+
+#: src/Admin/ProUpsell.php:97
+msgid "Upgrade to PRO"
+msgstr "Mejora a PRO"
+
+#: src/Admin/ProUpsell.php:98
+msgid "Powiadom mnie"
+msgstr "Avísame"
+
+#: src/Admin/ProUpsell.php:98
+msgid "Get notified"
+msgstr "Avísame"
+
+#: src/Admin/ProUpsell.php:128
+msgid "Permission denied."
+msgstr "Permiso denegado."
+
+#. translators: %s: PRO edition name
+#: src/Admin/ProUpsell.php:158
+#, php-format
+msgid "Do more with %s"
+msgstr "Haz más con %s"
+
+#: src/Admin/ProUpsell.php:165
+msgid "Dismiss this notice"
+msgstr "Descartar este aviso"
+
+#. translators: %s: PRO edition name
+#: src/Admin/ProUpsell.php:183
+#, php-format
+msgid "What %s adds"
+msgstr "Lo que añade %s"

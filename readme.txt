@@ -5,7 +5,7 @@ Requires at least: 6.5
 Tested up to: 7.0
 Requires PHP: 8.1
 Requires Plugins: woocommerce
-Stable tag: 1.0.2
+Stable tag: 1.0.3
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -85,6 +85,9 @@ Enquire does not connect to any external service. Form submissions are sent to y
 Plogins Enquire includes Polish, German and Spanish translations for the plugin interface. The text domain is `plogins-enquire`, so WordPress.org language packs can also override or extend these bundled translations.
 
 == Changelog ==
+
+= 1.0.3 =
+* Translations: completed Polish, German and Spanish for the PRO upgrade panel.
 
 = 1.0.2 =
 * Added bundled Polish, German and Spanish translations for the plugin interface.

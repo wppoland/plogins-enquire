@@ -30,8 +30,8 @@ msgstr "https://plogins.com/de/enquire/"
 #: enquire.php
 msgid "Add an Ask a Question form to products that emails the store owner."
 msgstr ""
-"Füge den Produkten ein Frageformular hinzu, das dem Ladenbesitzer eine "
-"E-Mail sendet."
+"Füge den Produkten ein Frageformular hinzu, das dem Ladenbesitzer eine E-"
+"Mail sendet."
 
 #. Author of the plugin
 #: enquire.php
@@ -69,9 +69,9 @@ msgid ""
 "Clicking it opens an accessible form (name, email, message) that emails you "
 "the question with the product details, no data is stored."
 msgstr ""
-"Enquire fügt deinen einzelnen Produktseiten die Schaltfläche „Frage stellen“"
-" hinzu. Wenn du darauf klickst, öffnet sich ein zugängliches Formular (Name,"
-" E-Mail, Nachricht), das dir die Frage mit den Produktdetails per E-Mail "
+"Enquire fügt deinen einzelnen Produktseiten die Schaltfläche „Frage stellen“ "
+"hinzu. Wenn du darauf klickst, öffnet sich ein zugängliches Formular (Name, "
+"E-Mail, Nachricht), das dir die Frage mit den Produktdetails per E-Mail "
 "sendet. Es werden keine Daten gespeichert."
 
 #: src/Admin/Settings.php:107
@@ -88,8 +88,7 @@ msgstr "Ermögliche Anfragen"
 
 #: src/Admin/Settings.php:123
 msgid "Show the “Ask a question” button on single product pages."
-msgstr ""
-"Zeige auf einzelnen Produktseiten die Schaltfläche „Frage stellen“ an."
+msgstr "Zeige auf einzelnen Produktseiten die Schaltfläche „Frage stellen“ an."
 
 #: src/Admin/Settings.php:129
 msgid "Recipient email"
@@ -114,9 +113,9 @@ msgid ""
 "Clear any text field below to restore its packaged default (shown as the "
 "greyed hint)."
 msgstr ""
-"Die Schaltfläche „Anfrage“, die nach der Schaltfläche „In den Warenkorb“ auf"
-" der Produktseite angezeigt wird. Lösche alle unten aufgeführten Textfelder,"
-" um die gepackte Standardeinstellung wiederherzustellen (angezeigt als "
+"Die Schaltfläche „Anfrage“, die nach der Schaltfläche „In den Warenkorb“ auf "
+"der Produktseite angezeigt wird. Lösche alle unten aufgeführten Textfelder, "
+"um die gepackte Standardeinstellung wiederherzustellen (angezeigt als "
 "ausgegrauter Hinweis)."
 
 #: src/Admin/Settings.php:154
@@ -185,8 +184,8 @@ msgstr "Beschriftung des Nachrichtenfelds"
 
 #: src/Admin/Settings.php:170
 msgid ""
-"Sits above the message box, prompt the kind of question you want, e.g. “Your"
-" question”."
+"Sits above the message box, prompt the kind of question you want, e.g. “Your "
+"question”."
 msgstr ""
 "Befindet sich über dem Meldungsfeld und stellt die Art der gewünschten "
 "Frage, z. B. „deine Frage“."
@@ -264,9 +263,8 @@ msgid ""
 "Shown if the email cannot be sent (e.g. a server mail error). Keep it calm "
 "and ask them to retry."
 msgstr ""
-"Wird angezeigt, wenn die E-Mail nicht gesendet werden kann (z. B. ein "
-"Server-Mail-Fehler). Bleibe ruhig und bitte sie, es noch einmal zu "
-"versuchen."
+"Wird angezeigt, wenn die E-Mail nicht gesendet werden kann (z. B. ein Server-"
+"Mail-Fehler). Bleibe ruhig und bitte sie, es noch einmal zu versuchen."
 
 #: src/Admin/Settings.php:189
 msgid "Email subject"
@@ -378,3 +376,55 @@ msgstr "Über: %s"
 #: templates/enquiry-form.php:81
 msgid "Leave this field empty"
 msgstr "Lass dieses Feld leer"
+
+#: src/Admin/ProUpsell.php:78
+msgid "Wkrótce"
+msgstr "Demnächst"
+
+#: src/Admin/ProUpsell.php:78
+msgid "Coming soon"
+msgstr "Demnächst"
+
+#. translators: %d: yearly price in PLN
+#: src/Admin/ProUpsell.php:83
+#, php-format
+msgid "od %d zł/rok"
+msgstr "ab %d zł/Jahr"
+
+#. translators: 1: currency symbol, 2: yearly price
+#: src/Admin/ProUpsell.php:88
+#, php-format
+msgid "from %1$s%2$d/yr"
+msgstr "ab %1$s%2$d/Jahr"
+
+#: src/Admin/ProUpsell.php:97
+msgid "Upgrade to PRO"
+msgstr "Auf PRO upgraden"
+
+#: src/Admin/ProUpsell.php:98
+msgid "Powiadom mnie"
+msgstr "Benachrichtige mich"
+
+#: src/Admin/ProUpsell.php:98
+msgid "Get notified"
+msgstr "Benachrichtige mich"
+
+#: src/Admin/ProUpsell.php:128
+msgid "Permission denied."
+msgstr "Zugriff verweigert."
+
+#. translators: %s: PRO edition name
+#: src/Admin/ProUpsell.php:158
+#, php-format
+msgid "Do more with %s"
+msgstr "Mehr erreichen mit %s"
+
+#: src/Admin/ProUpsell.php:165
+msgid "Dismiss this notice"
+msgstr "Diesen Hinweis ausblenden"
+
+#. translators: %s: PRO edition name
+#: src/Admin/ProUpsell.php:183
+#, php-format
+msgid "What %s adds"
+msgstr "Was %s ergänzt"

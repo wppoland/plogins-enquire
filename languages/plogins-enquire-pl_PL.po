@@ -12,7 +12,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 "
+"|| n%100>14) ? 1 : 2);\n"
 "X-Domain: plogins-enquire\n"
 "X-Generator: WP-CLI 2.12.0\n"
 
@@ -153,8 +154,8 @@ msgid ""
 "The heading at the top of the dialog, set the shopper’s expectation, e.g. "
 "“Ask a question about this product”."
 msgstr ""
-"Nagłówek znajdujący się w górnej części okna dialogowego określa oczekiwania"
-" kupującego, np.: „Zadaj pytanie dotyczące tego produktu”."
+"Nagłówek znajdujący się w górnej części okna dialogowego określa oczekiwania "
+"kupującego, np.: „Zadaj pytanie dotyczące tego produktu”."
 
 #: src/Admin/Settings.php:168
 msgid "Name field label"
@@ -183,8 +184,8 @@ msgstr "Etykieta pola wiadomości"
 
 #: src/Admin/Settings.php:170
 msgid ""
-"Sits above the message box, prompt the kind of question you want, e.g. “Your"
-" question”."
+"Sits above the message box, prompt the kind of question you want, e.g. “Your "
+"question”."
 msgstr ""
 "Znajduje się nad oknem wiadomości i wyświetla żądany rodzaj pytania, np.: "
 "„Twoje pytanie”."
@@ -373,6 +374,58 @@ msgstr "Dotyczy: %s"
 msgid "Leave this field empty"
 msgstr "Pozostaw to pole puste"
 
+#: src/Admin/ProUpsell.php:78
+msgid "Wkrótce"
+msgstr "Wkrótce"
+
+#: src/Admin/ProUpsell.php:78
+msgid "Coming soon"
+msgstr "Wkrótce"
+
+#. translators: %d: yearly price in PLN
+#: src/Admin/ProUpsell.php:83
+#, php-format
+msgid "od %d zł/rok"
+msgstr "od %d zł/rok"
+
+#. translators: 1: currency symbol, 2: yearly price
+#: src/Admin/ProUpsell.php:88
+#, php-format
+msgid "from %1$s%2$d/yr"
+msgstr "od %1$s%2$d/rok"
+
+#: src/Admin/ProUpsell.php:97
+msgid "Upgrade to PRO"
+msgstr "Przejdź na PRO"
+
+#: src/Admin/ProUpsell.php:98
+msgid "Powiadom mnie"
+msgstr "Powiadom mnie"
+
+#: src/Admin/ProUpsell.php:98
+msgid "Get notified"
+msgstr "Powiadom mnie"
+
+#: src/Admin/ProUpsell.php:128
+msgid "Permission denied."
+msgstr "Brak uprawnień."
+
+#. translators: %s: PRO edition name
+#: src/Admin/ProUpsell.php:158
+#, php-format
+msgid "Do more with %s"
+msgstr "Zrób więcej dzięki %s"
+
+#: src/Admin/ProUpsell.php:165
+msgid "Dismiss this notice"
+msgstr "Odrzuć to powiadomienie"
+
+#. translators: %s: PRO edition name
+#: src/Admin/ProUpsell.php:183
+#, php-format
+msgid "What %s adds"
+msgstr "Co dodaje %s"
+
 #~ msgid ""
 #~ "The enquiry button shown after the add-to-cart button on the product page."
 #~ msgstr ""
@@ -408,11 +461,11 @@ msgstr "Pozostaw to pole puste"
 #~ msgstr "Ustaw pole imienia jako wymagane."
 
 #~ msgid ""
-#~ "Make the email field required. A valid email format is always enforced when "
-#~ "an address is entered."
+#~ "Make the email field required. A valid email format is always enforced "
+#~ "when an address is entered."
 #~ msgstr ""
-#~ "Ustaw pole e-mail jako wymagane. Poprawny format adresu e-mail jest zawsze "
-#~ "wymuszany, gdy adres zostanie wpisany."
+#~ "Ustaw pole e-mail jako wymagane. Poprawny format adresu e-mail jest "
+#~ "zawsze wymuszany, gdy adres zostanie wpisany."
 
 #~ msgid "Make the message field required."
 #~ msgstr "Ustaw pole wiadomości jako wymagane."
@@ -421,7 +474,8 @@ msgstr "Pozostaw to pole puste"
 #~ msgstr "To, co klienci widzą po wysłaniu, oraz temat wiadomości e-mail."
 
 #~ msgid "A friendly confirmation shown inline once the enquiry is sent."
-#~ msgstr "Przyjazne potwierdzenie wyświetlane na stronie po wysłaniu zapytania."
+#~ msgstr ""
+#~ "Przyjazne potwierdzenie wyświetlane na stronie po wysłaniu zapytania."
 
 #~ msgid "Shown if sending fails (e.g. a mail error)."
 #~ msgstr "Wyświetlany, gdy wysyłanie się nie powiedzie (np. błąd poczty)."
@@ -430,5 +484,5 @@ msgstr "Pozostaw to pole puste"
 #~ "Subject of the email you receive. {product} is replaced with the product "
 #~ "name."
 #~ msgstr ""
-#~ "Temat wiadomości e-mail, którą otrzymujesz. {product} jest zastępowane nazwą"
-#~ " produktu."
+#~ "Temat wiadomości e-mail, którą otrzymujesz. {product} jest zastępowane "
+#~ "nazwą produktu."

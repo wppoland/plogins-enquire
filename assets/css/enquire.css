@@ -1,9 +1,9 @@
 /**
- * Enquire — front-end styles for the trigger button and enquiry dialog.
+ * Enquire, front-end styles for the trigger button and enquiry dialog.
  *
  * World: written correspondence. A shopper asks a question; the note is
  * dispatched to the merchant, who replies before the sale. The accent is
- * iron-gall ink on warm manuscript paper — not a default UI blue. The one
+ * iron-gall ink on warm manuscript paper, not a default UI blue. The one
  * earned moment is the SEND: the note lifts away and an inked question-mark
  * seal presses into the page to confirm the question is on its way.
  *
@@ -12,7 +12,7 @@
  */
 
 .enquire {
-    /* Iron-gall ink: a deep, slightly green-shifted navy — the colour of a
+    /* Iron-gall ink: a deep, slightly green-shifted navy, the colour of a
        fountain pen, deliberately not a default UI blue (#2563eb). */
     --enquire-ink: var(--wp--preset--color--contrast, #1d3a4a);
     /* Manuscript amber: the seal / accent moment, warm against the ink.
@@ -89,7 +89,7 @@
     padding: 24px;
 }
 
-/* Ink rule under the header — a ruled line, like letterhead. */
+/* Ink rule under the header, a ruled line, like letterhead. */
 .enquire__header {
     display: flex;
     align-items: flex-start;
@@ -229,7 +229,7 @@
 /* The dispatch moment ---------------------------------------------------
  * On a successful send, the form is marked [data-enquire-sent]. The note
  * (form) lifts and fades away while an inked question-mark seal presses
- * into the centre of the panel — the question is on its way. This is the
+ * into the centre of the panel, the question is on its way. This is the
  * single craft risk; everything else stays quiet.
  */
 
@@ -299,7 +299,7 @@
         animation: enquire-reveal 240ms ease-out 200ms both;
     }
 
-    /* The seal presses down hard, then settles — like a stamp into wax. */
+    /* The seal presses down hard, then settles, like a stamp into wax. */
     .enquire__panel[data-enquire-sent] .enquire__seal-mark {
         animation: enquire-press 420ms cubic-bezier(0.34, 1.56, 0.64, 1) 220ms both;
     }

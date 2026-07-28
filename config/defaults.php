@@ -4,7 +4,7 @@
  *
  * The feature ships enabled. The merchant configures the recipient address, the
  * trigger button label/placement, which fields are required, and the success
- * message from the Enquire admin screen. No enquiry data is stored — submissions
+ * message from the Enquire admin screen. No enquiry data is stored, submissions
  * are emailed only.
  *
  * @package Enquire

@@ -15,7 +15,7 @@ use Enquire\Contract\HasHooks;
  *
  * Security: every submission is guarded by a nonce, a honeypot field and a
  * per-visitor rate limit. All input is sanitised; all output is escaped. No
- * enquiry data is stored — the message is emailed only.
+ * enquiry data is stored, the message is emailed only.
  */
 final class EnquiryService implements HasHooks
 {
@@ -187,7 +187,7 @@ final class EnquiryService implements HasHooks
          * store owner.
          *
          * Add-ons (e.g. Enquire Pro auto-reply) hook this to react to a sent
-         * enquiry — for example, emailing a confirmation back to the shopper.
+         * enquiry, for example, emailing a confirmation back to the shopper.
          *
          * @param \WC_Product          $product The product the enquiry is about.
          * @param array<string, mixed> $enquiry The sanitised submission, with

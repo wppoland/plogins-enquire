@@ -1,11 +1,11 @@
-=== Plogins Enquire - Product Enquiry for WooCommerce ===
+=== Enquire - Product Enquiry for WooCommerce ===
 Contributors: motylanogha
 Tags: woocommerce, product enquiry, ask a question, contact form, product question
 Requires at least: 6.5
 Tested up to: 7.0
 Requires PHP: 8.1
 Requires Plugins: woocommerce
-Stable tag: 0.1.2
+Stable tag: 1.0.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -80,7 +80,20 @@ Yes. This plugin is compatible with WordPress Multisite. Network activate it or 
 
 Enquire does not connect to any external service. Form submissions are sent to your own site over `admin-ajax.php` and never leave your server. Each enquiry is delivered with your site's own `wp_mail()` (WordPress core mail), using whatever mailer your site already has. The plugin stores only its own settings (the `enquire_settings` option) and a schema marker (`enquire_db_version`), plus a short-lived transient used for the per-visitor rate limit; enquiry content itself is not written to the database.
 
+== Translations ==
+
+Plogins Enquire includes Polish, German and Spanish translations for the plugin interface. The text domain is `plogins-enquire`, so WordPress.org language packs can also override or extend these bundled translations.
+
 == Changelog ==
+
+= 1.0.3 =
+* Translations: completed Polish, German and Spanish for the PRO upgrade panel.
+
+= 1.0.2 =
+* Added bundled Polish, German and Spanish translations for the plugin interface.
+
+= 1.0.1 =
+* First stable release.
 
 = 0.1.2 =
 * Renamed to Plogins Enquire for WooCommerce for a more distinctive plugin name.

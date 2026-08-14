@@ -270,8 +270,8 @@ final class Settings implements HasHooks
     }
 
     /**
-     * Sanitises the submitted settings before save, preserving defaults for any
-     * field not on the form.
+     * Sanitises the submitted settings before save, preserving stored values for
+     * any field not on the form.
      *
      * @param mixed $raw
      * @return array<string, mixed>
@@ -282,11 +282,19 @@ final class Settings implements HasHooks
             $raw = [];
         }
 
-        $defaults = $this->settings();
+        // The empty-field fallback used to read from settings(), which is the
+        // stored option merged over the packaged defaults. So clearing "Button
+        // label" fell back to the custom label the merchant had just deleted:
+        // the field came back filled in and shoppers kept seeing the old
+        // wording, even though every section says clearing restores the
+        // packaged default. Fall back to the packaged defaults, and keep the
+        // stored values only as the base for keys that are not on the form.
+        $stored   = $this->settings();
+        $defaults = $this->defaults();
 
         $recipient = isset($raw['recipient']) ? sanitize_email((string) $raw['recipient']) : '';
 
-        return array_merge($defaults, [
+        return array_merge($stored, [
             'enabled'         => ! empty($raw['enabled']),
             'recipient'       => $recipient,
             'button_text'     => $this->sanitizeText($raw, 'button_text', $defaults),

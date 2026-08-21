@@ -17,14 +17,14 @@ Enquire adds an "Ask a question" button to your WooCommerce single product pages
 
 Nothing is stored in your database. Each enquiry is sent by email, and the shopper's address is used as the Reply-To header so you can answer straight from your inbox.
 
-The code is on GitHub at https://github.com/wppoland/plogins-enquire if you want to read it, report a bug, or send a patch.
+The code is on GitHub at [github.com/wppoland/plogins-enquire](https://github.com/wppoland/plogins-enquire) if you want to read it, report a bug, or send a patch.
 
 = Documentation and links =
 
-* **Documentation** - https://plogins.com/plogins-enquire/docs/
-* **Plugin page** - https://plogins.com/plogins-enquire/
-* **Source code** - https://github.com/wppoland/plogins-enquire
-* **Bug reports and feature requests** - https://github.com/wppoland/plogins-enquire/issues
+* **Documentation**: [plogins.com/plogins-enquire/docs/](https://plogins.com/plogins-enquire/docs/)
+* **Plugin page**: [plogins.com/plogins-enquire/](https://plogins.com/plogins-enquire/)
+* **Source code**: [github.com/wppoland/plogins-enquire](https://github.com/wppoland/plogins-enquire)
+* **Bug reports and feature requests**: [github.com/wppoland/plogins-enquire/issues](https://github.com/wppoland/plogins-enquire/issues)
 
 
 = Features =

@@ -15,7 +15,6 @@ return [
     'sellable'   => true,
     'price_from' => 29,
     'currency'   => 'EUR',
-    'price_pln'  => 129,
     'lead'       => [
         'en' => 'Enquiry logging, auto-reply, attachments, routing and HTML templates. Feature-complete PRO.',
         'pl' => 'Dziennik, automatyczna odpowiedź, załączniki, routing i szablony HTML. Kompletna wersja PRO.',

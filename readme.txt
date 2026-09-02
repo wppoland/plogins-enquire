@@ -82,7 +82,7 @@ Enquire does not connect to any external service. Form submissions are sent to y
 
 == Translations ==
 
-Plogins Enquire includes Polish, German and Spanish translations for the plugin interface. The text domain is `plogins-enquire`, so WordPress.org language packs can also override or extend these bundled translations.
+Plogins Enquire is fully translatable and ships the `plogins-enquire.pot` template. Translations are delivered by WordPress.org language packs from translate.wordpress.org, which is where Polish, German and Spanish are being contributed; the package itself carries no compiled translation files.
 
 == Changelog ==
 

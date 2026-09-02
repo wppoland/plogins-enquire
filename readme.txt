@@ -5,7 +5,7 @@ Requires at least: 6.5
 Tested up to: 7.1
 Requires PHP: 8.1
 Requires Plugins: woocommerce
-Stable tag: 1.0.7
+Stable tag: 1.0.8
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -85,6 +85,9 @@ Enquire does not connect to any external service. Form submissions are sent to y
 Plogins Enquire is fully translatable and ships the `plogins-enquire.pot` template. Translations are delivered by WordPress.org language packs from translate.wordpress.org, which is where Polish, German and Spanish are being contributed; the package itself carries no compiled translation files.
 
 == Changelog ==
+
+= 1.0.8 =
+* Fixed: an add-on's extra enquiry-form fields were silently deleted before reaching the browser. The `enquire/form_fields` filter exists so an add-on can add a form control, and the template ran its output through `wp_kses_post()`, whose allow-list is for post content and has no `<input>`, `<select>` or `<option>`. Plogins Enquire Pro's file-attachment field was the first real use of the filter, and it never appeared on any product page as a result. The output now goes through an allow-list that keeps everything `wp_kses_post()` allows and adds the form controls the filter exists to carry.
 
 = 1.0.7 =
 * Tested against WordPress 7.1. Verified by activating this build on a clean 7.1 install with WooCommerce 11.1, not by editing the header.

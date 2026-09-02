@@ -138,7 +138,28 @@ $enquire_title_id  = $enquire_dialog_id . '-title';
                  * @param \WC_Product          $product  Current product.
                  * @param array<string, mixed> $settings Free plugin settings.
                  */
-                echo wp_kses_post((string) apply_filters('enquire/form_fields', '', $product, $settings));
+                $enquire_extra_fields = (string) apply_filters('enquire/form_fields', '', $product, $settings);
+
+                // wp_kses_post() is for post CONTENT, and its allow-list has no
+                // <input>, <select> or <option>: it strips exactly the elements a
+                // form-FIELD extension point exists to add. Enquire Pro's file
+                // attachment field, the first real consumer of this filter, was
+                // silently deleted on every page load because of this. The
+                // allow-list below is post's own plus the form controls an
+                // add-on legitimately needs to add a field.
+                $enquire_field_html = wp_kses($enquire_extra_fields, array_merge(
+                    wp_kses_allowed_html('post'),
+                    [
+                        'input'    => ['type' => true, 'id' => true, 'name' => true, 'value' => true, 'class' => true, 'accept' => true, 'required' => true, 'placeholder' => true, 'checked' => true, 'min' => true, 'max' => true, 'step' => true, 'multiple' => true, 'aria-describedby' => true, 'aria-required' => true],
+                        'select'   => ['id' => true, 'name' => true, 'class' => true, 'required' => true, 'multiple' => true, 'aria-describedby' => true],
+                        'option'   => ['value' => true, 'selected' => true],
+                        'optgroup' => ['label' => true],
+                        'label'    => ['for' => true, 'class' => true],
+                        'textarea' => ['id' => true, 'name' => true, 'class' => true, 'rows' => true, 'cols' => true, 'required' => true, 'placeholder' => true, 'aria-describedby' => true],
+                    ],
+                ));
+
+                echo $enquire_field_html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- wp_kses() above is the escaping.
                 ?>
 
                 <div class="enquire__status" data-enquire-status role="status" aria-live="polite" hidden></div>

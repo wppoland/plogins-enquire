@@ -7,6 +7,7 @@ namespace Enquire\Admin;
 defined('ABSPATH') || exit;
 
 use Enquire\Contract\HasHooks;
+use Enquire\Service\Texts;
 
 /**
  * Admin settings page registered as a WooCommerce submenu ("WooCommerce →
@@ -90,8 +91,13 @@ final class Settings implements HasHooks
             return;
         }
 
+        // $settings stays RAW: the fields must show what is stored, never a
+        // resolved default. Rendering the resolved text as the field value
+        // would re-freeze one language into the option on the next save, which
+        // is the bug Texts exists to fix. The resolved text is used only for
+        // the greyed placeholder.
         $settings = $this->settings();
-        $defaults = $this->defaults();
+        $defaults = Texts::apply($this->defaults());
         ?>
         <div class="wrap enquire-admin">
             <h1><?php echo esc_html(get_admin_page_title()); ?></h1>
@@ -289,45 +295,49 @@ final class Settings implements HasHooks
         // wording, even though every section says clearing restores the
         // packaged default. Fall back to the packaged defaults, and keep the
         // stored values only as the base for keys that are not on the form.
-        $stored   = $this->settings();
-        $defaults = $this->defaults();
+        $stored = $this->settings();
 
         $recipient = isset($raw['recipient']) ? sanitize_email((string) $raw['recipient']) : '';
 
         return array_merge($stored, [
             'enabled'         => ! empty($raw['enabled']),
             'recipient'       => $recipient,
-            'button_text'     => $this->sanitizeText($raw, 'button_text', $defaults),
-            'form_title'      => $this->sanitizeText($raw, 'form_title', $defaults),
-            'name_label'      => $this->sanitizeText($raw, 'name_label', $defaults),
-            'email_label'     => $this->sanitizeText($raw, 'email_label', $defaults),
-            'message_label'   => $this->sanitizeText($raw, 'message_label', $defaults),
-            'submit_text'     => $this->sanitizeText($raw, 'submit_text', $defaults),
+            'button_text'     => $this->sanitizeText($raw, 'button_text'),
+            'form_title'      => $this->sanitizeText($raw, 'form_title'),
+            'name_label'      => $this->sanitizeText($raw, 'name_label'),
+            'email_label'     => $this->sanitizeText($raw, 'email_label'),
+            'message_label'   => $this->sanitizeText($raw, 'message_label'),
+            'submit_text'     => $this->sanitizeText($raw, 'submit_text'),
             'require_name'    => ! empty($raw['require_name']),
             'require_email'   => ! empty($raw['require_email']),
             'require_message' => ! empty($raw['require_message']),
-            'success_message' => $this->sanitizeText($raw, 'success_message', $defaults),
-            'error_message'   => $this->sanitizeText($raw, 'error_message', $defaults),
-            'email_subject'   => $this->sanitizeText($raw, 'email_subject', $defaults),
+            'success_message' => $this->sanitizeText($raw, 'success_message'),
+            'error_message'   => $this->sanitizeText($raw, 'error_message'),
+            'email_subject'   => $this->sanitizeText($raw, 'email_subject'),
         ]);
     }
 
     /**
-     * Sanitise a single text field, falling back to the packaged default when
-     * the submitted value is empty.
+     * Sanitise a single text field.
+     *
+     * An empty field is stored as an empty string, never substituted with the
+     * default wording. Storing the default would write one language into the
+     * option, where no translation can reach it; empty means "resolve through
+     * Enquire\Service\Texts at render time", in the language of the site.
      *
      * @param array<string, mixed> $raw
-     * @param array<string, mixed> $defaults
      */
-    private function sanitizeText(array $raw, string $key, array $defaults): string
+    private function sanitizeText(array $raw, string $key): string
     {
-        $value = isset($raw[$key]) ? sanitize_text_field((string) $raw[$key]) : '';
-
-        return $value !== '' ? $value : (string) ($defaults[$key] ?? '');
+        return isset($raw[$key]) ? sanitize_text_field((string) $raw[$key]) : '';
     }
 
     /**
-     * Stored settings merged over packaged defaults.
+     * Stored settings merged over packaged defaults, RAW.
+     *
+     * Deliberately not passed through Texts::apply(): the settings screen must
+     * show what is actually stored, so that saving cannot turn a resolved
+     * default into a stored English string.
      *
      * @return array<string, mixed>
      */

@@ -14,12 +14,14 @@ declare(strict_types=1);
 
 defined('ABSPATH') || exit;
 
-$enquire_button_text = (string) ($settings['button_text'] ?? __('Ask a question', 'plogins-enquire'));
-$enquire_form_title  = (string) ($settings['form_title'] ?? __('Ask a question about this product', 'plogins-enquire'));
-$enquire_name_label  = (string) ($settings['name_label'] ?? __('Your name', 'plogins-enquire'));
-$enquire_email_label = (string) ($settings['email_label'] ?? __('Your email', 'plogins-enquire'));
-$enquire_msg_label   = (string) ($settings['message_label'] ?? __('Your question', 'plogins-enquire'));
-$enquire_submit_text = (string) ($settings['submit_text'] ?? __('Send enquiry', 'plogins-enquire'));
+// $settings arrives resolved through Enquire\Service\Texts, so a key a
+// merchant left empty already holds its translated default.
+$enquire_button_text = (string) ($settings['button_text'] ?? '');
+$enquire_form_title  = (string) ($settings['form_title'] ?? '');
+$enquire_name_label  = (string) ($settings['name_label'] ?? '');
+$enquire_email_label = (string) ($settings['email_label'] ?? '');
+$enquire_msg_label   = (string) ($settings['message_label'] ?? '');
+$enquire_submit_text = (string) ($settings['submit_text'] ?? '');
 
 $enquire_req_name  = ! empty($settings['require_name']);
 $enquire_req_email = ! empty($settings['require_email']);

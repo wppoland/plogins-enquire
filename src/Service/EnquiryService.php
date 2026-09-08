@@ -133,7 +133,7 @@ final class EnquiryService implements HasHooks
         $product   = $productId > 0 ? wc_get_product($productId) : null;
         if (! $product instanceof \WC_Product) {
             wp_send_json_error([
-                'message' => (string) ($settings['error_message'] ?? __('Sorry, something went wrong. Please try again.', 'plogins-enquire')),
+                'message' => (string) ($settings['error_message'] ?? ''),
             ], 400);
         }
 
@@ -176,7 +176,7 @@ final class EnquiryService implements HasHooks
         $sent = $this->sendEmail($settings, $product, $enquiry);
         if (! $sent) {
             wp_send_json_error([
-                'message' => (string) ($settings['error_message'] ?? __('Sorry, something went wrong. Please try again.', 'plogins-enquire')),
+                'message' => (string) ($settings['error_message'] ?? ''),
             ], 500);
         }
 
@@ -196,7 +196,7 @@ final class EnquiryService implements HasHooks
         do_action('enquire/enquiry_sent', $product, $enquiry);
 
         wp_send_json_success([
-            'message' => (string) ($settings['success_message'] ?? __('Thanks! Your question has been sent.', 'plogins-enquire')),
+            'message' => (string) ($settings['success_message'] ?? ''),
         ]);
     }
 
@@ -245,7 +245,7 @@ final class EnquiryService implements HasHooks
         }
 
         $productName = $product->get_name();
-        $subjectTpl  = (string) ($settings['email_subject'] ?? 'Product enquiry: {product}');
+        $subjectTpl  = (string) ($settings['email_subject'] ?? '');
         $subject     = str_replace('{product}', $productName, $subjectTpl);
 
         $notProvided = __('(not provided)', 'plogins-enquire');
@@ -359,7 +359,11 @@ final class EnquiryService implements HasHooks
     }
 
     /**
-     * Stored settings merged over packaged defaults.
+     * Stored settings merged over packaged defaults, resolved for rendering.
+     *
+     * Texts::apply() fills the customer-facing strings a merchant has left
+     * empty with their translated defaults. This is the only settings reader on
+     * the front end, so every string that reaches a shopper passes through it.
      *
      * @return array<string, mixed>
      */
@@ -374,7 +378,7 @@ final class EnquiryService implements HasHooks
         /** @var array<string, mixed> $defaults */
         $defaults = require ENQUIRE_DIR . 'config/defaults.php';
 
-        return array_merge($defaults, $stored);
+        return Texts::apply(array_merge($defaults, $stored));
     }
 
     /**

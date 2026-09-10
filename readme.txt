@@ -5,7 +5,7 @@ Requires at least: 6.5
 Tested up to: 7.1
 Requires PHP: 8.1
 Requires Plugins: woocommerce
-Stable tag: 1.0.10
+Stable tag: 1.0.11
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -85,6 +85,9 @@ Enquire does not connect to any external service. Form submissions are sent to y
 Plogins Enquire is fully translatable and ships the `plogins-enquire.pot` template. Translations are delivered by WordPress.org language packs from translate.wordpress.org, which is where Polish, German and Spanish are being contributed; the package itself carries no compiled translation files.
 
 == Changelog ==
+
+= 1.0.11 =
+* Fixed: deleting the plugin left the per-user "dismiss" flag from the PRO notice in the database. Uninstall now removes it for every user, not just the one who dismissed it.
 
 = 1.0.10 =
 * Fixed: the enquiry form was always in English, whatever language your site runs in. The button label, the form title, the field labels, the send button, the success and error messages and the enquiry email subject were plain English text in a config file rather than translatable strings, so they never reached the translation template and no language pack could replace them. Saving the settings screen once wrote that English into the database, where nothing could reach it at all. They are translatable now, so they follow the site language as soon as a translation exists. Translations are delivered by WordPress.org language packs rather than bundled in this download, so the form stays English until a pack is published. Wording you typed yourself is untouched; a field still holding the old packaged English is cleared on update so the translated wording can take over.

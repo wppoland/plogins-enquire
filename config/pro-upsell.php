@@ -21,8 +21,8 @@ return [
     ],
     'features'   => [
         [
-            'en' => ['title' => 'Enquiry log', 'desc' => 'Save every enquiry under WooCommerce → Enquiry Log with product, contact details and message.'],
-            'pl' => ['title' => 'Dziennik zapytań', 'desc' => 'Zapis każdego zapytania w WooCommerce → Enquiry Log z produktem, danymi kontaktowymi i treścią.'],
+            'en' => ['title' => 'Enquiry log', 'desc' => 'Save every enquiry under WooCommerce > Enquiry Log with product, contact details and message.'],
+            'pl' => ['title' => 'Dziennik zapytań', 'desc' => 'Zapis każdego zapytania w WooCommerce > Enquiry Log z produktem, danymi kontaktowymi i treścią.'],
         ],
         [
             'en' => ['title' => 'Automatic reply', 'desc' => 'Email the shopper a confirmation right after they submit, with {product}, {name} and {site} placeholders.'],

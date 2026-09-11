@@ -10,7 +10,7 @@ use Enquire\Contract\HasHooks;
 use Enquire\Service\Texts;
 
 /**
- * Admin settings page registered as a WooCommerce submenu ("WooCommerce →
+ * Admin settings page registered as a WooCommerce submenu ("WooCommerce >
  * Enquire").
  *
  * Stores settings in the `enquire_settings` option (array): the master toggle,

@@ -218,7 +218,7 @@ msgid ""
 msgstr ""
 "Kupujący nie mogą wysłać zapytania bez adresu e-mail. Podczas wprowadzania "
 "adresu zawsze wymuszany jest prawidłowy format, nawet jeśli ta opcja jest "
-"wyłączona, ale pozostawienie jej wyłączonej oznacza, że ​​możesz nie być w "
+"wyłączona, ale pozostawienie jej wyłączonej oznacza, że możesz nie być w "
 "stanie odpowiedzieć."
 
 #: src/Admin/Settings.php:174

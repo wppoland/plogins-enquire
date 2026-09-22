@@ -7,31 +7,31 @@ msgstr ""
 "POT-Creation-Date: 2026-06-18T12:34:55+00:00\n"
 "PO-Revision-Date: 2026-06-18T12:34:55+00:00\n"
 "Last-Translator: motylanogha <szatkowski.mariusz@gmail.com>\n"
-"Language-Team: Spanish <es@li.org>\n"
-"Language: es_ES\n"
+"Language-Team: German <de@li.org>\n"
+"Language: de_DE\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Domain: plogins-enquire\n"
+"X-Domain: demando\n"
 "X-Generator: WP-CLI 2.11.0\n"
 
 #. Plugin Name of the plugin
 #: enquire.php
 msgid "Enquire - Product Enquiry Form for WooCommerce"
-msgstr "Enquire - Formulario de consulta de producto para WooCommerce"
+msgstr "Anfragen, Produktanfrageformular für WooCommerce"
 
 #. Plugin URI of the plugin
 #: enquire.php
 msgid "https://plogins.com/enquire/"
-msgstr "https://plogins.com/es/enquire/"
+msgstr "https://plogins.com/de/enquire/"
 
 #. Description of the plugin
 #: enquire.php
 msgid "Add an Ask a Question form to products that emails the store owner."
 msgstr ""
-"Añade un formulario de Hacer una pregunta a los productos que envíe por "
-"correo electrónico al propietario de la tienda."
+"Füge den Produkten ein Frageformular hinzu, das dem Ladenbesitzer eine E-"
+"Mail sendet."
 
 #. Author of the plugin
 #: enquire.php
@@ -48,12 +48,12 @@ msgid ""
 "Enquire - Product Enquiry Form for WooCommerce requires WooCommerce to be "
 "active."
 msgstr ""
-"Enquire: el formulario de consulta de productos para WooCommerce requiere "
-"que WooCommerce esté activo."
+"Anfragen, Für das Produktanfrageformular für WooCommerce muss WooCommerce "
+"aktiv sein."
 
 #: src/Admin/Settings.php:52
 msgid "Enquire Settings"
-msgstr "Ajustes de Enquire"
+msgstr "Enquire-Einstellungen"
 
 #: src/Admin/Settings.php:53
 msgid "Enquire"
@@ -61,8 +61,7 @@ msgstr "Enquire"
 
 #: src/Admin/Settings.php:98
 msgid "Let shoppers ask about a product before they buy"
-msgstr ""
-"Permita que los compradores pregunten sobre un producto antes de comprarlo"
+msgstr "Lass Käufer vor dem Kauf nach einem Produkt fragen"
 
 #: src/Admin/Settings.php:99
 msgid ""
@@ -70,45 +69,43 @@ msgid ""
 "Clicking it opens an accessible form (name, email, message) that emails you "
 "the question with the product details, no data is stored."
 msgstr ""
-"Enquire añade un botón \"Hacer una pregunta\" a las páginas de sus productos "
-"individuales. Al hacer clic en él, se abre un formulario accesible (nombre, "
-"correo electrónico, mensaje) que le envía la pregunta con los detalles del "
-"producto, no se almacena ningún dato."
+"Enquire fügt deinen einzelnen Produktseiten die Schaltfläche „Frage stellen“ "
+"hinzu. Wenn du darauf klickst, öffnet sich ein zugängliches Formular (Name, "
+"E-Mail, Nachricht), das dir die Frage mit den Produktdetails per E-Mail "
+"sendet. Es werden keine Daten gespeichert."
 
 #: src/Admin/Settings.php:107
 msgid "General"
-msgstr "General"
+msgstr "Allgemein"
 
 #: src/Admin/Settings.php:108
 msgid "The master switch and where enquiries are delivered."
-msgstr "El interruptor maestro y donde se entregan consultas."
+msgstr "Der Hauptschalter und wo Anfragen zugestellt werden."
 
 #: src/Admin/Settings.php:113
 msgid "Enable enquiries"
-msgstr "Habilitar consultas"
+msgstr "Ermögliche Anfragen"
 
 #: src/Admin/Settings.php:123
 msgid "Show the “Ask a question” button on single product pages."
-msgstr ""
-"Muestre el botón \"Hacer una pregunta\" en las páginas de un solo producto."
+msgstr "Zeige auf einzelnen Produktseiten die Schaltfläche „Frage stellen“ an."
 
 #: src/Admin/Settings.php:129
 msgid "Recipient email"
-msgstr "Correo electrónico del destinatario"
+msgstr "Empfänger-E-Mail"
 
 #: src/Admin/Settings.php:140
 msgid ""
 "Enquiries are emailed here. Leave empty to use your site’s admin email. The "
 "customer’s address is set as Reply-To so you can reply directly."
 msgstr ""
-"Las consultas se envían por correo electrónico aquí. Déjelo vacío para usar "
-"el correo electrónico del administrador de tu sitio. La dirección del "
-"cliente está configurada como Responder a para que pueda responder "
-"directamente."
+"Anfragen werden hier per E-Mail gesendet. Lass das Feld leer, um die "
+"Administrator-E-Mail-Adresse deiner Website zu verwenden. Die Adresse des "
+"Kunden ist als „Antwort an“ festgelegt, sodass du direkt antworten können."
 
 #: src/Admin/Settings.php:148
 msgid "Trigger button"
-msgstr "Botón de disparo"
+msgstr "Auslöseknopf"
 
 #: src/Admin/Settings.php:149
 msgid ""
@@ -116,25 +113,26 @@ msgid ""
 "Clear any text field below to restore its packaged default (shown as the "
 "greyed hint)."
 msgstr ""
-"El botón de consulta que se muestra después del botón Añadir al carrito en "
-"la página del producto. Borre cualquier campo de texto a continuación para "
-"restaurar su paquete predeterminado (que se muestra como una pista gris)."
+"Die Schaltfläche „Anfrage“, die nach der Schaltfläche „In den Warenkorb“ auf "
+"der Produktseite angezeigt wird. Lösche alle unten aufgeführten Textfelder, "
+"um die gepackte Standardeinstellung wiederherzustellen (angezeigt als "
+"ausgegrauter Hinweis)."
 
 #: src/Admin/Settings.php:154
 msgid "Button label"
-msgstr "Etiqueta del botón"
+msgstr "Knopfbeschriftung"
 
 #: src/Admin/Settings.php:154
 msgid ""
 "The wording shoppers click to open the enquiry form, e.g. “Ask a question” "
 "or “Enquire now”."
 msgstr ""
-"Los compradores hacen clic en el texto para abrir el formulario de consulta, "
-"p. “Haz una pregunta” o “Consulta ahora”."
+"Der Wortlaut, den Käufer anklicken, um das Anfrageformular zu öffnen, z.B. "
+"„Stelle eine Frage“ oder „Jetzt anfragen“."
 
 #: src/Admin/Settings.php:161
 msgid "Form fields"
-msgstr "Campos de formulario"
+msgstr "Formularfelder"
 
 #: src/Admin/Settings.php:162
 msgid ""
@@ -142,77 +140,75 @@ msgid ""
 "complete before they can send. Clear any label to restore its packaged "
 "default."
 msgstr ""
-"Las etiquetas dentro del cuadro de diálogo de consulta y los campos que un "
-"comprador debe completar antes de poder enviar. Borre cualquier etiqueta "
-"para restaurar su paquete predeterminado."
+"Die Beschriftungen im Anfragedialog und welche Felder ein Käufer ausfüllen "
+"muss, bevor er senden kann. Lösche alle Beschriftungen, um die gepackte "
+"Standardeinstellung wiederherzustellen."
 
 #: src/Admin/Settings.php:167
 msgid "Form title"
-msgstr "Título del formulario"
+msgstr "Formulartitel"
 
 #: src/Admin/Settings.php:167
 msgid ""
 "The heading at the top of the dialog, set the shopper’s expectation, e.g. "
 "“Ask a question about this product”."
 msgstr ""
-"El título en la parte superior del cuadro de diálogo establece las "
-"expectativas del comprador, p. “Haga una pregunta sobre este producto”."
+"In der Überschrift oben im Dialog lege die Erwartungen des Käufers fest, "
+"z. B. „Stelle eine Frage zu diesem Produkt“."
 
 #: src/Admin/Settings.php:168
 msgid "Name field label"
-msgstr "Etiqueta del campo de nombre"
+msgstr "Namensfeldbeschriftung"
 
 #: src/Admin/Settings.php:168
 msgid "Sits above the name input. Customers see this wording, not “name”."
 msgstr ""
-"Se encuentra encima de la entrada del nombre. Los clientes ven este texto, "
-"no \"nombre\"."
+"Befindet sich über der Namenseingabe. Kunden sehen diesen Wortlaut, nicht "
+"„Name“."
 
 #: src/Admin/Settings.php:169
 msgid "Email field label"
-msgstr "Etiqueta de campo de correo electrónico"
+msgstr "E-Mail-Feldbezeichnung"
 
 #: src/Admin/Settings.php:169
 msgid ""
 "Sits above the email input. This address becomes the Reply-To, so you can "
 "answer the shopper directly."
 msgstr ""
-"Se encuentra encima de la entrada del correo electrónico. Esta dirección se "
-"convierte en Responder a, por lo que puede responder al comprador "
-"directamente."
+"Befindet sich über dem E-Mail-Eingang. Diese Adresse wird zur "
+"Antwortadresse, sodass du dem Käufer direkt antworten können."
 
 #: src/Admin/Settings.php:170
 msgid "Message field label"
-msgstr "Etiqueta del campo de mensaje"
+msgstr "Beschriftung des Nachrichtenfelds"
 
 #: src/Admin/Settings.php:170
 msgid ""
 "Sits above the message box, prompt the kind of question you want, e.g. “Your "
 "question”."
 msgstr ""
-"Se encuentra encima del cuadro de mensaje y muestra el tipo de pregunta que "
-"deseas, p. “Tu pregunta”."
+"Befindet sich über dem Meldungsfeld und stellt die Art der gewünschten "
+"Frage, z. B. „deine Frage“."
 
 #: src/Admin/Settings.php:171
 msgid "Submit button label"
-msgstr "Enviar etiqueta del botón"
+msgstr "Beschriftung der Schaltfläche „Senden“."
 
 #: src/Admin/Settings.php:171
 msgid "The wording on the send button inside the dialog."
-msgstr "El texto del botón enviar dentro del cuadro de diálogo."
+msgstr "Der Wortlaut auf der Schaltfläche „Senden“ im Dialog."
 
 #: src/Admin/Settings.php:172
 msgid "Require name"
-msgstr "Requerir nombre"
+msgstr "Name erforderlich"
 
 #: src/Admin/Settings.php:172
 msgid "Shoppers cannot send until they fill in the name field."
-msgstr ""
-"Los compradores no pueden enviar hasta que completen el campo de nombre."
+msgstr "Käufer können nicht senden, bis sie das Namensfeld ausgefüllt haben."
 
 #: src/Admin/Settings.php:173
 msgid "Require email"
-msgstr "Requerir correo electrónico"
+msgstr "E-Mail erforderlich"
 
 #: src/Admin/Settings.php:173
 msgid ""
@@ -220,214 +216,215 @@ msgid ""
 "when an address is entered, even if this is off, but leaving it off means "
 "you may not be able to reply."
 msgstr ""
-"Los compradores no pueden enviar sin un correo electrónico. Siempre se "
-"aplica un formato válido cuando se ingresa una dirección, incluso si está "
-"desactivado, pero dejarlo desactivado significa que es posible que no puedas "
-"responder."
+"Käufer können nicht ohne eine E-Mail senden. Bei der Eingabe einer Adresse "
+"wird immer ein gültiges Format erzwungen, auch wenn dies deaktiviert ist. "
+"Wenn du es jedoch deaktiviert lassen, kannst du möglicherweise nicht "
+"antworten."
 
 #: src/Admin/Settings.php:174
 msgid "Require message"
-msgstr "Requerir mensaje"
+msgstr "Nachricht erforderlich"
 
 #: src/Admin/Settings.php:174
 msgid "Shoppers cannot send an empty enquiry."
-msgstr "Los compradores no pueden enviar una consulta vacía."
+msgstr "Käufer können keine leere Anfrage senden."
 
 #: src/Admin/Settings.php:181
 msgid "Messaging"
-msgstr "Mensajería"
+msgstr "Nachrichten"
 
 #: src/Admin/Settings.php:182
 msgid ""
 "What shoppers see after submitting, and the subject line of the email you "
 "receive. Clear any field to restore its packaged default."
 msgstr ""
-"Lo que ven los compradores después de enviarlo y la línea de asunto del "
-"correo electrónico que recibe. Borre cualquier campo para restaurar su "
-"paquete predeterminado."
+"Was Käufer nach dem Absenden sehen und die Betreffzeile der E-Mail, die Du "
+"erhältst. Lösche ein beliebiges Feld, um die gepackte Standardeinstellung "
+"wiederherzustellen."
 
 #: src/Admin/Settings.php:187
 msgid "Success message"
-msgstr "Mensaje de éxito"
+msgstr "Erfolgsmeldung"
 
 #: src/Admin/Settings.php:187
 msgid ""
 "Shown inline the moment an enquiry sends, reassure the shopper and set a "
 "reply expectation."
 msgstr ""
-"Se muestra en línea en el momento en que se envía una consulta, tranquiliza "
-"al comprador y establece una expectativa de respuesta."
+"Wird in dem Moment angezeigt, in dem eine Anfrage gesendet wird, um den "
+"Käufer zu beruhigen und eine Antworterwartung festzulegen."
 
 #: src/Admin/Settings.php:188
 msgid "Error message"
-msgstr "Mensaje de fallo"
+msgstr "Fehlermeldung"
 
 #: src/Admin/Settings.php:188
 msgid ""
 "Shown if the email cannot be sent (e.g. a server mail error). Keep it calm "
 "and ask them to retry."
 msgstr ""
-"Se muestra si el correo electrónico no se puede enviar (por ejemplo, un "
-"error de correo del servidor). Mantén la calma y pídeles que vuelvan a "
-"intentarlo."
+"Wird angezeigt, wenn die E-Mail nicht gesendet werden kann (z. B. ein Server-"
+"Mail-Fehler). Bleibe ruhig und bitte sie, es noch einmal zu versuchen."
 
 #: src/Admin/Settings.php:189
 msgid "Email subject"
-msgstr "Asunto del correo electrónico"
+msgstr "E-Mail-Betreff"
 
 #: src/Admin/Settings.php:189
 msgid ""
 "The subject line of the enquiry email you receive. {product} is replaced "
 "with the product name, so enquiries are easy to scan in your inbox."
 msgstr ""
-"La línea de asunto del correo electrónico de consulta que recibe. {product} "
-"se reemplaza con el nombre del producto, por lo que las consultas son "
-"fáciles de escanear en su bandeja de entrada."
+"Die Betreffzeile der Anfrage-E-Mail, die Du erhältst. {product} wird durch "
+"den Produktnamen ersetzt, sodass Anfragen einfach in deinem Posteingang "
+"gescannt werden können."
 
 #: src/Service/EnquiryService.php:122
 msgid "Your session expired. Please reload the page and try again."
-msgstr "Tu sesión expiró. Vuelva a cargar la página e inténtelo de nuevo."
+msgstr ""
+"Deine Sitzung ist abgelaufen. Bitte lade die Seite neu und versuche es "
+"erneut."
 
 #: src/Service/EnquiryService.php:128
 msgid "Please wait a moment before sending another enquiry."
-msgstr "Espere un momento antes de enviar otra consulta."
+msgstr "Bitte warte einen Moment, bevor du eine weitere Anfrage sendest."
 
 #: src/Service/EnquiryService.php:136 src/Service/EnquiryService.php:179
 msgid "Sorry, something went wrong. Please try again."
-msgstr "Lo siento, algo salió mal. Por favor inténtalo de nuevo."
+msgstr "Entschuldigung, etwas ist schief gelaufen. Bitte versuche es erneut."
 
 #: src/Service/EnquiryService.php:199
 msgid "Thanks! Your question has been sent."
-msgstr "¡Gracias! Su pregunta ha sido enviada."
+msgstr "Danke! Deine Frage wurde gesendet."
 
 #: src/Service/EnquiryService.php:214
 msgid "Please enter your name."
-msgstr "Por favor ingrese su nombre."
+msgstr "Bitte gib deinen Namen ein."
 
 #: src/Service/EnquiryService.php:219
 msgid "Please enter your email address."
-msgstr "Por favor ingrese su dirección de correo electrónico."
+msgstr "Bitte gib deine E-Mail-Adresse ein."
 
 #: src/Service/EnquiryService.php:221 src/Service/EnquiryService.php:224
 msgid "Please enter a valid email address."
-msgstr "Por favor, introduce una dirección de correo electrónico válida."
+msgstr "Bitte gib eine gültige E-Mail-Adresse ein."
 
 #: src/Service/EnquiryService.php:228
 msgid "Please enter your question."
-msgstr "Por favor ingrese su pregunta."
+msgstr "Bitte gib deine Frage ein."
 
 #: src/Service/EnquiryService.php:250
 msgid "(not provided)"
-msgstr "(no proporcionado)"
+msgstr "(nicht bereitgestellt)"
 
 #. translators: %s: product name.
 #: src/Service/EnquiryService.php:259
 msgid "New product enquiry for: %s"
-msgstr "Consulta de nuevo producto para: %s"
+msgstr "Neue Produktanfrage für: %s"
 
 #. translators: %s: customer name.
 #: src/Service/EnquiryService.php:263
 msgid "Name: %s"
-msgstr "Nombre: %s"
+msgstr "Name: %s"
 
 #. translators: %s: customer email.
 #: src/Service/EnquiryService.php:265
 msgid "Email: %s"
-msgstr "Correo electrónico: %s"
+msgstr "E-Mail: %s"
 
 #: src/Service/EnquiryService.php:267
 msgid "Message:"
-msgstr "Mensaje:"
+msgstr "Nachricht:"
 
 #: src/Service/EnquiryService.php:268
 msgid "(no message)"
-msgstr "(sin mensaje)"
+msgstr "(keine Nachricht)"
 
 #: templates/enquiry-form.php:17
 msgid "Ask a question"
-msgstr "Hacer una pregunta"
+msgstr "Eine Frage stellen"
 
 #: templates/enquiry-form.php:18
 msgid "Ask a question about this product"
-msgstr "Haga una pregunta sobre este producto"
+msgstr "Stelle eine Frage zu diesem Produkt"
 
 #: templates/enquiry-form.php:19
 msgid "Your name"
-msgstr "tu nombre"
+msgstr "Dein Name"
 
 #: templates/enquiry-form.php:20
 msgid "Your email"
-msgstr "Tu correo electrónico"
+msgstr "Deine E-Mail"
 
 #: templates/enquiry-form.php:21
 msgid "Your question"
-msgstr "Tu pregunta"
+msgstr "Deine Frage"
 
 #: templates/enquiry-form.php:22
 msgid "Send enquiry"
-msgstr "Enviar consulta"
+msgstr "Anfrage senden"
 
 #: templates/enquiry-form.php:54
 msgid "Close"
-msgstr "Cerrar"
+msgstr "Schließen"
 
 #. translators: %s: product name.
 #: templates/enquiry-form.php:63
 msgid "About: %s"
-msgstr "Acerca de: %s"
+msgstr "Über: %s"
 
 #: templates/enquiry-form.php:81
 msgid "Leave this field empty"
-msgstr "Deja este campo vacío"
+msgstr "Lass dieses Feld leer"
 
 #: src/Admin/ProUpsell.php:78
 msgid "Wkrótce"
-msgstr "Próximamente"
+msgstr "Demnächst"
 
 #: src/Admin/ProUpsell.php:78
 msgid "Coming soon"
-msgstr "Próximamente"
+msgstr "Demnächst"
 
 #. translators: %d: yearly price in PLN
 #: src/Admin/ProUpsell.php:83
 #, php-format
 msgid "od %d zł/rok"
-msgstr "desde %d zł/año"
+msgstr "ab %d zł/Jahr"
 
 #. translators: 1: currency symbol, 2: yearly price
 #: src/Admin/ProUpsell.php:88
 #, php-format
 msgid "from %1$s%2$d/yr"
-msgstr "desde %1$s%2$d/año"
+msgstr "ab %1$s%2$d/Jahr"
 
 #: src/Admin/ProUpsell.php:97
 msgid "Upgrade to PRO"
-msgstr "Mejora a PRO"
+msgstr "Auf PRO upgraden"
 
 #: src/Admin/ProUpsell.php:98
 msgid "Powiadom mnie"
-msgstr "Avísame"
+msgstr "Benachrichtige mich"
 
 #: src/Admin/ProUpsell.php:98
 msgid "Get notified"
-msgstr "Avísame"
+msgstr "Benachrichtige mich"
 
 #: src/Admin/ProUpsell.php:128
 msgid "Permission denied."
-msgstr "Permiso denegado."
+msgstr "Zugriff verweigert."
 
 #. translators: %s: PRO edition name
 #: src/Admin/ProUpsell.php:158
 #, php-format
 msgid "Do more with %s"
-msgstr "Haz más con %s"
+msgstr "Mehr erreichen mit %s"
 
 #: src/Admin/ProUpsell.php:165
 msgid "Dismiss this notice"
-msgstr "Descartar este aviso"
+msgstr "Diesen Hinweis ausblenden"
 
 #. translators: %s: PRO edition name
 #: src/Admin/ProUpsell.php:183
 #, php-format
 msgid "What %s adds"
-msgstr "Lo que añade %s"
+msgstr "Was %s ergänzt"

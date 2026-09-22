@@ -33,16 +33,16 @@ final class Texts
     public static function defaults(): array
     {
         return [
-            'button_text'     => __('Ask a question', 'plogins-enquire'),
-            'form_title'      => __('Ask a question about this product', 'plogins-enquire'),
-            'name_label'      => __('Your name', 'plogins-enquire'),
-            'email_label'     => __('Your email', 'plogins-enquire'),
-            'message_label'   => __('Your question', 'plogins-enquire'),
-            'submit_text'     => __('Send enquiry', 'plogins-enquire'),
-            'success_message' => __('Thanks! Your question has been sent. We will get back to you shortly.', 'plogins-enquire'),
-            'error_message'   => __('Sorry, something went wrong. Please try again.', 'plogins-enquire'),
+            'button_text'     => __('Ask a question', 'demando'),
+            'form_title'      => __('Ask a question about this product', 'demando'),
+            'name_label'      => __('Your name', 'demando'),
+            'email_label'     => __('Your email', 'demando'),
+            'message_label'   => __('Your question', 'demando'),
+            'submit_text'     => __('Send enquiry', 'demando'),
+            'success_message' => __('Thanks! Your question has been sent. We will get back to you shortly.', 'demando'),
+            'error_message'   => __('Sorry, something went wrong. Please try again.', 'demando'),
             /* translators: {product} is a placeholder replaced with the product name, keep it as is. */
-            'email_subject'   => __('Product enquiry: {product}', 'plogins-enquire'),
+            'email_subject'   => __('Product enquiry: {product}', 'demando'),
         ];
     }
 

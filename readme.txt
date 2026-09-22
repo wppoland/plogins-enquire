@@ -1,11 +1,11 @@
-=== Plogins Enquire - Product Enquiry for WooCommerce ===
+=== Demando - Product Enquiry for WooCommerce ===
 Contributors: motylanogha
 Tags: woocommerce, product enquiry, ask a question, contact form, product question
 Requires at least: 6.5
 Tested up to: 7.1
 Requires PHP: 8.1
 Requires Plugins: woocommerce
-Stable tag: 1.0.12
+Stable tag: 1.1.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -13,7 +13,7 @@ Add an Ask a Question form to products that emails the store owner.
 
 == Description ==
 
-Enquire adds an "Ask a question" button to your WooCommerce single product pages. When a shopper clicks it, a dialog opens with a short form (name, email, message). On submit, the question is emailed to you along with the product name and a link to it, so you can reply before the sale.
+Demando adds an "Ask a question" button to your WooCommerce single product pages. When a shopper clicks it, a dialog opens with a short form (name, email, message). On submit, the question is emailed to you along with the product name and a link to it, so you can reply before the sale.
 
 Nothing is stored in your database. Each enquiry is sent by email, and the shopper's address is used as the Reply-To header so you can answer straight from your inbox.
 
@@ -35,20 +35,20 @@ The code is on GitHub at [github.com/wppoland/plogins-enquire](https://github.co
 * Success and error messages appear inline, so there is no page reload.
 * Spam handling: nonce check, a honeypot field, and a 30-second rate limit per visitor.
 * Pick which of name, email and message are required, and edit the button, field labels, success/error text and email subject.
-* Settings live under WooCommerce > Enquire.
+* Settings live under WooCommerce > Product Enquiry.
 * The small CSS and JS load only on product pages. The plugin declares WooCommerce HPOS and Cart &amp; Checkout Blocks compatibility.
 
 == Installation ==
 
-1. Upload the plugin to `/wp-content/plugins/enquire`, or install via Plugins > Add New.
+1. Upload the plugin to `/wp-content/plugins/demando`, or install via Plugins > Add New.
 2. Activate it. WooCommerce must be active.
-3. Go to WooCommerce > Enquire to set the recipient email, button label and form options.
+3. Go to WooCommerce > Product Enquiry to set the recipient email, button label and form options.
 
 == Frequently Asked Questions ==
 
 = Does it require WooCommerce? =
 
-Yes. Enquire adds its button to WooCommerce single product pages and uses WooCommerce product data.
+Yes. Demando adds its button to WooCommerce single product pages and uses WooCommerce product data.
 
 = Where are enquiries stored? =
 
@@ -64,7 +64,7 @@ Each submission is checked against a nonce and a hidden honeypot field, and a vi
 
 = Can I customise the button label? =
 
-Yes. Set the button text and form heading under **WooCommerce > Enquire**.
+Yes. Set the button text and form heading under **WooCommerce > Product Enquiry**.
 
 
 = Does this plugin work on WordPress Multisite? =
@@ -74,17 +74,20 @@ Yes. This plugin is compatible with WordPress Multisite. Network activate it or 
 == Screenshots ==
 
 1. The "Ask a question" form on a single product page.
-2. The WooCommerce > Enquire settings page.
+2. The WooCommerce > Product Enquiry settings page.
 
 == External Services ==
 
-Enquire does not connect to any external service. Form submissions are sent to your own site over `admin-ajax.php` and never leave your server. Each enquiry is delivered with your site's own `wp_mail()` (WordPress core mail), using whatever mailer your site already has. The plugin stores only its own settings (the `enquire_settings` option) and a schema marker (`enquire_db_version`), plus a short-lived transient used for the per-visitor rate limit; enquiry content itself is not written to the database.
+Demando does not connect to any external service. Form submissions are sent to your own site over `admin-ajax.php` and never leave your server. Each enquiry is delivered with your site's own `wp_mail()` (WordPress core mail), using whatever mailer your site already has. The plugin stores only its own settings (the `enquire_settings` option) and a schema marker (`enquire_db_version`), plus a short-lived transient used for the per-visitor rate limit; enquiry content itself is not written to the database.
 
 == Translations ==
 
-Plogins Enquire is fully translatable and ships the `plogins-enquire.pot` template. Translations are delivered by WordPress.org language packs from translate.wordpress.org, which is where Polish, German and Spanish are being contributed; the package itself carries no compiled translation files.
+Demando is fully translatable and ships the `demando.pot` template. Translations are delivered by WordPress.org language packs from translate.wordpress.org, which is where Polish, German and Spanish are being contributed; the package itself carries no compiled translation files.
 
 == Changelog ==
+
+= 1.1.0 =
+* Renamed to Demando. The WordPress.org review team asks a plugin name to lead with a distinctive, coined identifier rather than a generic descriptive word. Demando is Esperanto for a question. The text domain follows the name; the stored data, the settings and every hook are unchanged.
 
 = 1.0.12 =
 * Fixed: the PRO upgrade promo kept selling to people who had already bought the paid edition. Only the banner could be dismissed, so the sidebar promo and the locked feature cards followed a paying customer around for good. The promo now checks whether the paid edition is active and steps aside when it is.

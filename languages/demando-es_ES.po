@@ -62,7 +62,7 @@ msgstr "Enquire"
 #: src/Admin/Settings.php:98
 msgid "Let shoppers ask about a product before they buy"
 msgstr ""
-"Permita que los compradores pregunten sobre un producto antes de comprarlo"
+"Permite que los compradores pregunten sobre un producto antes de comprarlo"
 
 #: src/Admin/Settings.php:99
 msgid ""
@@ -70,9 +70,9 @@ msgid ""
 "Clicking it opens an accessible form (name, email, message) that emails you "
 "the question with the product details, no data is stored."
 msgstr ""
-"Enquire añade un botón \"Hacer una pregunta\" a las páginas de sus productos "
+"Enquire añade un botón \"Hacer una pregunta\" a las páginas de tus productos "
 "individuales. Al hacer clic en él, se abre un formulario accesible (nombre, "
-"correo electrónico, mensaje) que le envía la pregunta con los detalles del "
+"correo electrónico, mensaje) que te envía la pregunta con los detalles del "
 "producto, no se almacena ningún dato."
 
 #: src/Admin/Settings.php:107
@@ -90,7 +90,7 @@ msgstr "Habilitar consultas"
 #: src/Admin/Settings.php:123
 msgid "Show the “Ask a question” button on single product pages."
 msgstr ""
-"Muestre el botón \"Hacer una pregunta\" en las páginas de un solo producto."
+"Muestra el botón \"Hacer una pregunta\" en las páginas de un solo producto."
 
 #: src/Admin/Settings.php:129
 msgid "Recipient email"
@@ -101,9 +101,9 @@ msgid ""
 "Enquiries are emailed here. Leave empty to use your site’s admin email. The "
 "customer’s address is set as Reply-To so you can reply directly."
 msgstr ""
-"Las consultas se envían por correo electrónico aquí. Déjelo vacío para usar "
+"Las consultas se envían por correo electrónico aquí. Déjalo vacío para usar "
 "el correo electrónico del administrador de tu sitio. La dirección del "
-"cliente está configurada como Responder a para que pueda responder "
+"cliente está configurada como Responder a para que puedas responder "
 "directamente."
 
 #: src/Admin/Settings.php:148
@@ -117,7 +117,7 @@ msgid ""
 "greyed hint)."
 msgstr ""
 "El botón de consulta que se muestra después del botón Añadir al carrito en "
-"la página del producto. Borre cualquier campo de texto a continuación para "
+"la página del producto. Borra cualquier campo de texto a continuación para "
 "restaurar su paquete predeterminado (que se muestra como una pista gris)."
 
 #: src/Admin/Settings.php:154
@@ -143,7 +143,7 @@ msgid ""
 "default."
 msgstr ""
 "Las etiquetas dentro del cuadro de diálogo de consulta y los campos que un "
-"comprador debe completar antes de poder enviar. Borre cualquier etiqueta "
+"comprador debe completar antes de poder enviar. Borra cualquier etiqueta "
 "para restaurar su paquete predeterminado."
 
 #: src/Admin/Settings.php:167
@@ -156,7 +156,7 @@ msgid ""
 "“Ask a question about this product”."
 msgstr ""
 "El título en la parte superior del cuadro de diálogo establece las "
-"expectativas del comprador, p. “Haga una pregunta sobre este producto”."
+"expectativas del comprador, p. “Haz una pregunta sobre este producto”."
 
 #: src/Admin/Settings.php:168
 msgid "Name field label"
@@ -178,7 +178,7 @@ msgid ""
 "answer the shopper directly."
 msgstr ""
 "Se encuentra encima de la entrada del correo electrónico. Esta dirección se "
-"convierte en Responder a, por lo que puede responder al comprador "
+"convierte en Responder a, por lo que puedes responder al comprador "
 "directamente."
 
 #: src/Admin/Settings.php:170
@@ -243,7 +243,7 @@ msgid ""
 "receive. Clear any field to restore its packaged default."
 msgstr ""
 "Lo que ven los compradores después de enviarlo y la línea de asunto del "
-"correo electrónico que recibe. Borre cualquier campo para restaurar su "
+"correo electrónico que recibes. Borra cualquier campo para restaurar su "
 "paquete predeterminado."
 
 #: src/Admin/Settings.php:187
@@ -280,17 +280,17 @@ msgid ""
 "The subject line of the enquiry email you receive. {product} is replaced "
 "with the product name, so enquiries are easy to scan in your inbox."
 msgstr ""
-"La línea de asunto del correo electrónico de consulta que recibe. {product} "
+"La línea de asunto del correo electrónico de consulta que recibes. {product} "
 "se reemplaza con el nombre del producto, por lo que las consultas son "
-"fáciles de escanear en su bandeja de entrada."
+"fáciles de escanear en tu bandeja de entrada."
 
 #: src/Service/EnquiryService.php:122
 msgid "Your session expired. Please reload the page and try again."
-msgstr "Tu sesión expiró. Vuelva a cargar la página e inténtelo de nuevo."
+msgstr "Tu sesión expiró. Vuelve a cargar la página e inténtalo de nuevo."
 
 #: src/Service/EnquiryService.php:128
 msgid "Please wait a moment before sending another enquiry."
-msgstr "Espere un momento antes de enviar otra consulta."
+msgstr "Espera un momento antes de enviar otra consulta."
 
 #: src/Service/EnquiryService.php:136 src/Service/EnquiryService.php:179
 msgid "Sorry, something went wrong. Please try again."
@@ -298,15 +298,15 @@ msgstr "Lo siento, algo salió mal. Por favor inténtalo de nuevo."
 
 #: src/Service/EnquiryService.php:199
 msgid "Thanks! Your question has been sent."
-msgstr "¡Gracias! Su pregunta ha sido enviada."
+msgstr "¡Gracias! Tu pregunta ha sido enviada."
 
 #: src/Service/EnquiryService.php:214
 msgid "Please enter your name."
-msgstr "Por favor ingrese su nombre."
+msgstr "Por favor, introduce tu nombre."
 
 #: src/Service/EnquiryService.php:219
 msgid "Please enter your email address."
-msgstr "Por favor ingrese su dirección de correo electrónico."
+msgstr "Por favor, introduce tu dirección de correo electrónico."
 
 #: src/Service/EnquiryService.php:221 src/Service/EnquiryService.php:224
 msgid "Please enter a valid email address."
@@ -314,7 +314,7 @@ msgstr "Por favor, introduce una dirección de correo electrónico válida."
 
 #: src/Service/EnquiryService.php:228
 msgid "Please enter your question."
-msgstr "Por favor ingrese su pregunta."
+msgstr "Por favor, introduce tu pregunta."
 
 #: src/Service/EnquiryService.php:250
 msgid "(not provided)"
@@ -349,7 +349,7 @@ msgstr "Hacer una pregunta"
 
 #: templates/enquiry-form.php:18
 msgid "Ask a question about this product"
-msgstr "Haga una pregunta sobre este producto"
+msgstr "Haz una pregunta sobre este producto"
 
 #: templates/enquiry-form.php:19
 msgid "Your name"

@@ -110,17 +110,17 @@ final class EnquiryService implements HasHooks
     {
         $settings = $this->settings();
 
+        if (! check_ajax_referer(self::NONCE_ACTION, 'nonce', false)) {
+            wp_send_json_error([
+                'message' => __('Your session expired. Please reload the page and try again.', 'demando'),
+            ], 400);
+        }
+
         // Honeypot: a filled hidden field means a bot. Pretend success to avoid
         // signalling the trap, but send nothing.
         $honeypot = isset($_POST[self::HONEYPOT]) ? sanitize_text_field(wp_unslash((string) $_POST[self::HONEYPOT])) : '';
         if ($honeypot !== '') {
             wp_send_json_success(['message' => (string) ($settings['success_message'] ?? '')]);
-        }
-
-        if (! check_ajax_referer(self::NONCE_ACTION, 'nonce', false)) {
-            wp_send_json_error([
-                'message' => __('Your session expired. Please reload the page and try again.', 'demando'),
-            ], 400);
         }
 
         if ($this->isRateLimited()) {

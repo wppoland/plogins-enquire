@@ -7,9 +7,10 @@ namespace Enquire\Admin;
 defined('ABSPATH') || exit;
 
 use Enquire\Contract\HasHooks;
+use Enquire\Service\Texts;
 
 /**
- * Admin settings page registered as a WooCommerce submenu ("WooCommerce →
+ * Admin settings page registered as a WooCommerce submenu ("WooCommerce >
  * Enquire").
  *
  * Stores settings in the `enquire_settings` option (array): the master toggle,
@@ -57,8 +58,8 @@ final class Settings implements HasHooks
     {
         add_submenu_page(
             'woocommerce',
-            __('Enquire Settings', 'plogins-enquire'),
-            __('Enquire', 'plogins-enquire'),
+            __('Demando: product enquiry', 'demando'),
+            __('Product Enquiry', 'demando'),
             'manage_woocommerce',
             self::PAGE,
             [$this, 'renderPage'],
@@ -90,8 +91,13 @@ final class Settings implements HasHooks
             return;
         }
 
+        // $settings stays RAW: the fields must show what is stored, never a
+        // resolved default. Rendering the resolved text as the field value
+        // would re-freeze one language into the option on the next save, which
+        // is the bug Texts exists to fix. The resolved text is used only for
+        // the greyed placeholder.
         $settings = $this->settings();
-        $defaults = $this->defaults();
+        $defaults = Texts::apply($this->defaults());
         ?>
         <div class="wrap enquire-admin">
             <h1><?php echo esc_html(get_admin_page_title()); ?></h1>
@@ -105,8 +111,8 @@ final class Settings implements HasHooks
                     </svg>
                 </span>
                 <div class="enquire-admin__intro-text">
-                    <h2><?php esc_html_e('Let shoppers ask about a product before they buy', 'plogins-enquire'); ?></h2>
-                    <p><?php esc_html_e('Enquire adds an “Ask a question” button to your single product pages. Clicking it opens an accessible form (name, email, message) that emails you the question with the product details, no data is stored.', 'plogins-enquire'); ?></p>
+                    <h2><?php esc_html_e('Let shoppers ask about a product before they buy', 'demando'); ?></h2>
+                    <p><?php esc_html_e('Enquire adds an “Ask a question” button to your single product pages. Clicking it opens an accessible form (name, email, message) that emails you the question with the product details, no data is stored.', 'demando'); ?></p>
                 </div>
             </div>
 
@@ -114,13 +120,13 @@ final class Settings implements HasHooks
                 <?php settings_fields(self::PAGE); ?>
 
                 <div class="enquire-admin__section">
-                    <h2><?php esc_html_e('General', 'plogins-enquire'); ?></h2>
-                    <p class="enquire-admin__section-intro"><?php esc_html_e('The master switch and where enquiries are delivered.', 'plogins-enquire'); ?></p>
+                    <h2><?php esc_html_e('General', 'demando'); ?></h2>
+                    <p class="enquire-admin__section-intro"><?php esc_html_e('The master switch and where enquiries are delivered.', 'demando'); ?></p>
 
                     <table class="form-table" role="presentation">
                         <tbody>
                             <tr>
-                                <th scope="row"><?php esc_html_e('Enable enquiries', 'plogins-enquire'); ?></th>
+                                <th scope="row"><?php esc_html_e('Enable enquiries', 'demando'); ?></th>
                                 <td>
                                     <label for="enquire_enabled">
                                         <input
@@ -130,13 +136,13 @@ final class Settings implements HasHooks
                                             value="1"
                                             <?php checked((bool) ($settings['enabled'] ?? false), true); ?>
                                         />
-                                        <?php esc_html_e('Show the “Ask a question” button on single product pages.', 'plogins-enquire'); ?>
+                                        <?php esc_html_e('Show the “Ask a question” button on single product pages.', 'demando'); ?>
                                     </label>
                                 </td>
                             </tr>
                             <tr>
                                 <th scope="row">
-                                    <label for="enquire_recipient"><?php esc_html_e('Recipient email', 'plogins-enquire'); ?></label>
+                                    <label for="enquire_recipient"><?php esc_html_e('Recipient email', 'demando'); ?></label>
                                 </th>
                                 <td>
                                     <input
@@ -147,7 +153,7 @@ final class Settings implements HasHooks
                                         class="regular-text"
                                         placeholder="<?php echo esc_attr((string) get_option('admin_email')); ?>"
                                     />
-                                    <p class="description"><?php esc_html_e('Enquiries are emailed here. Leave empty to use your site’s admin email. The customer’s address is set as Reply-To so you can reply directly.', 'plogins-enquire'); ?></p>
+                                    <p class="description"><?php esc_html_e('Enquiries are emailed here. Leave empty to use your site’s admin email. The customer’s address is set as Reply-To so you can reply directly.', 'demando'); ?></p>
                                 </td>
                             </tr>
                         </tbody>
@@ -155,48 +161,48 @@ final class Settings implements HasHooks
                 </div>
 
                 <div class="enquire-admin__section">
-                    <h2><?php esc_html_e('Trigger button', 'plogins-enquire'); ?></h2>
-                    <p class="enquire-admin__section-intro"><?php esc_html_e('The enquiry button shown after the add-to-cart button on the product page. Clear any text field below to restore its packaged default (shown as the greyed hint).', 'plogins-enquire'); ?></p>
+                    <h2><?php esc_html_e('Trigger button', 'demando'); ?></h2>
+                    <p class="enquire-admin__section-intro"><?php esc_html_e('The enquiry button shown after the add-to-cart button on the product page. Clear any text field below to restore its packaged default (shown as the greyed hint).', 'demando'); ?></p>
 
                     <table class="form-table" role="presentation">
                         <tbody>
                             <?php
-                            $this->textRow('button_text', __('Button label', 'plogins-enquire'), __('The wording shoppers click to open the enquiry form, e.g. “Ask a question” or “Enquire now”.', 'plogins-enquire'), $settings, $defaults);
+                            $this->textRow('button_text', __('Button label', 'demando'), __('The wording shoppers click to open the enquiry form, e.g. “Ask a question” or “Enquire now”.', 'demando'), $settings, $defaults);
                             ?>
                         </tbody>
                     </table>
                 </div>
 
                 <div class="enquire-admin__section">
-                    <h2><?php esc_html_e('Form fields', 'plogins-enquire'); ?></h2>
-                    <p class="enquire-admin__section-intro"><?php esc_html_e('The labels inside the enquiry dialog and which fields a shopper must complete before they can send. Clear any label to restore its packaged default.', 'plogins-enquire'); ?></p>
+                    <h2><?php esc_html_e('Form fields', 'demando'); ?></h2>
+                    <p class="enquire-admin__section-intro"><?php esc_html_e('The labels inside the enquiry dialog and which fields a shopper must complete before they can send. Clear any label to restore its packaged default.', 'demando'); ?></p>
 
                     <table class="form-table" role="presentation">
                         <tbody>
                             <?php
-                            $this->textRow('form_title', __('Form title', 'plogins-enquire'), __('The heading at the top of the dialog, set the shopper’s expectation, e.g. “Ask a question about this product”.', 'plogins-enquire'), $settings, $defaults);
-                            $this->textRow('name_label', __('Name field label', 'plogins-enquire'), __('Sits above the name input. Customers see this wording, not “name”.', 'plogins-enquire'), $settings, $defaults);
-                            $this->textRow('email_label', __('Email field label', 'plogins-enquire'), __('Sits above the email input. This address becomes the Reply-To, so you can answer the shopper directly.', 'plogins-enquire'), $settings, $defaults);
-                            $this->textRow('message_label', __('Message field label', 'plogins-enquire'), __('Sits above the message box, prompt the kind of question you want, e.g. “Your question”.', 'plogins-enquire'), $settings, $defaults);
-                            $this->textRow('submit_text', __('Submit button label', 'plogins-enquire'), __('The wording on the send button inside the dialog.', 'plogins-enquire'), $settings, $defaults);
-                            $this->checkboxRow('require_name', __('Require name', 'plogins-enquire'), __('Shoppers cannot send until they fill in the name field.', 'plogins-enquire'), $settings);
-                            $this->checkboxRow('require_email', __('Require email', 'plogins-enquire'), __('Shoppers cannot send without an email. A valid format is always enforced when an address is entered, even if this is off, but leaving it off means you may not be able to reply.', 'plogins-enquire'), $settings);
-                            $this->checkboxRow('require_message', __('Require message', 'plogins-enquire'), __('Shoppers cannot send an empty enquiry.', 'plogins-enquire'), $settings);
+                            $this->textRow('form_title', __('Form title', 'demando'), __('The heading at the top of the dialog, set the shopper’s expectation, e.g. “Ask a question about this product”.', 'demando'), $settings, $defaults);
+                            $this->textRow('name_label', __('Name field label', 'demando'), __('Sits above the name input. Customers see this wording, not “name”.', 'demando'), $settings, $defaults);
+                            $this->textRow('email_label', __('Email field label', 'demando'), __('Sits above the email input. This address becomes the Reply-To, so you can answer the shopper directly.', 'demando'), $settings, $defaults);
+                            $this->textRow('message_label', __('Message field label', 'demando'), __('Sits above the message box, prompt the kind of question you want, e.g. “Your question”.', 'demando'), $settings, $defaults);
+                            $this->textRow('submit_text', __('Submit button label', 'demando'), __('The wording on the send button inside the dialog.', 'demando'), $settings, $defaults);
+                            $this->checkboxRow('require_name', __('Require name', 'demando'), __('Shoppers cannot send until they fill in the name field.', 'demando'), $settings);
+                            $this->checkboxRow('require_email', __('Require email', 'demando'), __('Shoppers cannot send without an email. A valid format is always enforced when an address is entered, even if this is off, but leaving it off means you may not be able to reply.', 'demando'), $settings);
+                            $this->checkboxRow('require_message', __('Require message', 'demando'), __('Shoppers cannot send an empty enquiry.', 'demando'), $settings);
                             ?>
                         </tbody>
                     </table>
                 </div>
 
                 <div class="enquire-admin__section">
-                    <h2><?php esc_html_e('Messaging', 'plogins-enquire'); ?></h2>
-                    <p class="enquire-admin__section-intro"><?php esc_html_e('What shoppers see after submitting, and the subject line of the email you receive. Clear any field to restore its packaged default.', 'plogins-enquire'); ?></p>
+                    <h2><?php esc_html_e('Messaging', 'demando'); ?></h2>
+                    <p class="enquire-admin__section-intro"><?php esc_html_e('What shoppers see after submitting, and the subject line of the email you receive. Clear any field to restore its packaged default.', 'demando'); ?></p>
 
                     <table class="form-table" role="presentation">
                         <tbody>
                             <?php
-                            $this->textRow('success_message', __('Success message', 'plogins-enquire'), __('Shown inline the moment an enquiry sends, reassure the shopper and set a reply expectation.', 'plogins-enquire'), $settings, $defaults);
-                            $this->textRow('error_message', __('Error message', 'plogins-enquire'), __('Shown if the email cannot be sent (e.g. a server mail error). Keep it calm and ask them to retry.', 'plogins-enquire'), $settings, $defaults);
-                            $this->textRow('email_subject', __('Email subject', 'plogins-enquire'), __('The subject line of the enquiry email you receive. {product} is replaced with the product name, so enquiries are easy to scan in your inbox.', 'plogins-enquire'), $settings, $defaults);
+                            $this->textRow('success_message', __('Success message', 'demando'), __('Shown inline the moment an enquiry sends, reassure the shopper and set a reply expectation.', 'demando'), $settings, $defaults);
+                            $this->textRow('error_message', __('Error message', 'demando'), __('Shown if the email cannot be sent (e.g. a server mail error). Keep it calm and ask them to retry.', 'demando'), $settings, $defaults);
+                            $this->textRow('email_subject', __('Email subject', 'demando'), __('The subject line of the enquiry email you receive. {product} is replaced with the product name, so enquiries are easy to scan in your inbox.', 'demando'), $settings, $defaults);
                             ?>
                         </tbody>
                     </table>
@@ -270,8 +276,8 @@ final class Settings implements HasHooks
     }
 
     /**
-     * Sanitises the submitted settings before save, preserving defaults for any
-     * field not on the form.
+     * Sanitises the submitted settings before save, preserving stored values for
+     * any field not on the form.
      *
      * @param mixed $raw
      * @return array<string, mixed>
@@ -282,44 +288,56 @@ final class Settings implements HasHooks
             $raw = [];
         }
 
-        $defaults = $this->settings();
+        // The empty-field fallback used to read from settings(), which is the
+        // stored option merged over the packaged defaults. So clearing "Button
+        // label" fell back to the custom label the merchant had just deleted:
+        // the field came back filled in and shoppers kept seeing the old
+        // wording, even though every section says clearing restores the
+        // packaged default. Fall back to the packaged defaults, and keep the
+        // stored values only as the base for keys that are not on the form.
+        $stored = $this->settings();
 
         $recipient = isset($raw['recipient']) ? sanitize_email((string) $raw['recipient']) : '';
 
-        return array_merge($defaults, [
+        return array_merge($stored, [
             'enabled'         => ! empty($raw['enabled']),
             'recipient'       => $recipient,
-            'button_text'     => $this->sanitizeText($raw, 'button_text', $defaults),
-            'form_title'      => $this->sanitizeText($raw, 'form_title', $defaults),
-            'name_label'      => $this->sanitizeText($raw, 'name_label', $defaults),
-            'email_label'     => $this->sanitizeText($raw, 'email_label', $defaults),
-            'message_label'   => $this->sanitizeText($raw, 'message_label', $defaults),
-            'submit_text'     => $this->sanitizeText($raw, 'submit_text', $defaults),
+            'button_text'     => $this->sanitizeText($raw, 'button_text'),
+            'form_title'      => $this->sanitizeText($raw, 'form_title'),
+            'name_label'      => $this->sanitizeText($raw, 'name_label'),
+            'email_label'     => $this->sanitizeText($raw, 'email_label'),
+            'message_label'   => $this->sanitizeText($raw, 'message_label'),
+            'submit_text'     => $this->sanitizeText($raw, 'submit_text'),
             'require_name'    => ! empty($raw['require_name']),
             'require_email'   => ! empty($raw['require_email']),
             'require_message' => ! empty($raw['require_message']),
-            'success_message' => $this->sanitizeText($raw, 'success_message', $defaults),
-            'error_message'   => $this->sanitizeText($raw, 'error_message', $defaults),
-            'email_subject'   => $this->sanitizeText($raw, 'email_subject', $defaults),
+            'success_message' => $this->sanitizeText($raw, 'success_message'),
+            'error_message'   => $this->sanitizeText($raw, 'error_message'),
+            'email_subject'   => $this->sanitizeText($raw, 'email_subject'),
         ]);
     }
 
     /**
-     * Sanitise a single text field, falling back to the packaged default when
-     * the submitted value is empty.
+     * Sanitise a single text field.
+     *
+     * An empty field is stored as an empty string, never substituted with the
+     * default wording. Storing the default would write one language into the
+     * option, where no translation can reach it; empty means "resolve through
+     * Enquire\Service\Texts at render time", in the language of the site.
      *
      * @param array<string, mixed> $raw
-     * @param array<string, mixed> $defaults
      */
-    private function sanitizeText(array $raw, string $key, array $defaults): string
+    private function sanitizeText(array $raw, string $key): string
     {
-        $value = isset($raw[$key]) ? sanitize_text_field((string) $raw[$key]) : '';
-
-        return $value !== '' ? $value : (string) ($defaults[$key] ?? '');
+        return isset($raw[$key]) ? sanitize_text_field((string) $raw[$key]) : '';
     }
 
     /**
-     * Stored settings merged over packaged defaults.
+     * Stored settings merged over packaged defaults, RAW.
+     *
+     * Deliberately not passed through Texts::apply(): the settings screen must
+     * show what is actually stored, so that saving cannot turn a resolved
+     * default into a stored English string.
      *
      * @return array<string, mixed>
      */

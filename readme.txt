@@ -1,11 +1,11 @@
-=== Enquire - Product Enquiry for WooCommerce ===
+=== Demando - Product Enquiry for WooCommerce ===
 Contributors: motylanogha
 Tags: woocommerce, product enquiry, ask a question, contact form, product question
 Requires at least: 6.5
-Tested up to: 7.0
+Tested up to: 7.1
 Requires PHP: 8.1
 Requires Plugins: woocommerce
-Stable tag: 1.0.4
+Stable tag: 1.1.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -13,18 +13,18 @@ Add an Ask a Question form to products that emails the store owner.
 
 == Description ==
 
-Enquire adds an "Ask a question" button to your WooCommerce single product pages. When a shopper clicks it, a dialog opens with a short form (name, email, message). On submit, the question is emailed to you along with the product name and a link to it, so you can reply before the sale.
+Demando adds an "Ask a question" button to your WooCommerce single product pages. When a shopper clicks it, a dialog opens with a short form (name, email, message). On submit, the question is emailed to you along with the product name and a link to it, so you can reply before the sale.
 
 Nothing is stored in your database. Each enquiry is sent by email, and the shopper's address is used as the Reply-To header so you can answer straight from your inbox.
 
-The code is on GitHub at https://github.com/wppoland/plogins-enquire if you want to read it, report a bug, or send a patch.
+The code is on GitHub at [github.com/wppoland/plogins-enquire](https://github.com/wppoland/plogins-enquire) if you want to read it, report a bug, or send a patch.
 
 = Documentation and links =
 
-* **Documentation** - https://plogins.com/plogins-enquire/docs/
-* **Plugin page** - https://plogins.com/plogins-enquire/
-* **Source code** - https://github.com/wppoland/plogins-enquire
-* **Bug reports and feature requests** - https://github.com/wppoland/plogins-enquire/issues
+* **Documentation**: [plogins.com/plogins-enquire/docs/](https://plogins.com/plogins-enquire/docs/)
+* **Plugin page**: [plogins.com/plogins-enquire/](https://plogins.com/plogins-enquire/)
+* **Source code**: [github.com/wppoland/plogins-enquire](https://github.com/wppoland/plogins-enquire)
+* **Bug reports and feature requests**: [github.com/wppoland/plogins-enquire/issues](https://github.com/wppoland/plogins-enquire/issues)
 
 
 = Features =
@@ -35,20 +35,20 @@ The code is on GitHub at https://github.com/wppoland/plogins-enquire if you want
 * Success and error messages appear inline, so there is no page reload.
 * Spam handling: nonce check, a honeypot field, and a 30-second rate limit per visitor.
 * Pick which of name, email and message are required, and edit the button, field labels, success/error text and email subject.
-* Settings live under WooCommerce → Enquire.
+* Settings live under WooCommerce > Product Enquiry.
 * The small CSS and JS load only on product pages. The plugin declares WooCommerce HPOS and Cart &amp; Checkout Blocks compatibility.
 
 == Installation ==
 
-1. Upload the plugin to `/wp-content/plugins/enquire`, or install via Plugins → Add New.
+1. Upload the plugin to `/wp-content/plugins/demando`, or install via Plugins > Add New.
 2. Activate it. WooCommerce must be active.
-3. Go to WooCommerce → Enquire to set the recipient email, button label and form options.
+3. Go to WooCommerce > Product Enquiry to set the recipient email, button label and form options.
 
 == Frequently Asked Questions ==
 
 = Does it require WooCommerce? =
 
-Yes. Enquire adds its button to WooCommerce single product pages and uses WooCommerce product data.
+Yes. Demando adds its button to WooCommerce single product pages and uses WooCommerce product data.
 
 = Where are enquiries stored? =
 
@@ -64,7 +64,7 @@ Each submission is checked against a nonce and a hidden honeypot field, and a vi
 
 = Can I customise the button label? =
 
-Yes. Set the button text and form heading under **WooCommerce → Enquire**.
+Yes. Set the button text and form heading under **WooCommerce > Product Enquiry**.
 
 
 = Does this plugin work on WordPress Multisite? =
@@ -74,17 +74,48 @@ Yes. This plugin is compatible with WordPress Multisite. Network activate it or 
 == Screenshots ==
 
 1. The "Ask a question" form on a single product page.
-2. The WooCommerce → Enquire settings page.
+2. The WooCommerce > Product Enquiry settings page.
 
 == External Services ==
 
-Enquire does not connect to any external service. Form submissions are sent to your own site over `admin-ajax.php` and never leave your server. Each enquiry is delivered with your site's own `wp_mail()` (WordPress core mail), using whatever mailer your site already has. The plugin stores only its own settings (the `enquire_settings` option) and a schema marker (`enquire_db_version`), plus a short-lived transient used for the per-visitor rate limit; enquiry content itself is not written to the database.
+Demando does not connect to any external service. Form submissions are sent to your own site over `admin-ajax.php` and never leave your server. Each enquiry is delivered with your site's own `wp_mail()` (WordPress core mail), using whatever mailer your site already has. The plugin stores only its own settings (the `enquire_settings` option) and a schema marker (`enquire_db_version`), plus a short-lived transient used for the per-visitor rate limit; enquiry content itself is not written to the database.
 
 == Translations ==
 
-Plogins Enquire includes Polish, German and Spanish translations for the plugin interface. The text domain is `plogins-enquire`, so WordPress.org language packs can also override or extend these bundled translations.
+Demando is fully translatable and ships the `demando.pot` template. Translations are delivered by WordPress.org language packs from translate.wordpress.org, which is where Polish, German and Spanish are being contributed; the package itself carries no compiled translation files.
 
 == Changelog ==
+
+= 1.1.1 =
+* The enquiry form checks its security token before reading any field, including the spam trap.
+
+= 1.1.0 =
+* Renamed to Demando. The WordPress.org review team asks a plugin name to lead with a distinctive, coined identifier rather than a generic descriptive word. Demando is Esperanto for a question. The text domain follows the name; the stored data, the settings and every hook are unchanged.
+
+= 1.0.12 =
+* Fixed: the PRO upgrade promo kept selling to people who had already bought the paid edition. Only the banner could be dismissed, so the sidebar promo and the locked feature cards followed a paying customer around for good. The promo now checks whether the paid edition is active and steps aside when it is.
+* Fixed: arrow glyphs in the admin menu paths, and in the strings handed to translators. An arrow inside a translatable string makes the glyph every translator's problem and changes the layout in any locale that drops it.
+
+= 1.0.11 =
+* Fixed: deleting the plugin left the per-user "dismiss" flag from the PRO notice in the database. Uninstall now removes it for every user, not just the one who dismissed it.
+
+= 1.0.10 =
+* Fixed: the enquiry form was always in English, whatever language your site runs in. The button label, the form title, the field labels, the send button, the success and error messages and the enquiry email subject were plain English text in a config file rather than translatable strings, so they never reached the translation template and no language pack could replace them. Saving the settings screen once wrote that English into the database, where nothing could reach it at all. They are translatable now, so they follow the site language as soon as a translation exists. Translations are delivered by WordPress.org language packs rather than bundled in this download, so the form stays English until a pack is published. Wording you typed yourself is untouched; a field still holding the old packaged English is cleared on update so the translated wording can take over.
+
+= 1.0.9 =
+* Renamed to Plogins Enquire - Product Enquiry for WooCommerce so the name leads with the brand rather than a generic word, which is what the WordPress.org plugin review team asks for. The plugin slug is unchanged.
+
+= 1.0.8 =
+* Fixed: an add-on's extra enquiry-form fields were silently deleted before reaching the browser. The `enquire/form_fields` filter exists so an add-on can add a form control, and the template ran its output through `wp_kses_post()`, whose allow-list is for post content and has no `<input>`, `<select>` or `<option>`. Plogins Enquire Pro's file-attachment field was the first real use of the filter, and it never appeared on any product page as a result. The output now goes through an allow-list that keeps everything `wp_kses_post()` allows and adds the form controls the filter exists to carry.
+
+= 1.0.7 =
+* Tested against WordPress 7.1. Verified by activating this build on a clean 7.1 install with WooCommerce 11.1, not by editing the header.
+
+= 1.0.6 =
+* Fixed the PRO promo on the settings screen quoting a price in PLN. PRO is priced and charged in EUR, so an admin on a Polish site was shown a zloty amount and then billed in euro, and the zloty figure was a fixed conversion that drifted from the real charge as the rate moved. The promo now shows the euro price that is actually taken.
+
+= 1.0.5 =
+* Clearing a text field on the settings page now really does bring back its packaged default wording, both in the field and on the product page. Before, the text you deleted came straight back on save.
 
 = 1.0.3 =
 * Translations: completed Polish, German and Spanish for the PRO upgrade panel.

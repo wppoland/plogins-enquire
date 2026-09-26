@@ -10,20 +10,19 @@
 defined('ABSPATH') || exit;
 
 return [
-    'name'       => 'Enquire Pro',
+    'name'       => 'Demando Pro',
     'url'        => 'https://plogins.com/plogins-enquire-pro/pricing/',
     'sellable'   => true,
     'price_from' => 29,
     'currency'   => 'EUR',
-    'price_pln'  => 129,
     'lead'       => [
         'en' => 'Enquiry logging, auto-reply, attachments, routing and HTML templates. Feature-complete PRO.',
         'pl' => 'Dziennik, automatyczna odpowiedź, załączniki, routing i szablony HTML. Kompletna wersja PRO.',
     ],
     'features'   => [
         [
-            'en' => ['title' => 'Enquiry log', 'desc' => 'Save every enquiry under WooCommerce → Enquiry Log with product, contact details and message.'],
-            'pl' => ['title' => 'Dziennik zapytań', 'desc' => 'Zapis każdego zapytania w WooCommerce → Enquiry Log z produktem, danymi kontaktowymi i treścią.'],
+            'en' => ['title' => 'Enquiry log', 'desc' => 'Save every enquiry under WooCommerce > Enquiry Log with product, contact details and message.'],
+            'pl' => ['title' => 'Dziennik zapytań', 'desc' => 'Zapis każdego zapytania w WooCommerce > Enquiry Log z produktem, danymi kontaktowymi i treścią.'],
         ],
         [
             'en' => ['title' => 'Automatic reply', 'desc' => 'Email the shopper a confirmation right after they submit, with {product}, {name} and {site} placeholders.'],

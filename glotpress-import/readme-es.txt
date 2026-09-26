@@ -35,14 +35,14 @@ El código está en GitHub en https://github.com/wppoland/plogins-enquire si qui
 * Los mensajes de éxito y error aparecen en línea, por lo que no es necesario recargar la página.
 * Manejo de spam: control nonce, un campo de honeypot y un límite de tasa de 30 segundos por visitante.
 * Elige cuáles de los campos (nombre, correo electrónico y mensaje) son obligatorios y edita el botón, las etiquetas de los campos, el texto de éxito/error y el asunto del correo electrónico.
-* Los ajustes se encuentran en WooCommerce → Enquire.
+* Los ajustes se encuentran en WooCommerce > Enquire.
 * Los pequeños archivos CSS y JS se cargan solo en las páginas de productos. El complemento declara compatibilidad con WooCommerce HPOS y con los bloques de Carrito y Pago.
 
 == Installation ==
 
-1. Sube el complemento a `/wp-content/plugins/enquire`, o instálalo desde Complementos → Añadir nuevo.
+1. Sube el complemento a `/wp-content/plugins/enquire`, o instálalo desde Complementos > Añadir nuevo.
 2. Actívalo. WooCommerce debe estar activo.
-3. Ve a WooCommerce → Enquire para configurar el correo electrónico del destinatario, la etiqueta del botón y las opciones del formulario.
+3. Ve a WooCommerce > Enquire para configurar el correo electrónico del destinatario, la etiqueta del botón y las opciones del formulario.
 
 == Frequently Asked Questions ==
 
@@ -64,7 +64,7 @@ Cada envío se compara con un campo nonce y un campo de honeypot oculto, y un vi
 
 = Can I customise the button label? =
 
-Sí. Establece el texto del botón y el encabezado del formulario en <strong>WooCommerce → Enquire</strong>.
+Sí. Establece el texto del botón y el encabezado del formulario en <strong>WooCommerce > Enquire</strong>.
 
 
 = Does this plugin work on WordPress Multisite? =
@@ -74,7 +74,7 @@ Sí. Este complemento es compatible con WordPress Multisite. Actívalo en red o 
 == Screenshots ==
 
 1. El formulario "Hacer una pregunta" en la página de un solo producto.
-2. La página de ajustes WooCommerce → Enquire.
+2. La página de ajustes WooCommerce > Enquire.
 
 == External Services ==
 

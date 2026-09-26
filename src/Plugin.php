@@ -61,7 +61,7 @@ final class Plugin
         /**
          * Fires after Enquire has fully booted and all services are registered.
          *
-         * Add-ons (e.g. Enquire Pro) listen on this action to extend the shared
+         * Add-ons (e.g. Demando Pro) listen on this action to extend the shared
          * container and register their own hooks.
          *
          * @param Plugin $plugin The booted plugin instance.

@@ -14,12 +14,14 @@ declare(strict_types=1);
 
 defined('ABSPATH') || exit;
 
-$enquire_button_text = (string) ($settings['button_text'] ?? __('Ask a question', 'plogins-enquire'));
-$enquire_form_title  = (string) ($settings['form_title'] ?? __('Ask a question about this product', 'plogins-enquire'));
-$enquire_name_label  = (string) ($settings['name_label'] ?? __('Your name', 'plogins-enquire'));
-$enquire_email_label = (string) ($settings['email_label'] ?? __('Your email', 'plogins-enquire'));
-$enquire_msg_label   = (string) ($settings['message_label'] ?? __('Your question', 'plogins-enquire'));
-$enquire_submit_text = (string) ($settings['submit_text'] ?? __('Send enquiry', 'plogins-enquire'));
+// $settings arrives resolved through Enquire\Service\Texts, so a key a
+// merchant left empty already holds its translated default.
+$enquire_button_text = (string) ($settings['button_text'] ?? '');
+$enquire_form_title  = (string) ($settings['form_title'] ?? '');
+$enquire_name_label  = (string) ($settings['name_label'] ?? '');
+$enquire_email_label = (string) ($settings['email_label'] ?? '');
+$enquire_msg_label   = (string) ($settings['message_label'] ?? '');
+$enquire_submit_text = (string) ($settings['submit_text'] ?? '');
 
 $enquire_req_name  = ! empty($settings['require_name']);
 $enquire_req_email = ! empty($settings['require_email']);
@@ -51,7 +53,7 @@ $enquire_title_id  = $enquire_dialog_id . '-title';
         <div class="enquire__panel" data-enquire-panel>
             <div class="enquire__header">
                 <h2 class="enquire__title" id="<?php echo esc_attr($enquire_title_id); ?>"><?php echo esc_html($enquire_form_title); ?></h2>
-                <button type="button" class="enquire__close" data-enquire-close aria-label="<?php esc_attr_e('Close', 'plogins-enquire'); ?>">
+                <button type="button" class="enquire__close" data-enquire-close aria-label="<?php esc_attr_e('Close', 'demando'); ?>">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
@@ -60,7 +62,7 @@ $enquire_title_id  = $enquire_dialog_id . '-title';
                 <?php
                 printf(
                     /* translators: %s: product name. */
-                    esc_html__('About: %s', 'plogins-enquire'),
+                    esc_html__('About: %s', 'demando'),
                     '<strong>' . esc_html($product->get_name()) . '</strong>'
                 );
                 ?>
@@ -78,7 +80,7 @@ $enquire_title_id  = $enquire_dialog_id . '-title';
                 // input itself (inert + aria-hidden, no accessible name).
                 ?>
                 <div class="enquire__hp">
-                    <span aria-hidden="true"><?php esc_html_e('Leave this field empty', 'plogins-enquire'); ?></span>
+                    <span aria-hidden="true"><?php esc_html_e('Leave this field empty', 'demando'); ?></span>
                     <input
                         type="text"
                         name="<?php echo esc_attr($honeypot); ?>"
@@ -138,7 +140,28 @@ $enquire_title_id  = $enquire_dialog_id . '-title';
                  * @param \WC_Product          $product  Current product.
                  * @param array<string, mixed> $settings Free plugin settings.
                  */
-                echo wp_kses_post((string) apply_filters('enquire/form_fields', '', $product, $settings));
+                $enquire_extra_fields = (string) apply_filters('enquire/form_fields', '', $product, $settings);
+
+                // wp_kses_post() is for post CONTENT, and its allow-list has no
+                // <input>, <select> or <option>: it strips exactly the elements a
+                // form-FIELD extension point exists to add. Demando Pro's file
+                // attachment field, the first real consumer of this filter, was
+                // silently deleted on every page load because of this. The
+                // allow-list below is post's own plus the form controls an
+                // add-on legitimately needs to add a field.
+                $enquire_field_html = wp_kses($enquire_extra_fields, array_merge(
+                    wp_kses_allowed_html('post'),
+                    [
+                        'input'    => ['type' => true, 'id' => true, 'name' => true, 'value' => true, 'class' => true, 'accept' => true, 'required' => true, 'placeholder' => true, 'checked' => true, 'min' => true, 'max' => true, 'step' => true, 'multiple' => true, 'aria-describedby' => true, 'aria-required' => true],
+                        'select'   => ['id' => true, 'name' => true, 'class' => true, 'required' => true, 'multiple' => true, 'aria-describedby' => true],
+                        'option'   => ['value' => true, 'selected' => true],
+                        'optgroup' => ['label' => true],
+                        'label'    => ['for' => true, 'class' => true],
+                        'textarea' => ['id' => true, 'name' => true, 'class' => true, 'rows' => true, 'cols' => true, 'required' => true, 'placeholder' => true, 'aria-describedby' => true],
+                    ],
+                ));
+
+                echo $enquire_field_html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- wp_kses() above is the escaping.
                 ?>
 
                 <div class="enquire__status" data-enquire-status role="status" aria-live="polite" hidden></div>

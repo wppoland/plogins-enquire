@@ -35,14 +35,14 @@ Kod znajduje się na GitHubie pod adresem https://github.com/wppoland/plogins-en
 * Komunikaty o powodzeniu i błędach pojawiają się w tekście, więc nie ma potrzeby ponownego ładowania strony.
 * Obsługa spamu: sprawdzanie nonce, pole typu honeypot i 30-sekundowy limit częstotliwości na odwiedzającego.
 * Wybierz, które pola (imię i nazwisko, adres e-mail, wiadomość) są wymagane, a następnie edytuj przycisk, etykiety pól, teksty powodzenia/błędu i temat wiadomości e-mail.
-* Ustawienia są dostępne w WooCommerce → Enquire.
+* Ustawienia są dostępne w WooCommerce > Enquire.
 * Niewielkie pliki CSS i JS ładują się tylko na stronach produktów. Wtyczka deklaruje zgodność z WooCommerce HPOS oraz z blokami koszyka i kasy.
 
 == Installation ==
 
-1. Prześlij wtyczkę do `/wp-content/plugins/enquire` lub zainstaluj poprzez Wtyczki → Dodaj nową.
+1. Prześlij wtyczkę do `/wp-content/plugins/enquire` lub zainstaluj poprzez Wtyczki > Dodaj nową.
 2. Aktywuj. WooCommerce musi być aktywny.
-3. Przejdź do WooCommerce → Enquire, aby ustawić adres e-mail odbiorcy, etykietę przycisku i opcje formularza.
+3. Przejdź do WooCommerce > Enquire, aby ustawić adres e-mail odbiorcy, etykietę przycisku i opcje formularza.
 
 == Frequently Asked Questions ==
 
@@ -64,7 +64,7 @@ Każde zgłoszenie jest sprawdzane pod kątem nonce i ukrytego pola typu honeypo
 
 = Can I customise the button label? =
 
-Tak. Ustaw tekst przycisku i nagłówek formularza w sekcji <strong>WooCommerce → Enquire</strong>.
+Tak. Ustaw tekst przycisku i nagłówek formularza w sekcji <strong>WooCommerce > Enquire</strong>.
 
 
 = Does this plugin work on WordPress Multisite? =
@@ -74,7 +74,7 @@ Tak. Ta wtyczka jest kompatybilna z WordPress Multisite. Włącz ją dla całej 
 == Screenshots ==
 
 1. Formularz „Zadaj pytanie” na stronie pojedynczego produktu.
-2. Strona ustawień WooCommerce → Enquire.
+2. Strona ustawień WooCommerce > Enquire.
 
 == External Services ==
 

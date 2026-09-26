@@ -110,6 +110,12 @@ final class EnquiryService implements HasHooks
     {
         $settings = $this->settings();
 
+        if (! check_ajax_referer(self::NONCE_ACTION, 'nonce', false)) {
+            wp_send_json_error([
+                'message' => __('Your session expired. Please reload the page and try again.', 'demando'),
+            ], 400);
+        }
+
         // Honeypot: a filled hidden field means a bot. Pretend success to avoid
         // signalling the trap, but send nothing.
         $honeypot = isset($_POST[self::HONEYPOT]) ? sanitize_text_field(wp_unslash((string) $_POST[self::HONEYPOT])) : '';
@@ -117,15 +123,9 @@ final class EnquiryService implements HasHooks
             wp_send_json_success(['message' => (string) ($settings['success_message'] ?? '')]);
         }
 
-        if (! check_ajax_referer(self::NONCE_ACTION, 'nonce', false)) {
-            wp_send_json_error([
-                'message' => __('Your session expired. Please reload the page and try again.', 'plogins-enquire'),
-            ], 400);
-        }
-
         if ($this->isRateLimited()) {
             wp_send_json_error([
-                'message' => __('Please wait a moment before sending another enquiry.', 'plogins-enquire'),
+                'message' => __('Please wait a moment before sending another enquiry.', 'demando'),
             ], 429);
         }
 
@@ -133,7 +133,7 @@ final class EnquiryService implements HasHooks
         $product   = $productId > 0 ? wc_get_product($productId) : null;
         if (! $product instanceof \WC_Product) {
             wp_send_json_error([
-                'message' => (string) ($settings['error_message'] ?? __('Sorry, something went wrong. Please try again.', 'plogins-enquire')),
+                'message' => (string) ($settings['error_message'] ?? ''),
             ], 400);
         }
 
@@ -176,7 +176,7 @@ final class EnquiryService implements HasHooks
         $sent = $this->sendEmail($settings, $product, $enquiry);
         if (! $sent) {
             wp_send_json_error([
-                'message' => (string) ($settings['error_message'] ?? __('Sorry, something went wrong. Please try again.', 'plogins-enquire')),
+                'message' => (string) ($settings['error_message'] ?? ''),
             ], 500);
         }
 
@@ -186,7 +186,7 @@ final class EnquiryService implements HasHooks
          * Fires after a product enquiry has been successfully emailed to the
          * store owner.
          *
-         * Add-ons (e.g. Enquire Pro auto-reply) hook this to react to a sent
+         * Add-ons (e.g. Demando Pro auto-reply) hook this to react to a sent
          * enquiry, for example, emailing a confirmation back to the shopper.
          *
          * @param \WC_Product          $product The product the enquiry is about.
@@ -196,7 +196,7 @@ final class EnquiryService implements HasHooks
         do_action('enquire/enquiry_sent', $product, $enquiry);
 
         wp_send_json_success([
-            'message' => (string) ($settings['success_message'] ?? __('Thanks! Your question has been sent.', 'plogins-enquire')),
+            'message' => (string) ($settings['success_message'] ?? ''),
         ]);
     }
 
@@ -211,21 +211,21 @@ final class EnquiryService implements HasHooks
         $errors = [];
 
         if (! empty($settings['require_name']) && $name === '') {
-            $errors[] = __('Please enter your name.', 'plogins-enquire');
+            $errors[] = __('Please enter your name.', 'demando');
         }
 
         if (! empty($settings['require_email'])) {
             if ($email === '') {
-                $errors[] = __('Please enter your email address.', 'plogins-enquire');
+                $errors[] = __('Please enter your email address.', 'demando');
             } elseif (! is_email($email)) {
-                $errors[] = __('Please enter a valid email address.', 'plogins-enquire');
+                $errors[] = __('Please enter a valid email address.', 'demando');
             }
         } elseif ($email !== '' && ! is_email($email)) {
-            $errors[] = __('Please enter a valid email address.', 'plogins-enquire');
+            $errors[] = __('Please enter a valid email address.', 'demando');
         }
 
         if (! empty($settings['require_message']) && $message === '') {
-            $errors[] = __('Please enter your question.', 'plogins-enquire');
+            $errors[] = __('Please enter your question.', 'demando');
         }
 
         return $errors;
@@ -245,10 +245,10 @@ final class EnquiryService implements HasHooks
         }
 
         $productName = $product->get_name();
-        $subjectTpl  = (string) ($settings['email_subject'] ?? 'Product enquiry: {product}');
+        $subjectTpl  = (string) ($settings['email_subject'] ?? '');
         $subject     = str_replace('{product}', $productName, $subjectTpl);
 
-        $notProvided = __('(not provided)', 'plogins-enquire');
+        $notProvided = __('(not provided)', 'demando');
         $name         = isset($enquiry['name']) ? (string) $enquiry['name'] : '';
         $email        = isset($enquiry['email']) ? (string) $enquiry['email'] : '';
         $message      = isset($enquiry['message']) ? (string) $enquiry['message'] : '';
@@ -257,16 +257,16 @@ final class EnquiryService implements HasHooks
 
         $lines = [
             /* translators: %s: product name. */
-            sprintf(__('New product enquiry for: %s', 'plogins-enquire'), $productName),
+            sprintf(__('New product enquiry for: %s', 'demando'), $productName),
             (string) $product->get_permalink(),
             '',
             /* translators: %s: customer name. */
-            sprintf(__('Name: %s', 'plogins-enquire'), $nameValue),
+            sprintf(__('Name: %s', 'demando'), $nameValue),
             /* translators: %s: customer email. */
-            sprintf(__('Email: %s', 'plogins-enquire'), $emailValue),
+            sprintf(__('Email: %s', 'demando'), $emailValue),
             '',
-            __('Message:', 'plogins-enquire'),
-            $message !== '' ? $message : __('(no message)', 'plogins-enquire'),
+            __('Message:', 'demando'),
+            $message !== '' ? $message : __('(no message)', 'demando'),
         ];
 
         $body = implode("\n", $lines);
@@ -359,7 +359,11 @@ final class EnquiryService implements HasHooks
     }
 
     /**
-     * Stored settings merged over packaged defaults.
+     * Stored settings merged over packaged defaults, resolved for rendering.
+     *
+     * Texts::apply() fills the customer-facing strings a merchant has left
+     * empty with their translated defaults. This is the only settings reader on
+     * the front end, so every string that reaches a shopper passes through it.
      *
      * @return array<string, mixed>
      */
@@ -374,7 +378,7 @@ final class EnquiryService implements HasHooks
         /** @var array<string, mixed> $defaults */
         $defaults = require ENQUIRE_DIR . 'config/defaults.php';
 
-        return array_merge($defaults, $stored);
+        return Texts::apply(array_merge($defaults, $stored));
     }
 
     /**

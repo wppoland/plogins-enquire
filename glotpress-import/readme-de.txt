@@ -35,14 +35,14 @@ Der Code befindet sich auf GitHub unter https://github.com/wppoland/plogins-enqu
 * Erfolgs- und Fehlermeldungen werden inline angezeigt, sodass kein Neuladen der Seite erforderlich ist.
 * Spam-Behandlung: Nonce-Prüfung, ein Honeypot-Feld und ein 30-Sekunden-Rate-Limit pro Besucher.
 * Wähle aus, welche der Felder Name, E-Mail-Adresse und Nachricht erforderlich sind, und bearbeite die Schaltfläche, die Feldbeschriftungen, den Erfolgs-/Fehlertext und den E-Mail-Betreff.
-* Die Einstellungen findest du unter WooCommerce → Enquire.
+* Die Einstellungen findest du unter WooCommerce > Enquire.
 * Das kleine CSS und JS werden nur auf Produktseiten geladen. Das Plugin erklärt Kompatibilität mit WooCommerce HPOS sowie den Warenkorb- und Checkout-Blöcken.
 
 == Installation ==
 
-1. Lade das Plugin nach `/wp-content/plugins/enquire` hoch oder installiere es über Plugins → Neu hinzufügen.
+1. Lade das Plugin nach `/wp-content/plugins/enquire` hoch oder installiere es über Plugins > Neu hinzufügen.
 2. Aktiviere es. WooCommerce muss aktiv sein.
-3. Gehe zu WooCommerce → Enquire, um die E-Mail-Adresse des Empfängers, die Schaltflächenbeschriftung und die Formularoptionen festzulegen.
+3. Gehe zu WooCommerce > Enquire, um die E-Mail-Adresse des Empfängers, die Schaltflächenbeschriftung und die Formularoptionen festzulegen.
 
 == Frequently Asked Questions ==
 
@@ -64,7 +64,7 @@ Jede Übermittlung wird anhand eines Nonce- und eines versteckten Honeypot-Felds
 
 = Can I customise the button label? =
 
-Ja. Lege den Schaltflächentext und die Formularüberschrift unter <strong>WooCommerce → Enquire</strong> fest.
+Ja. Lege den Schaltflächentext und die Formularüberschrift unter <strong>WooCommerce > Enquire</strong> fest.
 
 
 = Does this plugin work on WordPress Multisite? =
@@ -74,7 +74,7 @@ Ja. Dieses Plugin ist mit WordPress Multisite kompatibel. Aktiviere es im Netzwe
 == Screenshots ==
 
 1. Das Formular „Frage stellen“ auf einer einzelnen Produktseite.
-2. Die Einstellungsseite WooCommerce → Enquire.
+2. Die Einstellungsseite WooCommerce > Enquire.
 
 == External Services ==
 

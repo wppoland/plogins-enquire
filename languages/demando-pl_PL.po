@@ -3,8 +3,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Enquire - Product Enquiry Form for WooCommerce 0.1.0\n"
-"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/enquire\n"
-"POT-Creation-Date: 2026-06-18T12:34:55+00:00\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/demando\n"
+"POT-Creation-Date: 2026-09-08T13:42:25+00:00\n"
 "PO-Revision-Date: 2026-06-15 12:00+0000\n"
 "Last-Translator: motylanogha <szatkowski.mariusz@gmail.com>\n"
 "Language-Team: Polish <pl@li.org>\n"
@@ -14,57 +14,99 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 "
 "|| n%100>14) ? 1 : 2);\n"
-"X-Domain: plogins-enquire\n"
+"X-Domain: demando\n"
 "X-Generator: WP-CLI 2.12.0\n"
 
 #. Plugin Name of the plugin
-#: enquire.php
-msgid "Enquire - Product Enquiry Form for WooCommerce"
-msgstr "Enquire - Formularz zapytań o produkt dla WooCommerce"
+#: demando.php
+msgid "Demando - Product Enquiry for WooCommerce"
+msgstr "Demando - zapytanie o produkt dla WooCommerce"
 
 #. Plugin URI of the plugin
-#: enquire.php
-msgid "https://plogins.com/enquire/"
-msgstr "https://plogins.com/enquire/"
+#: demando.php
+msgid "https://plogins.com/plogins-enquire/"
+msgstr "https://plogins.com/plogins-enquire/"
 
 #. Description of the plugin
-#: enquire.php
+#: demando.php
 msgid "Add an Ask a Question form to products that emails the store owner."
 msgstr ""
 "Dodaj do produktów formularz „Zadaj pytanie”, który wysyła e-mail do "
 "właściciela sklepu."
 
 #. Author of the plugin
-#: enquire.php
-msgid "WPPoland"
-msgstr "WPPoland"
+#: demando.php
+msgid "WPPoland.com"
+msgstr "WPPoland.com"
 
 #. Author URI of the plugin
-#: enquire.php
-msgid "https://plogins.com/"
-msgstr "https://plogins.com/"
+#: demando.php
+msgid "https://wppoland.com"
+msgstr "https://wppoland.com"
 
-#: enquire.php:47
-msgid ""
-"Enquire - Product Enquiry Form for WooCommerce requires WooCommerce to be "
-"active."
-msgstr ""
-"Enquire - Formularz zapytań o produkt dla WooCommerce wymaga aktywnej "
-"wtyczki WooCommerce."
+#: demando.php:48
+msgid "Demando requires WooCommerce to be active."
+msgstr "Demando wymaga aktywnego WooCommerce."
 
-#: src/Admin/Settings.php:52
-msgid "Enquire Settings"
-msgstr "Ustawienia Enquire"
+#: src/Admin/ProUpsell.php:78
+msgid "Wkrótce"
+msgstr "Wkrótce"
 
-#: src/Admin/Settings.php:53
-msgid "Enquire"
-msgstr "Enquire"
+#: src/Admin/ProUpsell.php:78
+msgid "Coming soon"
+msgstr "Wkrótce"
 
-#: src/Admin/Settings.php:98
+#. translators: 1: currency symbol, 2: yearly price
+#: src/Admin/ProUpsell.php:84
+#, php-format
+msgid "from %1$s%2$d/yr"
+msgstr "od %1$s%2$d/rok"
+
+#: src/Admin/ProUpsell.php:93
+msgid "Upgrade to PRO"
+msgstr "Przejdź na PRO"
+
+#: src/Admin/ProUpsell.php:94
+msgid "Powiadom mnie"
+msgstr "Powiadom mnie"
+
+#: src/Admin/ProUpsell.php:94
+msgid "Get notified"
+msgstr "Powiadom mnie"
+
+#: src/Admin/ProUpsell.php:124
+msgid "Permission denied."
+msgstr "Brak uprawnień."
+
+#. translators: %s: PRO edition name
+#: src/Admin/ProUpsell.php:154
+#, php-format
+msgid "Do more with %s"
+msgstr "Zrób więcej dzięki %s"
+
+#: src/Admin/ProUpsell.php:161
+msgid "Dismiss this notice"
+msgstr "Odrzuć to powiadomienie"
+
+#. translators: %s: PRO edition name
+#: src/Admin/ProUpsell.php:179
+#, php-format
+msgid "What %s adds"
+msgstr "Co dodaje %s"
+
+#: src/Admin/Settings.php:61
+msgid "Demando: product enquiry"
+msgstr "Demando: zapytanie o produkt"
+
+#: src/Admin/Settings.php:62
+msgid "Product Enquiry"
+msgstr "Zapytanie o produkt"
+
+#: src/Admin/Settings.php:114
 msgid "Let shoppers ask about a product before they buy"
 msgstr "Pozwól klientom zapytać o produkt, zanim go kupią"
 
-#: src/Admin/Settings.php:99
+#: src/Admin/Settings.php:115
 msgid ""
 "Enquire adds an “Ask a question” button to your single product pages. "
 "Clicking it opens an accessible form (name, email, message) that emails you "
@@ -75,28 +117,28 @@ msgstr ""
 "wysyła Ci pytanie wraz ze szczegółami produktu, żadne dane nie są "
 "przechowywane."
 
-#: src/Admin/Settings.php:107
+#: src/Admin/Settings.php:123
 msgid "General"
 msgstr "Ogólne"
 
-#: src/Admin/Settings.php:108
+#: src/Admin/Settings.php:124
 msgid "The master switch and where enquiries are delivered."
 msgstr "Główny przełącznik oraz miejsce, do którego trafiają zapytania."
 
-#: src/Admin/Settings.php:113
+#: src/Admin/Settings.php:129
 msgid "Enable enquiries"
 msgstr "Włącz zapytania"
 
-#: src/Admin/Settings.php:123
+#: src/Admin/Settings.php:139
 msgid "Show the “Ask a question” button on single product pages."
 msgstr ""
 "Wyświetlaj przycisk „Zadaj pytanie” na stronach pojedynczych produktów."
 
-#: src/Admin/Settings.php:129
+#: src/Admin/Settings.php:145
 msgid "Recipient email"
 msgstr "E-mail odbiorcy"
 
-#: src/Admin/Settings.php:140
+#: src/Admin/Settings.php:156
 msgid ""
 "Enquiries are emailed here. Leave empty to use your site’s admin email. The "
 "customer’s address is set as Reply-To so you can reply directly."
@@ -105,11 +147,11 @@ msgstr ""
 "administratora witryny. Adres klienta jest ustawiany jako Reply-To, dzięki "
 "czemu możesz odpowiedzieć bezpośrednio."
 
-#: src/Admin/Settings.php:148
+#: src/Admin/Settings.php:164
 msgid "Trigger button"
 msgstr "Przycisk uruchamiający"
 
-#: src/Admin/Settings.php:149
+#: src/Admin/Settings.php:165
 msgid ""
 "The enquiry button shown after the add-to-cart button on the product page. "
 "Clear any text field below to restore its packaged default (shown as the "
@@ -119,11 +161,11 @@ msgstr ""
 "produktu. Wyczyść dowolne pole tekstowe poniżej, aby przywrócić domyślne "
 "ustawienie pakietu (pokazane jako wskazówka w kolorze szarym)."
 
-#: src/Admin/Settings.php:154
+#: src/Admin/Settings.php:170
 msgid "Button label"
 msgstr "Etykieta przycisku"
 
-#: src/Admin/Settings.php:154
+#: src/Admin/Settings.php:170
 msgid ""
 "The wording shoppers click to open the enquiry form, e.g. “Ask a question” "
 "or “Enquire now”."
@@ -131,11 +173,11 @@ msgstr ""
 "Sformułowanie, które kupujący klika, aby otworzyć formularz zapytania, np.: "
 "„Zadaj pytanie” lub „Zapytaj teraz”."
 
-#: src/Admin/Settings.php:161
+#: src/Admin/Settings.php:177
 msgid "Form fields"
 msgstr "Pola formularza"
 
-#: src/Admin/Settings.php:162
+#: src/Admin/Settings.php:178
 msgid ""
 "The labels inside the enquiry dialog and which fields a shopper must "
 "complete before they can send. Clear any label to restore its packaged "
@@ -145,11 +187,11 @@ msgstr ""
 "wypełnić, zanim będzie mógł wysłać zapytanie. Wyczyść dowolną etykietę, aby "
 "przywrócić jej wbudowaną wartość domyślną."
 
-#: src/Admin/Settings.php:167
+#: src/Admin/Settings.php:183
 msgid "Form title"
 msgstr "Tytuł formularza"
 
-#: src/Admin/Settings.php:167
+#: src/Admin/Settings.php:183
 msgid ""
 "The heading at the top of the dialog, set the shopper’s expectation, e.g. "
 "“Ask a question about this product”."
@@ -157,20 +199,20 @@ msgstr ""
 "Nagłówek znajdujący się w górnej części okna dialogowego określa oczekiwania "
 "kupującego, np.: „Zadaj pytanie dotyczące tego produktu”."
 
-#: src/Admin/Settings.php:168
+#: src/Admin/Settings.php:184
 msgid "Name field label"
 msgstr "Etykieta pola imienia"
 
-#: src/Admin/Settings.php:168
+#: src/Admin/Settings.php:184
 msgid "Sits above the name input. Customers see this wording, not “name”."
 msgstr ""
 "Znajduje się nad polem nazwy. Klienci widzą to sformułowanie, a nie „nazwę”."
 
-#: src/Admin/Settings.php:169
+#: src/Admin/Settings.php:185
 msgid "Email field label"
 msgstr "Etykieta pola e-mail"
 
-#: src/Admin/Settings.php:169
+#: src/Admin/Settings.php:185
 msgid ""
 "Sits above the email input. This address becomes the Reply-To, so you can "
 "answer the shopper directly."
@@ -178,11 +220,11 @@ msgstr ""
 "Znajduje się nad polem e-mail. Adres ten staje się adresem zwrotnym, dzięki "
 "czemu możesz bezpośrednio odpowiedzieć kupującemu."
 
-#: src/Admin/Settings.php:170
+#: src/Admin/Settings.php:186
 msgid "Message field label"
 msgstr "Etykieta pola wiadomości"
 
-#: src/Admin/Settings.php:170
+#: src/Admin/Settings.php:186
 msgid ""
 "Sits above the message box, prompt the kind of question you want, e.g. “Your "
 "question”."
@@ -190,27 +232,27 @@ msgstr ""
 "Znajduje się nad oknem wiadomości i wyświetla żądany rodzaj pytania, np.: "
 "„Twoje pytanie”."
 
-#: src/Admin/Settings.php:171
+#: src/Admin/Settings.php:187
 msgid "Submit button label"
 msgstr "Etykieta przycisku wysyłania"
 
-#: src/Admin/Settings.php:171
+#: src/Admin/Settings.php:187
 msgid "The wording on the send button inside the dialog."
 msgstr "Treść przycisku wysyłania w oknie dialogowym."
 
-#: src/Admin/Settings.php:172
+#: src/Admin/Settings.php:188
 msgid "Require name"
 msgstr "Wymagaj imienia"
 
-#: src/Admin/Settings.php:172
+#: src/Admin/Settings.php:188
 msgid "Shoppers cannot send until they fill in the name field."
 msgstr "Kupujący nie mogą wysłać zapytania, dopóki nie wypełnią pola nazwy."
 
-#: src/Admin/Settings.php:173
+#: src/Admin/Settings.php:189
 msgid "Require email"
 msgstr "Wymagaj adresu e-mail"
 
-#: src/Admin/Settings.php:173
+#: src/Admin/Settings.php:189
 msgid ""
 "Shoppers cannot send without an email. A valid format is always enforced "
 "when an address is entered, even if this is off, but leaving it off means "
@@ -218,22 +260,22 @@ msgid ""
 msgstr ""
 "Kupujący nie mogą wysłać zapytania bez adresu e-mail. Podczas wprowadzania "
 "adresu zawsze wymuszany jest prawidłowy format, nawet jeśli ta opcja jest "
-"wyłączona, ale pozostawienie jej wyłączonej oznacza, że ​​możesz nie być w "
+"wyłączona, ale pozostawienie jej wyłączonej oznacza, że możesz nie być w "
 "stanie odpowiedzieć."
 
-#: src/Admin/Settings.php:174
+#: src/Admin/Settings.php:190
 msgid "Require message"
 msgstr "Wymagaj wiadomości"
 
-#: src/Admin/Settings.php:174
+#: src/Admin/Settings.php:190
 msgid "Shoppers cannot send an empty enquiry."
 msgstr "Kupujący nie mogą wysłać pustego zapytania."
 
-#: src/Admin/Settings.php:181
+#: src/Admin/Settings.php:197
 msgid "Messaging"
 msgstr "Komunikaty"
 
-#: src/Admin/Settings.php:182
+#: src/Admin/Settings.php:198
 msgid ""
 "What shoppers see after submitting, and the subject line of the email you "
 "receive. Clear any field to restore its packaged default."
@@ -241,11 +283,11 @@ msgstr ""
 "Co kupujący widzą po przesłaniu i temat otrzymanej wiadomości e-mail. "
 "Wyczyść dowolne pole, aby przywrócić jego wartość domyślną w pakiecie."
 
-#: src/Admin/Settings.php:187
+#: src/Admin/Settings.php:203
 msgid "Success message"
 msgstr "Komunikat o powodzeniu"
 
-#: src/Admin/Settings.php:187
+#: src/Admin/Settings.php:203
 msgid ""
 "Shown inline the moment an enquiry sends, reassure the shopper and set a "
 "reply expectation."
@@ -253,11 +295,11 @@ msgstr ""
 "Wyświetlane w momencie wysłania zapytania, uspokój kupującego i ustal "
 "oczekiwaną odpowiedź."
 
-#: src/Admin/Settings.php:188
+#: src/Admin/Settings.php:204
 msgid "Error message"
 msgstr "Komunikat o błędzie"
 
-#: src/Admin/Settings.php:188
+#: src/Admin/Settings.php:204
 msgid ""
 "Shown if the email cannot be sent (e.g. a server mail error). Keep it calm "
 "and ask them to retry."
@@ -265,11 +307,11 @@ msgstr ""
 "Wyświetlany, jeśli nie można wysłać wiadomości e-mail (np. błąd poczty "
 "serwera). Zachowaj spokój i poproś o ponowną próbę."
 
-#: src/Admin/Settings.php:189
+#: src/Admin/Settings.php:205
 msgid "Email subject"
 msgstr "Temat wiadomości e-mail"
 
-#: src/Admin/Settings.php:189
+#: src/Admin/Settings.php:205
 msgid ""
 "The subject line of the enquiry email you receive. {product} is replaced "
 "with the product name, so enquiries are easy to scan in your inbox."
@@ -285,14 +327,6 @@ msgstr "Twoja sesja wygasła. Odśwież stronę i spróbuj ponownie."
 #: src/Service/EnquiryService.php:128
 msgid "Please wait a moment before sending another enquiry."
 msgstr "Poczekaj chwilę przed wysłaniem kolejnego zapytania."
-
-#: src/Service/EnquiryService.php:136 src/Service/EnquiryService.php:179
-msgid "Sorry, something went wrong. Please try again."
-msgstr "Przepraszamy, coś poszło nie tak. Spróbuj ponownie."
-
-#: src/Service/EnquiryService.php:199
-msgid "Thanks! Your question has been sent."
-msgstr "Dziękujemy! Twoje pytanie zostało wysłane."
 
 #: src/Service/EnquiryService.php:214
 msgid "Please enter your name."
@@ -310,121 +344,118 @@ msgstr "Podaj poprawny adres e-mail."
 msgid "Please enter your question."
 msgstr "Wpisz swoje pytanie."
 
-#: src/Service/EnquiryService.php:250
+#: src/Service/EnquiryService.php:251
 msgid "(not provided)"
 msgstr "(nie podano)"
 
 #. translators: %s: product name.
-#: src/Service/EnquiryService.php:259
+#: src/Service/EnquiryService.php:260
+#, php-format
 msgid "New product enquiry for: %s"
 msgstr "Nowe zapytanie o produkt: %s"
 
 #. translators: %s: customer name.
-#: src/Service/EnquiryService.php:263
+#: src/Service/EnquiryService.php:264
+#, php-format
 msgid "Name: %s"
 msgstr "Imię: %s"
 
 #. translators: %s: customer email.
-#: src/Service/EnquiryService.php:265
+#: src/Service/EnquiryService.php:266
+#, php-format
 msgid "Email: %s"
 msgstr "E-mail: %s"
 
-#: src/Service/EnquiryService.php:267
+#: src/Service/EnquiryService.php:268
 msgid "Message:"
 msgstr "Wiadomość:"
 
-#: src/Service/EnquiryService.php:268
+#: src/Service/EnquiryService.php:269
 msgid "(no message)"
 msgstr "(brak wiadomości)"
 
-#: templates/enquiry-form.php:17
+#: src/Service/Texts.php:36
 msgid "Ask a question"
 msgstr "Zadaj pytanie"
 
-#: templates/enquiry-form.php:18
+#: src/Service/Texts.php:37
 msgid "Ask a question about this product"
 msgstr "Zadaj pytanie o ten produkt"
 
-#: templates/enquiry-form.php:19
+#: src/Service/Texts.php:38
 msgid "Your name"
 msgstr "Twoje imię"
 
-#: templates/enquiry-form.php:20
+#: src/Service/Texts.php:39
 msgid "Your email"
 msgstr "Twój e-mail"
 
-#: templates/enquiry-form.php:21
+#: src/Service/Texts.php:40
 msgid "Your question"
 msgstr "Twoje pytanie"
 
-#: templates/enquiry-form.php:22
+#: src/Service/Texts.php:41
 msgid "Send enquiry"
 msgstr "Wyślij zapytanie"
 
-#: templates/enquiry-form.php:54
+#: src/Service/Texts.php:42
+msgid "Thanks! Your question has been sent. We will get back to you shortly."
+msgstr "Dziękujemy! Twoje pytanie zostało wysłane. Wkrótce się odezwiemy."
+
+#: src/Service/Texts.php:43
+msgid "Sorry, something went wrong. Please try again."
+msgstr "Przepraszamy, coś poszło nie tak. Spróbuj ponownie."
+
+#. translators: {product} is a placeholder replaced with the product name, keep it as is.
+#: src/Service/Texts.php:45
+msgid "Product enquiry: {product}"
+msgstr "Zapytanie o produkt: {product}"
+
+#: templates/enquiry-form.php:56
 msgid "Close"
 msgstr "Zamknij"
 
 #. translators: %s: product name.
-#: templates/enquiry-form.php:63
+#: templates/enquiry-form.php:65
+#, php-format
 msgid "About: %s"
 msgstr "Dotyczy: %s"
 
-#: templates/enquiry-form.php:81
+#: templates/enquiry-form.php:83
 msgid "Leave this field empty"
 msgstr "Pozostaw to pole puste"
 
-#: src/Admin/ProUpsell.php:78
-msgid "Wkrótce"
-msgstr "Wkrótce"
+#~ msgid "Enquire - Product Enquiry Form for WooCommerce"
+#~ msgstr "Enquire - Formularz zapytań o produkt dla WooCommerce"
 
-#: src/Admin/ProUpsell.php:78
-msgid "Coming soon"
-msgstr "Wkrótce"
+#~ msgid "https://plogins.com/enquire/"
+#~ msgstr "https://plogins.com/enquire/"
 
-#. translators: %d: yearly price in PLN
-#: src/Admin/ProUpsell.php:83
+#~ msgid "WPPoland"
+#~ msgstr "WPPoland"
+
+#~ msgid "https://plogins.com/"
+#~ msgstr "https://plogins.com/"
+
+#~ msgid ""
+#~ "Enquire - Product Enquiry Form for WooCommerce requires WooCommerce to be "
+#~ "active."
+#~ msgstr ""
+#~ "Enquire - Formularz zapytań o produkt dla WooCommerce wymaga aktywnej "
+#~ "wtyczki WooCommerce."
+
+#~ msgid "Enquire Settings"
+#~ msgstr "Ustawienia Enquire"
+
+#~ msgid "Enquire"
+#~ msgstr "Enquire"
+
+#~ msgid "Thanks! Your question has been sent."
+#~ msgstr "Dziękujemy! Twoje pytanie zostało wysłane."
+
 #, php-format
-msgid "od %d zł/rok"
-msgstr "od %d zł/rok"
-
-#. translators: 1: currency symbol, 2: yearly price
-#: src/Admin/ProUpsell.php:88
-#, php-format
-msgid "from %1$s%2$d/yr"
-msgstr "od %1$s%2$d/rok"
-
-#: src/Admin/ProUpsell.php:97
-msgid "Upgrade to PRO"
-msgstr "Przejdź na PRO"
-
-#: src/Admin/ProUpsell.php:98
-msgid "Powiadom mnie"
-msgstr "Powiadom mnie"
-
-#: src/Admin/ProUpsell.php:98
-msgid "Get notified"
-msgstr "Powiadom mnie"
-
-#: src/Admin/ProUpsell.php:128
-msgid "Permission denied."
-msgstr "Brak uprawnień."
-
-#. translators: %s: PRO edition name
-#: src/Admin/ProUpsell.php:158
-#, php-format
-msgid "Do more with %s"
-msgstr "Zrób więcej dzięki %s"
-
-#: src/Admin/ProUpsell.php:165
-msgid "Dismiss this notice"
-msgstr "Odrzuć to powiadomienie"
-
-#. translators: %s: PRO edition name
-#: src/Admin/ProUpsell.php:183
-#, php-format
-msgid "What %s adds"
-msgstr "Co dodaje %s"
+#~ msgid "od %d zł/rok"
+#~ msgstr "od %d zł/rok"
 
 #~ msgid ""
 #~ "The enquiry button shown after the add-to-cart button on the product page."
